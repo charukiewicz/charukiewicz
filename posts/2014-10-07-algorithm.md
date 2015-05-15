@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Everything Can Be An Algorithm
-disqus: y
 ---
 
 ### What is an Algorithm?

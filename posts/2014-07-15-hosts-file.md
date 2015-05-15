@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Replacing Adblock Plus with the hosts file
-disqus: y
 ---
 
 ### The Reign of Adblock Plus
@@ -93,7 +91,7 @@ rm hosts-swc
 echo "Completed!"
 ```
 
-You can download the script [here](/files/code/hosts-update.sh) or view the same file on [GitHub](https://github.com/charukiewicz/scripts/blob/master/hosts-update.sh).  I encourage you to open it in a text editor after downloading it to confirm it is exactly what I have in the box above.  You will need to run the script with root permissions by prefixing with the **sudo** command because the entire **/etc/** directory is read only.
+You can view and download the same file on [GitHub](https://github.com/charukiewicz/scripts/blob/master/hosts-update.sh).  I encourage you to open it in a text editor after downloading it to confirm it is exactly what I have in the box above.  You will need to run the script with root permissions by prefixing with the **sudo** command because the entire **/etc/** directory is read only.
 
 If you are a new Linux user (or an old, forgetful, Linux user) attempting to run this script for the first time, open a terminal and type the following commands:
 

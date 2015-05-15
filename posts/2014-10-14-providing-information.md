@@ -1,7 +1,5 @@
 ---
-layout: post
 title: The Four Principles of Providing Information
-disqus: y
 ---
 
 ### The Information Problem
