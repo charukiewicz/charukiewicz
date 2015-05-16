@@ -3,6 +3,7 @@ body {
     font-size: 16px;
     margin: 0px auto 0px auto;
     width: 600px;
+    font-family: inconsolata;
 }
 
 div#header {
@@ -53,4 +54,10 @@ div.info {
     color: #555;
     font-size: 14px;
     font-style: italic;
+}
+
+code {
+    font-size: 12px;
+    border: 1px solid #eeeed2;
+    color: #555555;
 }
