@@ -9,6 +9,7 @@ body {
     margin: 0px auto 0px auto;
     width: 600px;
     font-family: "Inconsolata";
+    text-align: justify;
 }
 
 div#header {

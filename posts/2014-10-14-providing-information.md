@@ -1,5 +1,5 @@
 ---
-title: The Four Principles of Providing Information
+title: Four Principles of Providing Information
 ---
 
 ### The Information Problem
