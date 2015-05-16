@@ -1,9 +1,14 @@
+@font-face {
+    font-family: "Inconsolata";
+    src: url(/files/Inconsolata.ttf) format("truetype");
+}
+
 body {
     color: black;
     font-size: 16px;
     margin: 0px auto 0px auto;
     width: 600px;
-    font-family: inconsolata;
+    font-family: "Inconsolata";
 }
 
 div#header {
