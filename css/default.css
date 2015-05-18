@@ -69,3 +69,7 @@ code {
     display: inline-block;
     padding: 2px 4px;
 }
+
+blockquote {
+    color: #505050;
+}
