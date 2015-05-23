@@ -32,6 +32,7 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
+{-
     create ["archive.html"] $ do
         route idRoute
         compile $ do
@@ -45,7 +46,7 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
-
+-}
 
     match "index.html" $ do
         route idRoute
@@ -53,7 +54,6 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
                     defaultContext
 
             getResourceBody
