@@ -42,7 +42,7 @@ Clarity is a sort of foundation for providing information.  If your information 
 
 Information relevance is the idea that the information you are providing should be useful to the person you are providing it to.  Ideally, our goal with regards to relevance is to provide information whose subject matter is what the recipient expects. That is, we explain or touch on everything they need, without any additional, superfluous or unneeded content.
 
-Achieving relevance is a balancing act.  In my opinion, it is better to err on the slide of slightly irrelevant rather than on the side of slightly lacking.  Something that is slighly irrelevant may be an annoyance or cause the person who is receiving your information to take a bit longer to digest it.  But, by contrast, something that is slightly lacking may actually be lacking a key detail.  The last thing you want to do is force your recipient to have to go hunt down this detail on their own, or wait hours or days because they need a followup question answered.
+Achieving relevance is a balancing act.  In my opinion, it is better to err on the slide of slightly irrelevant rather than on the side of slightly lacking.  Something that is slightly irrelevant may be an annoyance or cause the person who is receiving your information to take a bit longer to digest it.  But, by contrast, something that is slightly lacking may actually be lacking a key detail.  The last thing you want to do is force your recipient to have to go hunt down this detail on their own, or wait hours or days because they need a followup question answered.
 
 If your recipient does any of the following while taking in your information, your information is likely not completely relevant:
 
@@ -58,11 +58,11 @@ It is almost a challenge to provide absolutely no relevant information.  Typical
 
 ### Accessibility
 
-Information accessibility is about the flow of actions that the recipient of your information has to take before he actually recieves it.  Unlike relevance and clarity, accessibility has nothing to do with the actual content of the information itself.  Accessibility is also not directly applicable to simple forms of communication (such as an email) or basic information (such as a static webpage with no navigation whatsoever).
+Information accessibility is about the flow of actions that the recipient of your information has to take before he actually receives it.  Unlike relevance and clarity, accessibility has nothing to do with the actual content of the information itself.  Accessibility is also not directly applicable to simple forms of communication (such as an email) or basic information (such as a static webpage with no navigation whatsoever).
 
 Accessibility is the idea that your recipient should have to take as few steps as possible to reach or find the information that he is looking for.  Accessibility also means that the recipient should be able to easily find the information he is looking for, even if he does not know exactly which steps to take to find it.
 
-Many services fall far short of making information (or functionality) easily accesible to their users.  An example of very poor accessibility I encountered recently was when I was attempting to manage my recurring payments in my PayPal account.  As it currently stands, PayPal makes cancelling a recurring payment [a five step process](https://www.paypal.com/us/webapps/helpcenter/helphub/article/?solutionId=FAQ2327).  Worse yet, I was unable to find this solution on my own, I had to Google search "paypal cancel recurring payments" because the option to view and manage them is burried so far down in the user options.
+Many services fall far short of making information (or functionality) easily accessible to their users.  An example of very poor accessibility I encountered recently was when I was attempting to manage my recurring payments in my PayPal account.  As it currently stands, PayPal makes cancelling a recurring payment [a five step process](https://www.paypal.com/us/webapps/helpcenter/helphub/article/?solutionId=FAQ2327).  Worse yet, I was unable to find this solution on my own, I had to Google search "paypal cancel recurring payments" because the option to view and manage them is buried so far down in the user options.
 
 As a PayPal user, it is quite evident that managing where my money is going should be one of the most important things to me.  PayPal's decision to make it so difficult to manage recurring payments (coupled with the fact that you are forced into recurring payments with certain services you purchase using PayPal) is an example of very poor accessibility.
 
@@ -78,7 +78,7 @@ Information can be clear, relevant, and accessible yet be provided with the wron
 
 The general idea behind information density is to supply the recipient with information in a way that allows him to spend as little time as possible digesting it, while still giving him everything he needs or expects.
 
-This may intially sound like information relevenace.  That is not the case, however.  If we go back to my 'Python' Google search example.  Google returns results about the programming language and not the reptile because it knows that the programming language is more relevant to me.  This has nothing to do with density.
+This may initially sound like information relevance.  That is not the case, however.  If we go back to my 'Python' Google search example.  Google returns results about the programming language and not the reptile because it knows that the programming language is more relevant to me.  This has nothing to do with density.
 
 A great example of the principle of information density in action in the form of an activity digest email that many services provide.  Suppose I get a daily digest of new posts of a particular forum I visit.  The daily digest is designed to summarize the new content from each day, emailed automatically at the end of the day.  The daily digest will likely list at least the title of each post, and a link directly to it.  But there are other pieces of information which might also be worth including.  
 
