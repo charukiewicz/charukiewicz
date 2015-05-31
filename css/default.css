@@ -39,13 +39,27 @@ div#header #navigation a {
     text-transform: uppercase;
 }
 
-div#footer {
+div.footer {
     border-top: solid 2px black;
     color: #555;
     font-size: 12px;
-    margin-top: 30px;
-    padding: 12px 0px 12px 0px;
-    text-align: right;
+    padding-bottom: 34px;
+}
+
+div.footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+div.footer-lt {
+    margin-top: 9px;
+    font-size: 18px;
+    float: left;
+}
+
+div.footer-rt {
+    margin-top: 12px;
+    float: right;
 }
 
 h1 {
