@@ -97,7 +97,7 @@ title: Résumé
 **Next Generation Gaming, LLC** (Oct 2012 - Nov 2013)<br>
 *Director of Community Experience*
 
-* Product managment position; led a team of 5 software developers, 10 beta testers, and 5 sales staff members
+* Product management position; led a team of 5 software developers, 10 beta testers, and 5 sales staff members
 * Designed and implemented a system which automated and expanded all product sales; removed sales overhead costs and released multiple new categories of products which *increased average monthly revenue of the company by 35%*
 * Performed quantitative analysis of product sales, used results to develop marketing and sales strategies, instructed sales staff on how to execute sales strategies
 * Implemented a system which streamlined planning, development, testing, release, and public feedback of multiple simultaneous projects and software updates
