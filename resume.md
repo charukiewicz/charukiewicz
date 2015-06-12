@@ -15,13 +15,63 @@ title: Résumé
 
 <hr>
 
+## Technical Skills
+
+<b>
+<span class="sk-6">Advanced</span>
+<span class="sk-0" style="float:right">Basic</span>
+<div class="sk-grad"></div>
+</b>
+
+<table class="sk-table">
+<tr>
+<td>
+<span class="sk sk-6">Linux</span><br/>
+<span class="sk sk-6">CakePHP</span>
+</td>
+<td>
+<span class="sk sk-5">Git</span><br/>
+<span class="sk sk-5">MySQL</span><br/>
+<span class="sk sk-5">JavaScript</span><br/>
+<span class="sk sk-5">jQuery</span><br/>
+<span class="sk sk-5">Redis</span>
+</td>
+<td>
+<span class="sk sk-4">Node.js</span><br/>
+<span class="sk sk-4">Python</span><br/>
+<span class="sk sk-4">HTML5</span><br/>
+<span class="sk sk-4">AJAX</span><br/>
+<span class="sk sk-4">CSS3</span>
+</td>
+<td>
+<span class="sk sk-3">Haskell</span><br/>
+<span class="sk sk-3">Websockets</span><br/>
+<span class="sk sk-3">Bash</span><br/>
+<span class="sk sk-3">Svn</span>
+</td>
+<td>
+<span class="sk sk-2">LaTeX</span><br/>
+<span class="sk sk-2">OCaml</span>
+</td>
+<td>
+<span class="sk sk-1">Java</span><br/>
+</td>
+<td>
+<span class="sk sk-0">C</span><br/>
+<span class="sk sk-0">C++</span>
+</td>
+</tr>
+</table>
+
+<hr>
+
 ## Work Experience
 
 **Roompact** (Jan 2015 - Present)<br>
 *Software Engineer*
 
 * Designed, built, tested, deployed, and maintained complex application features using various web technologies
-* Technologies included Linux, MySQL, CakePHP, JavaScript, jQuery, AJAX, HTML5, CSS3
+* Technologies included Linux, CakePHP, Node.js, MySQL, Redis, JavaScript, jQuery, AJAX, Websockets, HTML5, CSS3, Supervisor, cron, Apache2, Nginx
 * Mentored software development interns.  Ensured progress was made towards completion their project completion with a strong focus on personal and technical skill development
 
 **Roompact** (May 2014 - Aug 2014)<br>
@@ -29,10 +79,8 @@ title: Résumé
 
 * Built application software with CakePHP, MySQL backend and HTML5, JQuery, AJAX frontend
 * Configured and maintained Linux servers; automated server tasks through BASH and cronjobs
-* Implemented defensive design in application code, database configuration, and server behavior to prevent malicious users and attacks
 * Built distributed process notification system capable of sending thousands of emails/text messages per minute
 * Created live information data feed capable of displaying nation-wide user activity in real time
-* Performed load testing on the application and server and analyzed network traffic patterns; identified performance bottlenecks
 * Developed and implemented data collection algorithms to collect user data for subsequent analysis
 * Researched and developed methods of to provide incentives for users; wrote report and presented findings to colleagues and management staff
 * Rapidly adapted to new project requirements to meet clients' needs
@@ -50,13 +98,10 @@ title: Résumé
 *Director of Community Experience*
 
 * Product managment position; led a team of 5 software developers, 10 beta testers, and 5 sales staff members
-* Mentored new programmers and software testers
-* Planned and assigned projects, held development meetings, wrote technical specifications, analyzed user data and trends, determined project costs and time requirements, developed new software features and digital sales opportunities
+* Designed and implemented a system which automated and expanded all product sales; removed sales overhead costs and released multiple new categories of products which *increased average monthly revenue of the company by 35%*
 * Performed quantitative analysis of product sales, used results to develop marketing and sales strategies, instructed sales staff on how to execute sales strategies
-* Surveyed users directly to gauge product response and gather general feedback
 * Implemented a system which streamlined planning, development, testing, release, and public feedback of multiple simultaneous projects and software updates
-* Designed and implemented a system which automated and expanded all product sales; removed sales overhead costs and released multiple new categories of products which increased average monthly revenue of the company by 35%
-* Worked with the PAWN language, MySQL, and PHP
+* Created new software features with the PAWN language, MySQL, and PHP
 
 <hr>
 
@@ -65,7 +110,7 @@ title: Résumé
 **Universitiy of Illinois at Urbana-Champaign** *(Dec 2014)*<br>
 B.Sc. in Mathematics & Computer Science and Philosophy *(Double Major)*
 
-**Coursework**: Calculus, Discrete Mathematics, Statistics, Linear Algebra, Real Analysis, Graph Theory, Data Structures, System Programming, Computer Architecture, Programming Languages & Compilers, Numerical Methods, Numerical Analysis, Computational Theory, Fundamental Algorithms, Symbolic Logic, Ancient & Early Modern Philosophy, Value Theory, Metaphysics, Ethical Theories, Epistemology
+<small>**Coursework**: Calculus, Discrete Mathematics, Statistics, Linear Algebra, Real Analysis, Graph Theory, Data Structures, System Programming, Computer Architecture, Programming Languages & Compilers, Numerical Methods, Numerical Analysis, Computational Theory, Fundamental Algorithms, Symbolic Logic, Ancient & Early Modern Philosophy, Value Theory, Metaphysics, Ethical Theories, Epistemology</small>
 
 **College of DuPage** (2012)<br>
 EMT-Basic Certification
@@ -88,6 +133,4 @@ EMT-Basic Certification
 
 * **Spoken Languages**: Fluency in English and Polish
 * **Medical Certifications**: AHA CPR, Illinois EMT-Basic
-* **Programming Languages**: Experience in Haskell, PHP, Python, JavaScript, HTML5, CSS3, OCaml, MySQL, BASH
-* **Software**: Experience with Windows, Linux, OSX, Android, Microsoft Office Suite, Network Traffic Analysis, Remote Server Administration, FTP, SSH, SVN, Git, LaTeX
 * **Personal Interests**: Business Research & Development, Algorithm Development, Functional Programming, Emergency Medicine, Military and Law Enforcement
