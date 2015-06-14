@@ -72,6 +72,10 @@ div.footer-rt {
     float: right;
 }
 
+div.contact li {
+    margin-top: 2px;
+}
+
 h1 {
     font-size: 24px;
 }
