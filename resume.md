@@ -72,7 +72,7 @@ title: Résumé
 
 * Designed, built, tested, deployed, and maintained complex application features using various web technologies
 * Technologies included Linux, CakePHP, Node.js, MySQL, Redis, JavaScript, jQuery, AJAX, Websockets, HTML5, CSS3, Supervisor, cron, Apache2, Nginx
-* Mentored software development interns.  Ensured progress was made towards completion their project completion with a strong focus on personal and technical skill development
+* Mentored software development interns; provided guidance to ensure skill development and progress towards internship project completion
 
 **Roompact** (May 2014 - Aug 2014)<br>
 *Software Development Intern*
