@@ -2,7 +2,7 @@
 title: On Software Engineering
 ---
 
-### A Few Words of Wisdom
+## A Few Words of Wisdom
 
 I was browsing reddit today I stumbled across a post titled "[I want to be a Software Architect](http://www.reddit.com/r/cscareerquestions/comments/366ytm/i_want_to_be_a_software_architect/)", where the author described his goal of improving his technical expertise and laid out a number of different topics, frameworks, and programming languages to study.  The end goal behind this improvement, as the title of the post suggests, would be to help one day become a Software Architect or Principal Software Engineer.
 

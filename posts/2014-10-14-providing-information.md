@@ -2,7 +2,7 @@
 title: Four Principles of Providing Information
 ---
 
-### The Information Problem
+## The Information Problem
 
 A couple of months ago, while faced with a number of design decisions in a project I was working on, I decided to sit down and qualify the fundamental principles of providing information to someone.  I felt that there was certainly a systematic way to approach the problem of attempting to serve someone the information that they were either looking for or expecting to receive.
 
@@ -17,7 +17,7 @@ The four principles are as follows:
 
 I will explain each of these principles in detail.
 
-### Clarity
+## Clarity
 
 Information clarity is perhaps the most easily identifiable principle in regards to how information should be handled.  It is also probably the least abstract of the four principles.  This principle is relatively simple; information must be provided and presented in an intelligible and unambiguous manner.
 
@@ -38,7 +38,7 @@ As the entity providing the information, you are responsible for its clarity.  Y
 
 Clarity is a sort of foundation for providing information.  If your information is horribly unclear, none of the other principles I am going to discuss will even begin to matter.  A reasonable level of clarity absolutely must be present.
 
-### Relevance
+## Relevance
 
 Information relevance is the idea that the information you are providing should be useful to the person you are providing it to.  Ideally, our goal with regards to relevance is to provide information whose subject matter is what the recipient expects. That is, we explain or touch on everything they need, without any additional, superfluous or unneeded content.
 
@@ -56,7 +56,7 @@ Google search is a service implements the principle of relevance extremely well.
 
 It is almost a challenge to provide absolutely no relevant information.  Typically what you write or provide will have some relevance in some way.  The goal with regards to relevance, as mentioned earlier, is to find the meeting point between information that is superfluous and information that is lacking.
 
-### Accessibility
+## Accessibility
 
 Information accessibility is about the flow of actions that the recipient of your information has to take before he actually receives it.  Unlike relevance and clarity, accessibility has nothing to do with the actual content of the information itself.  Accessibility is also not directly applicable to simple forms of communication (such as an email) or basic information (such as a static webpage with no navigation whatsoever).
 
@@ -70,7 +70,7 @@ A general example of excellent accessibility is the availability of an 'omnisear
 
 In the end, determining whether the principle of information accessibility is being applied well enough is subjective.  Generally speaking, the more easily accessible, the better.
 
-### Density
+## Density
 
 Finally, information density is about providing the proper scope of information to your recipient.  This principle is about how compact or 'condensed' the information you are providing is.  Compared to clarity or relevance, this is a relatively abstract idea that I will explain carefully.
 
@@ -88,7 +88,7 @@ None of these pieces of information are irrelevant.  Yet changing which ones are
 
 Altering the density of the information that you are providing to your users can completely change how your product or service is used.  It can change how much time users spend on it, how many visit, and most fundamentally, how the service itself ends up getting used.  It is this fact that makes information density a crucially important principle to consider when designing a service that provides information.
 
-### Summary: 'I-CRAD'
+## Summary: 'I-CRAD'
 
 I believe that these four principles are a comprehensive approach to providing information.  They are applicable to virtually every type of environment, service, or product in some way.  Their implementation can also spell the difference between a booming success and a total failure.
 

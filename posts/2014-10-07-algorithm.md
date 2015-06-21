@@ -2,7 +2,7 @@
 title: Everything Can Be An Algorithm
 ---
 
-### What is an Algorithm?
+## What is an Algorithm?
 
 I think that when most people hear the word 'algorithm' they tend to imagine some mathematician or software engineer doing some complex mathematical or computer related task.  This is a correct assumption.  Mathematicians, programmers, software developers, and engineers all regularly use algorithms to complete various professional and academic tasks.  It is algorithms that play a key role in critical developments in science and technology.  Algorithms have been and continue to be used in developing the world we live in today.  But, I think that people oftentimes do not really understand what algorithms really are, and that their reach extends far beyond the realm of the various aforementioned professionals and significant scientific developments.
 
@@ -18,7 +18,7 @@ Let's try another definition.  The following is my own definition of the word 'a
 
 This definition is an excellent starting point for algorithmic thinking.  
 
-### Algorithms Everywhere
+## Algorithms Everywhere
 
 I believe that a person can think in terms of algorithms in many different contexts.  These are situations and environments that reach far past a academia or a technical job.  What I mean by this is that it is possible to think of common day tasks algorithmically.
 

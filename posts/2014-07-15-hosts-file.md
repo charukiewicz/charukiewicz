@@ -2,7 +2,7 @@
 title: Replacing Adblock Plus with the hosts file
 ---
 
-### The Reign of Adblock Plus
+## The Reign of Adblock Plus
 
 I started using Adblock Plus in 2006, the year it was released for Mozilla Firefox.  This was two years before Google Chrome was even released.  For anyone who was even slightly technologically savvy, the advent of Adblock Plus had a huge impact on web browsing.  It changed the playing field and gave people a huge reason to migrate to Firefox and away from Internet Explorer.  Between addons (specifically Adblock Plus), and tabbed browsing, Firefox was a big deal.
 
@@ -12,7 +12,7 @@ A few months ago I read [an article](http://www.reddit.com/r/programming/comment
 
 This news came to me around a time where my browser usage was becoming more and more intensive.  With Google making Chrome more and more into its own self-sufficient ecosystem of applications and dynamic content, I had fewer reasons to have regular applications open and more reasons to have many tabs open.  It was (and still is) not uncommon for me to have over 10 tabs open when I am browsing the internet.  Between Gmail, Google Music, sometimes Facebook, a few Reddit tabs, and maybe a YouTube tab, I found that I was frequently devoting over 2 gigabytes of RAM to Google Chrome alone.  Google Chrome had become sluggish, no longer operating at the high speed Google always claimed it was king of.
 
-### The hosts file
+## The hosts file
 
 Enter the hosts file.  Well, *reenter* the hosts file.  Originally implemented in the 1970s, the hosts file was used by operating systems to map hostnames (such as google.com) to IP addresses (such as 74.125.224.72).  The hosts file was used to navigate [ARPANET](http://en.wikipedia.org/wiki/ARPANET), a precursor to the Internet.  Users would either need to create and update, or get their hands on a copy of an updated hosts file to actively be able to browse ARPANET via domain names. In 1984, a system which replaced the need for a manually updated hosts file was released.  It was called the Domain Name System, which we typically refer to today as just DNS.
 
@@ -43,7 +43,7 @@ we tell our computer to take us to 127.0.0.1 instead of reddit's normal IP addre
 
 Fortunately, there are kind people on the internet that have compile pre-existing hosts files filled with thousands of malicious and ad-serving domains.  The first site I found is [http://winhelp2002.mvps.org/hosts.htm](http://winhelp2002.mvps.org/hosts.htm), which includes not only a hosts file in both .zip and .txt form, but a great explanation of how the hosts file works and various types of domains to block.  The second is [http://someonewhocares.org/hosts/](http://someonewhocares.org/hosts/), which also offers a great description as well as instructions of how to update the hosts file on your PC.
 
-### Time for some automation
+## Time for some automation
 
 I would like to take it a step further and write a short bash script to automatically update our hosts file using the hosts files provided by both of these sites.  This will be written to work on Linux, but should probably work on OSX as well.  Ideally, every time we run the script we want to grab the most updated versions of each site's hosts file, so we have the most up-to-date version of a list of malicious and ad-serving domains.
 

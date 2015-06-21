@@ -8,20 +8,24 @@ body {
     font-size: 16px;
     margin: 0px auto 0px auto;
     width: 600px;
-    font-family: "Inconsolata";
-    text-align: justify;
+    font-family: Georgia,"Times New Roman",Times,serif;
+}
+
+body h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 div#header {
     border-bottom: 2px solid black;
     margin-bottom: 30px;
     padding: 12px 0px 12px 0px;
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 30px;
 }
 
 div#logo a {
     color: black;
     float: left;
-    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -33,7 +37,6 @@ div#header #navigation {
 div#header #navigation a {
     color: black;
     font-size: 18px;
-    font-weight: bold;
     margin-left: 12px;
     text-decoration: none;
     text-transform: uppercase;
@@ -72,7 +75,15 @@ div.footer-rt {
     float: right;
 }
 
+li {
+    margin-top: 10px;
+}
+
 div.contact li {
+    margin-top: 10px;
+}
+
+ul#posts li {
     margin-top: 10px;
 }
 
