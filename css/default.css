@@ -12,14 +12,14 @@ body {
 }
 
 body h1, h2, h3, h4, h5, h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 div#header {
     border-bottom: 2px solid black;
     margin-bottom: 30px;
     padding: 12px 0px 12px 0px;
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 30px;
 }
 
