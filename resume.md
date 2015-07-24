@@ -67,14 +67,16 @@ title: Résumé
 
 ## Work Experience
 
-**Roompact** (Jan 2015 - Present)<br>
+<div class="exp">
+
+**Roompact** <span class="fr">Jan 2015 - Present</span><br>
 *Software Engineer*
 
 * Designed, built, tested, deployed, and maintained complex application features using various web technologies
 * Technologies included Linux, CakePHP, Node.js, MySQL, Redis, JavaScript, jQuery, AJAX, Websockets, HTML5, CSS3, Supervisor, cron, Apache2, Nginx
 * Mentored software development interns; provided guidance to ensure skill development and progress towards internship project completion
 
-**Roompact** (May 2014 - Aug 2014)<br>
+**Roompact** <span class="fr">May 2014 - Aug 2014</span><br>
 *Software Development Intern*
 
 * Built application software with CakePHP, MySQL backend and HTML5, JQuery, AJAX frontend
@@ -85,7 +87,7 @@ title: Résumé
 * Researched and developed methods of to provide incentives for users; wrote report and presented findings to colleagues and management staff
 * Rapidly adapted to new project requirements to meet clients' needs
 
-**Illini Emergency Medical Services** (Sept 2012 - May 2014)<br>
+**Illini Emergency Medical Services** <span class="fr">Sept 2012 - May 2014</span><br>
 *EMT-Basic*
 
 * Staffed various types of events as on-site EMT
@@ -94,7 +96,7 @@ title: Résumé
 * Performed equipment checks and recorded equipment inventory
 * Coordinated with other agencies (Police, Fire, EMS) during large events (marathons, football games, etc.) to ensure coverage
 
-**Next Generation Gaming, LLC** (Oct 2012 - Nov 2013)<br>
+**Next Generation Gaming, LLC** <span class="fr">Oct 2012 - Nov 2013</span><br>
 *Director of Community Experience*
 
 * Product management position; led a team of 5 software developers, 10 beta testers, and 5 sales staff members
@@ -103,16 +105,18 @@ title: Résumé
 * Implemented a system which streamlined planning, development, testing, release, and public feedback of multiple simultaneous projects and software updates
 * Created new software features with the PAWN language, MySQL, and PHP
 
+</div>
+
 <hr>
 
 ## Education
 
-**Universitiy of Illinois at Urbana-Champaign** *(Dec 2014)*<br>
-B.Sc. in Mathematics & Computer Science and Philosophy *(Double Major)*
+**Universitiy of Illinois at Urbana-Champaign** <span class="fr">2010 - 2014</span><br>
+B.Sc. in Mathematics & Computer Science and Philosophy <span style="font-size:11px;font-style:italic;">(Double Major)</span>
 
 <small>**Coursework**: Calculus, Discrete Mathematics, Statistics, Linear Algebra, Real Analysis, Graph Theory, Data Structures, System Programming, Computer Architecture, Programming Languages & Compilers, Numerical Methods, Numerical Analysis, Computational Theory, Fundamental Algorithms, Symbolic Logic, Ancient & Early Modern Philosophy, Value Theory, Metaphysics, Ethical Theories, Epistemology</small>
 
-**College of DuPage** (2012)<br>
+**College of DuPage** <span class="fr">2012</span><br>
 EMT-Basic Certification
 
 <hr>

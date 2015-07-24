@@ -114,7 +114,7 @@ blockquote {
 }
 
 .sk {
-    font-weight: bold;
+   /* font-weight: bold; */
 }
 
 .sk-6 {
@@ -149,4 +149,12 @@ blockquote {
 
 .sk-table {
     width: 100%;
+}
+
+.fr {
+    float: right;
+}
+
+.exp ul {
+    margin-bottom: 30px;
 }
