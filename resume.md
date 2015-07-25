@@ -2,6 +2,8 @@
 title: Résumé
 ---
 
+<div class="resume-body">
+
 <small>[PDF Version](https://github.com/charukiewicz/resume/raw/master/charukiewicz_resume.pdf)</small>
 
 
@@ -138,3 +140,5 @@ EMT-Basic Certification
 * **Spoken Languages**: Fluency in English and Polish
 * **Medical Certifications**: AHA CPR, Illinois EMT-Basic
 * **Personal Interests**: Business Research & Development, Algorithm Development, Functional Programming, Emergency Medicine, Military and Law Enforcement
+
+</div>

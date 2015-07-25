@@ -52,6 +52,14 @@ div#content a:hover {
     color: #0045B0;
 }
 
+div.content-body {
+    line-height: 25px;
+}
+
+div.resume-body {
+    line-height: 20px;
+}
+
 div.footer {
     border-top: solid 2px black;
     color: #555;
@@ -107,6 +115,7 @@ code {
     color: #555555;
     display: inline-block;
     padding: 2px 4px;
+    line-height: 18px;
 }
 
 blockquote {
