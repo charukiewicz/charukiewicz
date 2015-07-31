@@ -11,12 +11,12 @@ I always try to pay very strong attention to detail.  I am always seeking to exp
 ## On the web:
 
 <div class="contact">
-* Find some of my code on <a href="https://github.com/charukiewicz"><i class="fa fa-github"></i> GitHub</a><br/>
-* See some of my ideas and cool things I find on <a href="https://twitter.com/charukiewicz"><i class="fa fa-twitter"></i> Twitter</a><br/>
-* Check out my posts on <a href="https://plus.google.com/+ChristianCharukiewicz/"><i class="fa fa-google-plus"></i> Google+</a><br/>
-* Read some of my answers on <a href="http://stackoverflow.com/users/2272853/christian"><i class="fa fa-stack-overflow"></i> Stack Overflow</a><br/>
-* Connect with me via <a href="https://www.linkedin.com/in/charukiewicz"><i class="fa fa-linkedin"></i> LinkedIn</a><br/>
-* Send me an <a href="mailto:c.charukiewicz@gmail.com"><i class="fa fa-envelope"></i> Email</a>
+* Find some of my code on <a href="https://github.com/charukiewicz"><i class="fa fa-github"></i>&nbsp;GitHub</a><br/>
+* See some of my ideas and cool things I find on <a href="https://twitter.com/charukiewicz"><i class="fa fa-twitter"></i>&nbsp;Twitter</a><br/>
+* Check out my posts on <a href="https://plus.google.com/+ChristianCharukiewicz/"><i class="fa fa-google-plus"></i>&nbsp;Google+</a><br/>
+* Read some of my answers on <a href="http://stackoverflow.com/users/2272853/christian"><i class="fa fa-stack-overflow"></i>&nbsp;Stack Overflow</a><br/>
+* Connect with me via <a href="https://www.linkedin.com/in/charukiewicz"><i class="fa fa-linkedin"></i>&nbsp;LinkedIn</a><br/>
+* Send me an <a href="mailto:c.charukiewicz@gmail.com"><i class="fa fa-envelope"></i>&nbsp;Email</a>
 </div>
 
 </div>
