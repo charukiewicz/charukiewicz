@@ -167,3 +167,7 @@ blockquote {
 .exp ul {
     margin-bottom: 30px;
 }
+
+.exp ul ul {
+    margin-bottom: 15px;
+}
