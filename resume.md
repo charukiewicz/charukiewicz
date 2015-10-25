@@ -76,12 +76,12 @@ title: Résumé
 * Designed, built, tested, deployed, and maintained complex application features using various web technologies; examples:
     * Built a news feed allowing users to make posts, replies, and receive notifications in real-time (Node.js, CakePHP, Redis, Websockets, JavaScript, jQuery, HTML, CSS)
     * Built a statistics tool capable of generating reports containing a quantitative overview of software usage in an easily understandable and visually appealing format (CakePHP, MySQL, HTML, CSS, JavaScript)
-    * Configured and maintained over half a dozen cloud servers (Linux, BASH, Supervisor, cron, Apache2, Nginx, iptables)
+    * Configured and maintained over half a dozen virtual servers (Linux, BASH, Supervisor, cron, Apache2, Nginx, iptables)
     * Designed and built RESTful API to interface with third-party clients; created and maintained corresponding documentation (CakePHP)
     * Created internal library allowing other developers to easily implement the sending of email/text messages using queue-worker system, greatly improving end-user performance (CakePHP, MySQL)
     * Redesigned and significantly improved strategies and architecture for caching of dynamic data (CakePHP, Linux, Redis)
     * Implemented single sign-on system (CAS protocol), allowing clients to use existing account systems for user authentication (CakePHP, MySQL)
-* Acted as technical contact for parter software vendors and clients implementing API and single sign-on integration
+* Acted as technical contact for partner software vendors and clients implementing API and single sign-on integration
 * Wrote custom SQL queries during exploratory data analysis as well as for specially made internal and client-facing data reports
 * Participated in business strategy meetings; provided technical expertise in planning future growth opportunities and key software features
 * Mentored software development interns; provided guidance to ensure skill development and progress towards internship project completion
