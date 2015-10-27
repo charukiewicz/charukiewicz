@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.55">
+        <title>Christian Charukiewicz - Let's Encrypt With Let's Encrypt</title>
+        <link rel="stylesheet" type="text/css" href="../../css/default.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/syntax.css" />
+        <link rel="stylesheet" type="text/css" href="../../assets/font-awesome/css/font-awesome.css" />
+        <link href="../../images/fav.png" rel="shortcut icon">
+        <meta name="google-site-verification" content="URddx6H5g_y_Y0QQSKvLFPZDSBZegLj4J1VCdqEvoBw" />
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-52843414-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <a href="../../">Christian Charukiewicz</a>
+            </div>
+            <div id="navigation">
+                <a href="../../">Home</a>
+                <a href="../../about/">About</a>
+                <a href="../../resume/">Résumé</a>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>Let's Encrypt With Let's Encrypt</h1>
+
+            <div class="info">
+    Posted on October 26, 2015
+    
+</div>
+
+<div class="content-body">
+
+<h2 id="what-is-website-encryption">What is website encryption?</h2>
+<p>As of today the pages on this site are being served up over SSL. This means that the sever this site is hosted on is encrypting each webpage before it serves it to your browser. Encryption makes the data unreadable to third parties, and also ensures that the data that you see has not been tampered with.</p>
+<p>An encrypted website can be identified by the <strong>https://</strong> as opposed to the <strong>http://</strong> at the beginning of the address bar, and a (usually green) lock icon just to the left of the actual address text. The state of the lock icon also serves to warn against possible faults in the encryption. In Google Chrome, a red lock icon and <del><strong>https</strong></del> being stricken out indicates a serious fault in the SSL on the site (either the encryption is broken or the identity of the host has not been verified). An orange lock icon is less severe, and typically indicates that domain may be encrypted but some of the elements on the page are not.</p>
+<p>As a rule of thumb, if the connection is not in the “green” status, you should never enter sensitive data (credit card numbers, SSNs, personal info) anywhere on the site. Other browsers such as Firefox may not adhere to this same color system for indicating whether SSL is working on a site, but you can always click the lock icon for more information about the encryption status. This should be true for all browsers on all operating systems.</p>
+<h2 id="how-is-this-site-encrypted">How is this site encrypted?</h2>
+<p>Quite a while ago, an organization called <a href="https://letsencrypt.org/">Let’s Encrypt</a> was created to serve as a new certificate authority. A certificate authority serves as a trusted, unbiased organization that independently verifies the authenticity of servers that want to serve encrypted web content to a browser.</p>
+<p>Before Let’s Encrypt, a website owner had to pay money to a certificate authority like DigiCert, Comodo, or Symantec in order to get an SSL certificate. Prices of SSL certificates from these authorities are in my opinion very expensive. The cheapest one I can see is a single domain certificate from Comodo for $76 per year, ranging all the way up to a wildcard certificate (covering all of a website’s subdomains) from Symantec for a whopping $1,999 per year! For a website like this one, paying over $6 a month just to serve my visitors lightly styled HTML pages over SSL is a waste of money.</p>
+<p>But this is where Let’s Encrypt comes back into the picture. Let’s Encrypt is a free service that is the product of a collaboration between organizations like <a href="https://letsencrypt.org/sponsors/">Mozilla, Akami, Cisco, and the EFF</a> that aims to bring free SSL certificates to the entire internet. What’s more is that Let’s Encrypt is a totally automated service, not requiring any human intervention on behalf of the certificate authority to issue a certificate for a particular host.</p>
+<p>A couple weeks ago, I signed up to request an invite to the Let’s Encrypt beta program. The opportunity to serve my site over SSL without having to pay a ton of money (in this case, for nothing other than a bit of my time) was a good prospect to me. I did not hesitate to submit this site to participate in the beta program. Today, I got an invite.</p>
+<h2 id="encryption-steps">Encryption Steps</h2>
+<p>I will not go into much detail into how the actual SSL setup process, because there really was not much to it. Anyone with a moderate amount of Linux experience should be able to follow the instructions and complete the process within about. The email I received inviting me to the beta program contained most of the instructions for setting up SSL. In short, the steps were like this:</p>
+<ol style="list-style-type: decimal">
+<li>Clone the <code>letsencrypt</code> client (a command line tool written in Python) from the Let’s Encrypt GitHub repo</li>
+<li><code>cd</code> into the cloned repo and run a script with <code>./letsencrypt</code> and a few option flags (provided in the email)</li>
+<li>Follow the wizard and select the domain that is to be served over SSL (based off of available Apache/Nginx configurations)</li>
+<li>Add a <a href="http://serverfault.com/a/570290/256141">redirect from HTTP to HTTPS</a> in my <code>/etc/apache2/sites-enabled/</code> configuration file for this domain</li>
+<li>Ensure that none of the assets (like Disqus comments) on my site are being served over HTTP (to avoid the “orange lock” warning mentioned earlier)</li>
+</ol>
+<h2 id="why-encrypt">Why Encrypt?</h2>
+<p>The lingering question here is quite simple: Why bother encrypting? This is just a blog website that has a relatively small amount of content. The most sensitive piece of information here is probably my email address, and the biggest risk associated with that is my inbox getting hit with spam. It is not like encryption is doing anything to mitigate that either. It would appear as though me taking any time at all to encrypt this site is utterly pointless.</p>
+<p>But I believe that there is a reason. I am a proponent of encryption becoming a <em>de facto</em> standard for how we share data over the internet. Encrypted data should not just be the content your bank website sends you when you check your account balance. Nor should it be just your payment gateway connection when you click “Checkout with PayPal” on a store’s site. I believe that <strong>everything</strong> should be encrypted, all of the time. That means all communication, all transactions, all entertainment, and all information access in general.</p>
+<p>When encryption is the standard, the discrepancy between important encrypted data (like your medical records on your hospital’s website) and unimportant data (like this blog post) vanishes. By encrypting everything, important encrypted content becomes obscured by all of the unimportant encrypted content. This makes it very difficult for a malicious entity to target important encrypted data. An attacker may waste time and money attempting to decrypt data exchanged between your computer and some server, only to find that the data is a <a href="http://i.imgur.com/VUd7QZe.jpg">sad pepe meme</a>, for example.</p>
+<p>The other component of my belief for encrypting everything is simply from a privacy standpoint. I believe that nobody should have the ability to track what you do on the internet, and making encryption a standard is perhaps the most important thing we can do to protect against that. This is particularly important for protecting people who are not tech savvy, and who are most likely to have their information compromised or make dangerous decisions on the internet.</p>
+<p>Fortunately, this belief is not novel. Companies like Google and Apple are moving rapidly towards an <a href="https://nakedsecurity.sophos.com/2015/10/21/new-android-marshmallow-devices-must-have-default-encryption-google-says/">encryption by default</a> standard. Brucer Schneier also made <a href="https://www.schneier.com/blog/archives/2015/06/why_we_encrypt.html">a good post</a> about the importance of encrypting everything. And as of next month, Let’s Encrypt will go public and anyone will be able to use the service to serve encrypted versions of their own website.</p>
+<p>The bottom line is that while the decision to encrypt my website looked at in isolation seems pointless, looking at it as part of growing standard of encrypting everything paints a very different picture.</p>
+
+</div>
+
+<hr>
+
+<div class="block">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = "charukiewicz"; 
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+        </div>
+        <div class="footer">
+            <div class="footer-lt">
+                <a href="https://github.com/charukiewicz"><i class="fa fa-github"></i></a>
+                <a href="https://twitter.com/charukiewicz"><i class="fa fa-twitter"></i></a>
+                <a href="https://plus.google.com/+ChristianCharukiewicz/"><i class="fa fa-google-plus"></i></a>
+                <a href="mailto:c.charukiewicz@gmail.com"><i class="fa fa-envelope"></i></a>
+            </div>
+            <div class="footer-rt">
+                Site generated by
+                <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+            </div>
+        </div>
+    </body>
+</html>
