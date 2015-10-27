@@ -22,7 +22,7 @@ A couple weeks ago, I signed up to request an invite to the Let's Encrypt beta p
 
 ## Encryption Steps
 
-I will not go into much detail into how the actual SSL setup process, because there really was not much to it.  Anyone with a moderate amount of Linux experience should be able to follow the instructions and complete the process within about.  The email I received inviting me to the beta program contained most of the instructions for setting up SSL.  In short, the steps were like this:
+I will not go into much detail into how the actual SSL setup process, because there really was not much to it.  Anyone with a moderate amount of Linux experience should be able to follow the instructions and complete the process within 20 minutes.  The email I received inviting me to the beta program contained most of the instructions for setting up SSL.  In short, the steps were like this:
 
 1. Clone the `letsencrypt` client (a command line tool written in Python) from the Let's Encrypt GitHub repo
 2. `cd` into the cloned repo and run a script with `./letsencrypt` and a few option flags (provided in the email)
