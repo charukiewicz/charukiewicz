@@ -71,7 +71,14 @@ title: Résumé
 <div class="exp">
 
 **Roompact** <span class="fr">Chicago, IL</span><br>
-*Software Engineer* <span class="fr">Jan 2015 - Present</span>
+*Chief Technology Officer* <span class="fr">Jan 2016 - Present</span>
+
+* Set long term goals for product development, improving software development processes, and development team growth.
+* Designed and built application features using a wide array of technologies.
+* Managed application servers; developed and enforced technical contingency plans.
+
+**Roompact** <span class="fr">Chicago, IL</span><br>
+*Software Engineer* <span class="fr">Jan 2015 - Jan 2016</span>
 
 * Designed, built, tested, deployed, and maintained complex application features using various web technologies; examples:
     * Built a news feed allowing users to make posts, replies, and receive notifications in real-time (Node.js, CakePHP, Redis, Websockets, JavaScript, jQuery, HTML, CSS)
