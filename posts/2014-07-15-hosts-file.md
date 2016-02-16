@@ -2,6 +2,10 @@
 title: Replacing Adblock Plus with the hosts file
 ---
 
+<div style="color:#555;font-size:14px;">
+*Updated on February 15, 2016* <small>[[jump](#update)]</small>
+</div>
+
 ## The Reign of Adblock Plus
 
 I started using Adblock Plus in 2006, the year it was released for Mozilla Firefox.  This was two years before Google Chrome was even released.  For anyone who was even slightly technologically savvy, the advent of Adblock Plus had a huge impact on web browsing.  It changed the playing field and gave people a huge reason to migrate to Firefox and away from Internet Explorer.  Between addons (specifically Adblock Plus), and tabbed browsing, Firefox was a big deal.
@@ -110,3 +114,16 @@ Android users, if you have rooted your phone you have an option like this as wel
 ChromeOS users, unfortunately there are no good options for ChromeOS.  First of all, editing the file even using sudo does not work.  There is a workaround method, however every time ChromeOS updates the hosts file will be reset.
 
 With that, enjoy your Adblock alternative that takes absolutely zero system resources.  You will see empty boxes where ads would be on certain websites, or the ads should just be gone all together.  Feel free to contact me with any questions. [\@charukiewicz](https://www.twitter.com/charukiewicz/)
+
+<a name="update"></a>
+
+<i>**Update (Feb, 15, 2016)**: There has been a lot of material that has either come out or I have read about since writing this article.  Namely, there are a few really good scripts out there that do what my bash script does, but are more feature filled.  They pull from more sources, allow you to include your own whitelist, etc.
+
+A few options worth checking out:
+
+  * [hosts](https://github.com/StevenBlack/hosts) - A hosts file and updater script written in Python
+  * [Hostsblock](https://gaenserich.github.io/hostsblock/) - Another feature-filled utility
+  * [Pi-hole](http://pi-hole.net/) - Set up a Raspberry Pi to filter your LAN 
+  * [Adblock via /etc/hosts](https://www.reddit.com/r/linux/comments/45e27d/adblock_via_etchosts/) - reddit discussion on this topic
+
+</i>
