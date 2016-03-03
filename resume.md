@@ -29,13 +29,12 @@ title: Résumé
 <tr>
 <td>
 <span class="sk sk-6">Linux</span><br/>
-<span class="sk sk-6">(Cake)PHP</span>
+<span class="sk sk-5">JavaScript</span><br/>
+<span class="sk sk-6">PHP</span>
 </td>
 <td>
 <span class="sk sk-5">Git</span><br/>
 <span class="sk sk-5">MySQL</span><br/>
-<span class="sk sk-5">JavaScript</span><br/>
-<span class="sk sk-5">jQuery</span><br/>
 <span class="sk sk-5">Redis</span>
 </td>
 <td>
