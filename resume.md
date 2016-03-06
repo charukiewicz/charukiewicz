@@ -13,55 +13,7 @@ title: Résumé
 
 * **Email**: [c.charukiewicz@gmail.com](mailto:c.charukiewicz@gmail.com)
 * **Phone**: 630.464.7644
-* **Location**: Greater Chicago Area, Illinois
-
-<hr>
-
-## Technical Skills
-
-<b>
-<span class="sk-6">Advanced</span>
-<span class="sk-0" style="float:right">Basic</span>
-<div class="sk-grad"></div>
-</b>
-
-<table class="sk-table">
-<tr>
-<td>
-<span class="sk sk-6">Linux</span><br/>
-<span class="sk sk-5">JavaScript</span><br/>
-<span class="sk sk-6">PHP</span>
-</td>
-<td>
-<span class="sk sk-5">Git</span><br/>
-<span class="sk sk-5">MySQL</span><br/>
-<span class="sk sk-5">Redis</span>
-</td>
-<td>
-<span class="sk sk-4">Node.js</span><br/>
-<span class="sk sk-4">Python</span><br/>
-<span class="sk sk-4">HTML5</span><br/>
-<span class="sk sk-4">CSS3</span>
-</td>
-<td>
-<span class="sk sk-3">Haskell</span><br/>
-<span class="sk sk-3">Websockets</span><br/>
-<span class="sk sk-3">Bash</span><br/>
-<span class="sk sk-3">Svn</span>
-</td>
-<td>
-<span class="sk sk-2">LaTeX</span><br/>
-<span class="sk sk-2">OCaml</span>
-</td>
-<td>
-<span class="sk sk-1">Java</span><br/>
-</td>
-<td>
-<span class="sk sk-0">C</span><br/>
-<span class="sk sk-0">C++</span>
-</td>
-</tr>
-</table>
+* **Location**: Chicago, Illinois
 
 <hr>
 
@@ -101,7 +53,7 @@ title: Résumé
 * Created live information data feed capable of displaying nation-wide user activity in real time
 * Developed and implemented data collection algorithms to collect user data for subsequent analysis
 * Researched and developed methods of to provide incentives for users; wrote report and presented findings to colleagues and management staff
-* Rapidly adapted to new project requirements to meet clients' needs
+* Rapidly adapted to new project requirements to meet client needs
 
 **Illini Emergency Medical Services** <span class="fr">Champaign, IL</span><br>
 *EMT-Basic* <span class="fr">Sept 2012 - May 2014</span>
@@ -125,6 +77,54 @@ title: Résumé
 
 <hr>
 
+## Technical Skills
+
+<b>
+<span class="sk-6">Advanced</span>
+<span class="sk-0" style="float:right">Basic</span>
+<div class="sk-grad"></div>
+</b>
+
+<table class="sk-table">
+<tr>
+<td>
+<span class="sk sk-6">Linux</span><br/>
+<span class="sk sk-6">JavaScript</span><br/>
+<span class="sk sk-6">PHP</span>
+</td>
+<td>
+<span class="sk sk-5">Git</span><br/>
+<span class="sk sk-5">MySQL</span><br/>
+<span class="sk sk-5">Redis</span>
+</td>
+<td>
+<span class="sk sk-4">Node.js</span><br/>
+<span class="sk sk-4">Python</span><br/>
+<span class="sk sk-4">HTML5</span><br/>
+<span class="sk sk-4">CSS3</span>
+</td>
+<td>
+<span class="sk sk-3">Haskell</span><br/>
+<span class="sk sk-3">Websockets</span><br/>
+<span class="sk sk-3">Bash</span><br/>
+<span class="sk sk-3">Svn</span>
+</td>
+<td>
+<span class="sk sk-2">LaTeX</span><br/>
+<span class="sk sk-2">OCaml</span>
+</td>
+<td>
+<span class="sk sk-1">Java</span><br/>
+</td>
+<td>
+<span class="sk sk-0">C</span><br/>
+<span class="sk sk-0">C++</span>
+</td>
+</tr>
+</table>
+
+<hr>
+
 ## Education
 
 **Universitiy of Illinois at Urbana-Champaign** <span class="fr">2010 - 2014</span><br>
@@ -143,6 +143,10 @@ EMT-Basic Certification
 
 *An ongoing project.  A blog website (currently built using Hakyll).  A test bed for various design ideas and other web related experimentation.*
 
+**Project Euler Problems** - [GitHub](https://github.com/charukiewicz/project-euler)
+
+*A progression through a series of increasingly difficult math problems, solved computationally, using various techniques and programming languages.*
+
 **Beer Manager** - [GitHub](https://github.com/charukiewicz/beer-manager)
 
 *A simple RESTful API built with Flask (a Python microframework) designed to serve as the back end for a beer rating website or application*
@@ -151,8 +155,19 @@ EMT-Basic Certification
 
 ## Skills & Interests
 
-* **Spoken Languages**: Fluency in English and Polish
-* **Medical Certifications**: AHA CPR, Illinois EMT-Basic
-* **Personal Interests**: Business Research & Development, Algorithm Development, Functional Programming, Emergency Medicine, Military and Law Enforcement
+<table>
+<tr>
+<td width="32%">**Spoken Languages**</td>
+<td>Native proficiency in English; bilingual proficiency in Polish</td>
+</tr>
+<tr>
+<td>**Medical Certifications**</td>
+<td>AHA CPR, Illinois EMT-Basic</td>
+</tr>
+<tr>
+<td>**Personal Interests**</td>
+<td>Algorithm Development, User Experience Design, Functional Programming, Business Management & Leadership, Emergency Medicine, Military and Law Enforcement</td>
+</tr>
+</table>
 
 </div>

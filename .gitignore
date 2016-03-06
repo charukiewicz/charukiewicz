@@ -21,3 +21,6 @@ cabal.sandbox.config
 ### Hakyll ###
 _cache/
 site
+
+### Vim ###
+*.swp
