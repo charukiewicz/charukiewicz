@@ -44,6 +44,18 @@ removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
     isLocal :: [Char] -> Bool
     isLocal uri = not (isInfixOf "://" uri)
 
+
+--------------------------------------------------------------------------------
+
+myFeedConfiguration :: FeedConfiguration
+myFeedConfiguration = FeedConfiguration
+    { feedTitle       = "Christian Charukiewicz"
+    , feedDescription = "A personal website"
+    , feedAuthorName  = "Christian Charukiewicz"
+    , feedAuthorEmail = "c.charukiewicz@gmail.com"
+    , feedRoot        = "https://charukiewi.cz"
+    }
+
 --------------------------------------------------------------------------------
 
 main :: IO ()
@@ -77,6 +89,7 @@ main = hakyll $ do
         route $ niceRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
             >>= removeIndexHtml
@@ -112,6 +125,14 @@ main = hakyll $ do
                 >>= removeIndexHtml
 
     match "templates/*" $ compile templateCompiler
+
+    create ["atom.xml"] $ do
+    route idRoute
+    compile $ do
+        let feedCtx = postCtx `mappend` bodyField "description"
+        posts <- fmap (take 10) . recentFirst =<<
+            loadAllSnapshots "posts/*" "content"
+        renderAtom myFeedConfiguration feedCtx posts
 
 
 --------------------------------------------------------------------------------

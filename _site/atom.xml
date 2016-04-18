@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Christian Charukiewicz</title>
+    <link href="https://charukiewi.cz/atom.xml" rel="self" />
+    <link href="https://charukiewi.cz" />
+    <id>https://charukiewi.cz/atom.xml</id>
+    <author>
+        <name>Christian Charukiewicz</name>
+        <email>c.charukiewicz@gmail.com</email>
+    </author>
+    <updated>2015-10-26T00:00:00Z</updated>
+    <entry>
+    <title>Let's Encrypt With Let's Encrypt</title>
+    <link href="https://charukiewi.cz/posts/2015-10-26-lets-encrypt/index.html" />
+    <id>https://charukiewi.cz/posts/2015-10-26-lets-encrypt/index.html</id>
+    <published>2015-10-26T00:00:00Z</published>
+    <updated>2015-10-26T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="info">
+    Posted on October 26, 2015
+    
+</div>
+
+<div class="content-body">
+
+<h2 id="what-is-website-encryption">What is website encryption?</h2>
+<p>As of today the pages on this site are being served up over SSL. This means that the sever this site is hosted on is encrypting each webpage before it serves it to your browser. Encryption makes the data unreadable to third parties, and also ensures that the data that you see has not been tampered with.</p>
+<p>An encrypted website can be identified by the <strong>https://</strong> as opposed to the <strong>http://</strong> at the beginning of the address bar, and a (usually green) lock icon just to the left of the actual address text. The state of the lock icon also serves to warn against possible faults in the encryption. In Google Chrome, a red lock icon and <del><strong>https</strong></del> being stricken out indicates a serious fault in the SSL on the site (either the encryption is broken or the identity of the host has not been verified). An orange lock icon is less severe, and typically indicates that domain may be encrypted but some of the elements on the page are not.</p>
+<p>As a rule of thumb, if the connection is not in the “green” status, you should never enter sensitive data (credit card numbers, SSNs, personal info) anywhere on the site. Other browsers such as Firefox may not adhere to this same color system for indicating whether SSL is working on a site, but you can always click the lock icon for more information about the encryption status. This should be true for all browsers on all operating systems.</p>
+<h2 id="how-is-this-site-encrypted">How is this site encrypted?</h2>
+<p>Quite a while ago, an organization called <a href="https://letsencrypt.org/">Let’s Encrypt</a> was created to serve as a new certificate authority. A certificate authority serves as a trusted, unbiased organization that independently verifies the authenticity of servers that want to serve encrypted web content to a browser.</p>
+<p>Before Let’s Encrypt, a website owner had to pay money to a certificate authority like DigiCert, Comodo, or Symantec in order to get an SSL certificate. Prices of SSL certificates from these authorities are in my opinion very expensive. The cheapest one I can see is a single domain certificate from Comodo for $76 per year, ranging all the way up to a wildcard certificate (covering all of a website’s subdomains) from Symantec for a whopping $1,999 per year! For a website like this one, paying over $6 a month just to serve my visitors lightly styled HTML pages over SSL is a waste of money.</p>
+<p>But this is where Let’s Encrypt comes back into the picture. Let’s Encrypt is a free service that is the product of a collaboration between organizations like <a href="https://letsencrypt.org/sponsors/">Mozilla, Akami, Cisco, and the EFF</a> that aims to bring free SSL certificates to the entire internet. What’s more is that Let’s Encrypt is a totally automated service, not requiring any human intervention on behalf of the certificate authority to issue a certificate for a particular host.</p>
+<p>A couple weeks ago, I signed up to request an invite to the Let’s Encrypt beta program. The opportunity to serve my site over SSL without having to pay a ton of money (in this case, for nothing other than a bit of my time) was a good prospect to me. I did not hesitate to submit this site to participate in the beta program. Today, I got an invite.</p>
+<h2 id="encryption-steps">Encryption Steps</h2>
+<p>I will not go into much detail into how the actual SSL setup process, because there really was not much to it. Anyone with a moderate amount of Linux experience should be able to follow the instructions and complete the process within 20 minutes. The email I received inviting me to the beta program contained most of the instructions for setting up SSL. In short, the steps were like this:</p>
+<ol style="list-style-type: decimal">
+<li>Clone the <code>letsencrypt</code> client (a command line tool written in Python) from the Let’s Encrypt GitHub repo</li>
+<li><code>cd</code> into the cloned repo and run a script with <code>./letsencrypt</code> and a few option flags (provided in the email)</li>
+<li>Follow the wizard and select the domain that is to be served over SSL (based off of available Apache/Nginx configurations)</li>
+<li>Add a <a href="http://serverfault.com/a/570290/256141">redirect from HTTP to HTTPS</a> in my <code>/etc/apache2/sites-enabled/</code> configuration file for this domain</li>
+<li>Ensure that none of the assets (like Disqus comments) on my site are being served over HTTP (to avoid the “orange lock” warning mentioned earlier)</li>
+</ol>
+<h2 id="why-encrypt">Why Encrypt?</h2>
+<p>The lingering question here is quite simple: Why bother encrypting? This is just a blog website that has a relatively small amount of content. The most sensitive piece of information here is probably my email address, and the biggest risk associated with that is my inbox getting hit with spam. It is not like encryption is doing anything to mitigate that either. It would appear as though me taking any time at all to encrypt this site is utterly pointless.</p>
+<p>But I believe that there is a reason. I am a proponent of encryption becoming a <em>de facto</em> standard for how we share data over the internet. Encrypted data should not just be the content your bank website sends you when you check your account balance. Nor should it be just your payment gateway connection when you click “Checkout with PayPal” on a store’s site. I believe that <strong>everything</strong> should be encrypted, all of the time. That means all communication, all transactions, all entertainment, and all information access in general.</p>
+<p>When encryption is the standard, the discrepancy between important encrypted data (like your medical records on your hospital’s website) and unimportant data (like this blog post) vanishes. By encrypting everything, important encrypted content becomes obscured by all of the unimportant encrypted content. This makes it very difficult for a malicious entity to target important encrypted data. An attacker may waste time and money attempting to decrypt data exchanged between your computer and some server, only to find that the data is a <a href="/images/sad-pepe.png">sad pepe meme</a>, for example.</p>
+<p>The other component of my belief for encrypting everything is simply from a privacy standpoint. I believe that nobody should have the ability to track what you do on the internet, and making encryption a standard is perhaps the most important thing we can do to protect against that. This is particularly important for protecting people who are not tech savvy, and who are most likely to have their information compromised or make dangerous decisions on the internet.</p>
+<p>Fortunately, this belief is not novel. Companies like Google and Apple are moving rapidly towards an <a href="https://nakedsecurity.sophos.com/2015/10/21/new-android-marshmallow-devices-must-have-default-encryption-google-says/">encryption by default</a> standard. Brucer Schneier also made <a href="https://www.schneier.com/blog/archives/2015/06/why_we_encrypt.html">a good post</a> about the importance of encrypting everything. And as of next month, Let’s Encrypt will go public and anyone will be able to use the service to serve encrypted versions of their own website.</p>
+<p>The bottom line is that while the decision to encrypt my website looked at in isolation seems pointless, looking at it as part of growing standard of encrypting everything paints a very different picture.</p>
+
+</div>
+
+<hr>
+
+<div class="block">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = "charukiewicz"; 
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+]]></summary>
+</entry>
+<entry>
+    <title>Software Development on the Chromebook Pixel</title>
+    <link href="https://charukiewi.cz/posts/2015-06-20-chromebook-pixel/index.html" />
+    <id>https://charukiewi.cz/posts/2015-06-20-chromebook-pixel/index.html</id>
+    <published>2015-06-20T00:00:00Z</published>
+    <updated>2015-06-20T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="info">
+    Posted on June 20, 2015
+    
+</div>
+
+<div class="content-body">
+
+<h2 id="background">Background</h2>
+<p>In March of this year, Google released the new <a href="https://www.google.com/chromebook/pixel/">Chromebook Pixel</a>. Having used ChromeOS for most of a year on the Acer C720 Chromebook and very much enjoying it, I did not hesitate to retire the C720 and buy the Chromebook Pixel LS. This “Ludicrous Speed” version of the Pixel comes with a Core i7 processor, 16 GB of RAM, and a 64 GB SSD. Both versions of the new Pixel sport a fantastic 2560 x 1700 pixel resolution screen (which has a unique 3:2 aspect ratio), a great keyboard, touchpad, and a 12 hour battery life. Each Pixel also has two USB-C ports, which can be used for charging, data transfer, display and audio output, and even ethernet.</p>
+<p>The Chromebook Pixel LS is a fantastic device, with very fairly priced hardware. I have absolutely no complaints about the build quality and hardware features at all, although I will admit that I would have happily paid a bit more for a 128 GB SSD. But this post is not a Chromebook Pixel LS review. You can find hundreds of those all over the internet. Instead, I am going to talk about my software development environment and workflow on the Pixel. After using it on a daily basis for nearly 3 months now, I can share the experience of using the Pixel for this purpose with detail.</p>
+<h2 id="environment-setup">Environment Setup</h2>
+<p>When I used the C720, I did all of my software development in Linux via crouton. This allowed me to run Linux side-by-side with ChromeOS, and switch between the two seamlessly. In Linux, I was able to do all the things I would normally do: install packages, run daemons, host a local MySQL and Apache server, etc.</p>
+<p>Going into the purchase of the Chromebook Pixel, my research revealed that it was actually quite possible to do all of my software development without relying on Linux through crouton. I will discuss the motivations for this decision later on. But doing this required a bit of a setup. I will walk through everything I did in the first few weeks of using the Chromebook Pixel.</p>
+<h4 id="developer-mode">Developer Mode</h4>
+<p>Putting the Chromebook into <a href="https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel-2015#TOC-Developer-Mode">developer mode</a> is the first step towards getting the most out of it. Developer mode primarily allows for access to a full featured Linux shell (via the <code>shell</code> command) in the terminal. This is necessary for the successful execution of the next few items on this list.</p>
+<p>To put the Chromebook in developer mode:</p>
+<ol style="list-style-type: decimal">
+<li>Hold down the <strong>ESC</strong> and <strong>Refresh (F3)</strong> keys.</li>
+<li>While holding the keys, press the <strong>Power</strong> button. This will cause the Chromebook to reboot.</li>
+<li>When you are met with the white recovery screen, press <strong>Ctrl-D</strong> and follow the instructions.</li>
+</ol>
+<p>That is all there is to it. But it is worth noting that this process <strong>clears everything stored locally on your Chromebook</strong>. Any important files should be backed up prior to putting a Chromebook into developer mode.</p>
+<h4 id="dev_install">dev_install</h4>
+<p>Once the Chromebook is in developer mode, you can install the <a href="https://www.chromium.org/chromium-os/how-tos-and-troubleshooting/install-software-on-base-images">dev_install</a> script, which gives access to a number of useful packages aimed at Chromium OS developers. These are tools that you would find on most Linux systems. My purpose for running this script was to get access to sshfs, but since installation takes up a bit of SSD space, it is worth mentioning that there is now a Chrome app that acts as an alternative to this process (described in the next section).</p>
+<p>To run the script:</p>
+<ol style="list-style-type: decimal">
+<li>Open a terminal with <strong>Ctrl+Alt+T</strong>.</li>
+<li>Type <code>shell</code> to go into the true Linux shell (which is what developer mode enabled).</li>
+<li>Type <code>dev_install</code>. This begins the install process and prompts the user with a few questions.</li>
+</ol>
+<p>Once this is complete, the <code>emerge</code> command becomes available, which can be used to install the various aforementioned packages. Unfortunately, <code>emerge</code> does not give access to all the packages one would expect to be able to install (it is no <code>apt-get</code> or <code>pacman</code>), but it can be useful.</p>
+<h4 id="sshfs-sftp">sshfs / sftp</h4>
+<p>sshfs is a utility that allows an remote filesystem to be mounted in a local directory. Simply put, you can take a directory that is on some server somewhere and turn it into a ChromeOS folder. Doing this allows you to manipulate all of the files in said folder with any ChromeOS applications.</p>
+<p>sshfs can be installed with the <code>emerge</code> command. Installing the <code>sshfs-fuse</code> package will enable the <code>sshfs</code> command. The syntax for its usage is</p>
+<p><code>sshfs [user]@[host-ip-address]:[/path/to/directory] [/path/to/mountpoint]</code></p>
+<p>There are a number of other flags you can specify (such as <code>-p</code> for port). I found that the command would give me an error if I used the host’s domain name rather than IP address, but your mileage may vary.</p>
+<p>The other way to mount a remote directory is through the <a href="https://chrome.google.com/webstore/detail/sftp-file-system/gbheifiifcfekkamhepkeogobihicgmn">SFTP File System</a> Chrome app. I have not personally tested this functionality, but it looks like this is actually a great potential alternative to the need for developer mode and dev_install altogether. I discovered this app thanks to a recommendation from the <a href="http://www.reddit.com/r/chromeos/comments/39s3ew/a_tip_for_chromebook_web_developers/">ChromeOS subreddit</a>.</p>
+<h4 id="caret">Caret</h4>
+<p><a href="https://chrome.google.com/webstore/detail/caret/fljalecfjciodhpcledpamjachpmelml">Caret</a> is an awesome Sublime-like text editor for ChromeOS. It is a Chrome app, so it gets its own dedicated window and shares a large number of Sublime’s features. Used in conjunction with sshfs or sftp, Caret can be used to edit remote files on any server. Make sure to set the <code>disableReload</code> option to <code>true</code> in the Caret configuration file to prevent the cursor from bouncing to the top of the file every few seconds (which happens only when editing remote files).</p>
+<h4 id="chrome-mysql-admin">Chrome MySQL Admin</h4>
+<p><a href="https://chrome.google.com/webstore/detail/chrome-mysql-admin/ndgnpnpakfcdjmpgmcaknimfgcldechn">Chrome MySQL Admin</a> is a lightweight MySQL Chrome app that is very easy to use. It is not quite as powerful as MySQL workbench or even phpMyadmin, but it gets the job done for database servers that do not have phpMyadmin installed.</p>
+<p>One of the great aspects of Chrome MySQL Admin which I have not seen anywhere else is that the app will sync your saved database connections to Chrome. This means that if you access the app on another computer later on, your connections are available to you as long as you are logged into Chrome with your Google account. If security is an issue, simply do not add a connection to the app’s favorites list or do not log into your Google account on a computer where it may be dangerous to do so.</p>
+<h4 id="crouton">crouton</h4>
+<p><a href="https://github.com/dnschneid/crouton">crouton</a>, mentioned earlier, allows for the installation of Linux into a chroot side-by-side with ChromeOS. crouton allows for the installation of various operating systems, including a few versions of Ubuntu, Kali Linux, Debian, etc. There is also <a href="https://github.com/drinkcat/chroagh">chroagh</a> which is a fork of crouton made specifically to cater to Arch Linux.</p>
+<p>When installed, crouton can be accessed via the ChromeOS terminal directly in a tab using only a command line interface, as well as with a graphical desktop environment (Xfce being the default). You can configure crouton to start its own window session and then switch between ChromeOS and Linux using keyboard shortcuts, or as of a few months ago, you can now use the <code>xiwi</code> target in your installation to make the Linux GUI run inside of a resizeable (and full-screenable) ChromeOS window.</p>
+<p>Even though I am not using crouton for most of my development, there are certain situations where having acess to full blown Linux is useful. I consider my crouton installation a sort of emergency backup that only gets used once in a while when I need access to specific tools locally.</p>
+<h4 id="vim">Vim</h4>
+<p>Vim is certainly not directly related to ChromeOS, but its use in my workflow has become very significant. Vim is a lightweight and very old command line based text editor that has a very strong following amongst a large number of software developers. Vim also has a significant learning curve. I will discuss the role that Vim plays in my development setup more later.</p>
+<h4 id="tmux">tmux</h4>
+<p>Where Vim is the yin, tmux is the yang. tmux (short for “Terminal Multiplexer”) is a utility that allows for the splitting of a terminal into multiple panes. This may seem pointless if you are using a local machine with a desktop environment where you can just open as many terminal windows as you need, but it becomes a necessity when working over ssh. Overall, tmux is a significant time saver to anyone who does a lot of command line work.</p>
+<h2 id="environment-decisions">Environment Decisions</h2>
+<p>As I said towards the beginning of this post, my goal was to do development on the Pixel without using crouton, and only having it installed as a sort of emergency backup. I had a few reasons for this:</p>
+<ul>
+<li>While crouton is usually reliable, experience has shown that silent updates to ChromeOS will break functionality that crouton depends on. Fixing these issues is usually as simple as updating crouton, but sometimes it may take a few days for the update to actually be released by the crouton developers.</li>
+<li>Configuration of all of the various daemons and servers to replicate the actual application I am developing to a local environment is a Sisyphean task. In the past year, due to various operating system reinstalls and even an SSD failure, I have to reinstall the application infrastructure at least five separate times. The arrival of the Pixel prompted me to move this infrastructure to a remote development server and I am fairly confident I will never have to go through this process again.</li>
+<li>Actually running all of the daemons and servers mentioned above as local applications takes up system resources. The Chromebook Pixel LS can absolutely handle doing this, but with how easy it is to avoid doing this, it is a better option to outsource this work. By not having to run things like a MySQL database, a Redis instance, a NodeJS server and an Apache server locally, I can preserve the Pixel’s CPU, RAM, and particularly the SSD space for other things that cannot be offloaded. Just as importantly, a reduction in load on the CPU means a longer battery life.</li>
+<li>The super high resolution screen of the Chromebook Pixel is not handled very well by desktop environments like Xfce. Text in many panels and tabs ends up being absolutely tiny and the interface overall does not scale very well. Changing configuration can fix a few things but it is quite obvious that the environment is not yet ready to handle such a screen perfectly. This problem could be avoided by using crouton in command line mode only straight out of the ChromeOS shell, but at that point the usage becomes indistinguishable from using a remote server.</li>
+</ul>
+<p>Looking at these points, we can see that there is no single overwhelming reason not to use a local instance of Linux via crouton to do development on the Pixel. But in aggregate, these points add up to make a solid case against using doing so. What’s more is that they also build a case against using a local development application setup <em>in general</em>, regardless of operating system. Offloading the replication of the development application to a remote server seems like a better option all around, whenever doing so is possible. This is something that I had not really thought so much about until I was faced with this decision around the time I bought the Pixel.</p>
+<h2 id="evolution-of-the-workflow">Evolution of the Workflow</h2>
+<p>So the question is, what do I actually do? I have listed my tools and I just described what I opted <em>not</em> to do. Now, onto what I actually do use. To begin with, my actual development application is hosted on a remote Linux server. This server is an Ubuntu 14.04 VPN that replicates our production servers but on a much smaller scale.</p>
+<p>My initial plans for using the Pixel included strongly relying on sshfs and Caret to do my development. That is, I would mount the remote directory that contained the project source code using sshfs, and then use Caret for the actual editing. This was the most appealing option initially, particularly because I had been coming from using Sublime.</p>
+<p>I found that using Caret was okay, but not perfect. The main reason for this was the fact that I was editing a rather large project (hundreds of files with well over 100k lines of code) remotely. Loading all of these files as a project into Caret took a substantial amount of time (longer than even the slowest of IDEs opening), and I had to go through this process every time I would remount the remote directory, which was at least once a day. I also experienced minor synchronization issues with the files themselves and the file tree displayed in the Caret sidebar.</p>
+<p>At this point I realized that I had a few options. I could either deal with these minor issues and trudge onwards with Caret, or I could attempt a few fixes by making permutations of the same overall setup (such as using sftp instead of sshfs, and seeing if that changed anything). I also had the option to do all of the work using a different approach altogether. The option of using Vim was staring me in the face.</p>
+<p>I was somewhat apprehensive about switching to using Vim initially, as I knew it would probably slow me down to begin with. This proved to be an unnecessary concern. The basic knowledge I had picked up of Vim from using it in college (knowing things like normal vs insert mode, and commands like <code>dd</code>, <code>yy</code>, <code>p</code>, <code>o</code>, <code>cw</code>, <code>:##</code>, and <code>:wq</code>) was sufficient to get started. As time passed, I read a few tutorials and gradually added new commands to my regular usage. As this happened, my <a href="https://github.com/charukiewicz/dotfiles/blob/master/vim/.vimrc">.vimrc file</a> also grew. Using tmux also was a challenge at first, as its key bindings are somewhat unintuitive. But with a bit of looking at reference material, and through sheer persistence, I was able to become comfortable with Vim in conjunction with tmux within a few weeks.</p>
+<p>At this point, I have moved away from using Caret for nearly all programming and do virtually everything in Vim. Vim lives on the remote server that I do my development on. When I connect to my server, the first thing I do is start tmux and then usually create at least three panes. One is for Vim, and the others will usually be for some sort of cli utilities or server console output. It is worth mentioning that the combination of the high resolution and aspect ratio of the Pixel’s screen makes looking even at very small text on multiple panes really easy.</p>
+<p>I do still use Caret for some things. When I download a file that I want to open and look at, Caret is the best option to use on ChromeOS. Additionally, if I open a log file or something similar, Caret is no worse of an option than Vim is for the purpose of viewing it. So to sum up, I found that remotely using Vim is the best option to do any serious programming, but to simply view files, using Caret locally is comparable, if not better.</p>
+<p>Finally, for database management I use a conjunction of the Chrome MySQL Admin app and phpMyAdmin depending on which servers I am working with. In the case of exporting and particularly importing very large database files, I will simply ssh into the database server and use the command line to get any work done. When I am working with Redis, I will use the command line application to do everything.</p>
+<h2 id="parting-thoughts">Parting Thoughts</h2>
+<p>Taking the time to write this post has allowed me to realize that even though the tools and environment setup on my Chromebook Pixel are far removed from what the average ChromeOS user would use on a daily basis, I am still using the operating system in the underlying manner that goes in line with what was envisioned by Google. That is, all of my work is done remotely, in “the cloud”, with only a minor reliance on the actual software on the Chromebook itself. Looks like Google was right all along.</p>
+<p>A corollary of all of this is that this setup is not actually bound to the Chromebook Pixel itself. On days that I work from home, I will use a full sized PC, which is running Manjaro Linux. To get started, all I have to do is ssh into my development server and I pick up exactly where I left off from the office the day before. The Pixel might not even leave my bag on those days.</p>
+<p>Furthermore, if my Pixel got smashed, stolen, ran over by a train, or stopped a bullet, I would be able to continue working the moment I got my hands on any computer that I could access ssh on. And since I ended up not even using sshfs in the end, I could quite easily avoid putting a replacement Chromebook in developer mode and going through the first few steps of my setup altogether. The only thing I would need to do on a fresh Chromebook would simply be to log into my Google account. Caret and Chrome MySQL Admin would already be installed thanks to the sync features ChromeOS has.</p>
+<p>All in all, I am very pleased with this setup and it suits my need perfectly. I get access to the Chromebook Pixel’s fantastic hardware, get to use the extremely snappy and minimal ChromeOS, and ultimately work in an environment that is totally decoupled from the actual device, lending itself to maximum portability by being accessible from any computer that I would ever need to work from.</p>
+
+</div>
+
+<hr>
+
+<div class="block">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = "charukiewicz"; 
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+]]></summary>
+</entry>
+<entry>
+    <title>On Software Engineering</title>
+    <link href="https://charukiewi.cz/posts/2015-05-17-software-engineering/index.html" />
+    <id>https://charukiewi.cz/posts/2015-05-17-software-engineering/index.html</id>
+    <published>2015-05-17T00:00:00Z</published>
+    <updated>2015-05-17T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="info">
+    Posted on May 17, 2015
+    
+</div>
+
+<div class="content-body">
+
+<h2 id="a-few-words-of-wisdom">A Few Words of Wisdom</h2>
+<p>I was browsing reddit today I stumbled across a post titled “<a href="http://www.reddit.com/r/cscareerquestions/comments/366ytm/i_want_to_be_a_software_architect/">I want to be a Software Architect</a>”, where the author described his goal of improving his technical expertise and laid out a number of different topics, frameworks, and programming languages to study. The end goal behind this improvement, as the title of the post suggests, would be to help one day become a Software Architect or Principal Software Engineer.</p>
+<p>I began reading the replies and I found what I believe to be one of the most valuable pieces of advice I have ever read on reddit. I am reposting it here in part to share it with others, but also to ensure that I can refer back to it as time goes on. The following <a href="http://www.reddit.com/r/cscareerquestions/comments/366ytm/i_want_to_be_a_software_architect/crbi35z">reply</a> to the aforementioned post comes from user <a href="http://www.reddit.com/user/justanothersde">/u/justanothersde</a>:</p>
+<blockquote>
+<p>Just a couple notes: In some companies the word “architect” is a dirty word. It implies a hands-off ivory tower fellow who needs other people to get things done. These days having skills to be an individual and independent builder is very important, even if you end up being a principal engineer in a large company where you spend all your time telling everyone else how they should write their code.</p>
+<p>Another thing is that getting sharp engineering skills is only half of the equation to moving into a senior role. Only your first or second promotion is really about your mastery of all things tech, beyond that you are promoted more around other competencies like your ability to leverage yourself and get work done through other engineers. You do this by learning to first be right and say important things in public, and then to convince everyone around you that your design is correct. Many engineers never quite realize that they have to speak their ideas out loud, in public, under scrutiny from their peers and their management. Many engineers never learn how to write or articulate themselves in ways that naturally influence people. They use the wrong level of specificity, too many words, focus on the hard things without concisely conveying the big picture. They forget that they are writing for a specific audience and not just clones of themselves. They focus on calling out the hard or stupid aspects of the problem over bring attention to all the things that can be done easily and which have a lot of return of value. Many engineers never bother to understand the business or their customer. I’ve seen so many designs for beautiful or complex systems but as soon as I start asking questions about the flow of money and the business efficiencies realized by this or that tradeoff, some eyes just cloud over. Senior engineers need to be able to manage upwards, and help their management chain just as much as they write new beautiful code for some abstract purpose.</p>
+<p>All the subjects in your list are great and should be fun to learn. You will get insight and wisdom learning and using these things. They will also all be irrelevant by the time you become a principal. Interviews for principal engineers usually include coding problems that can be solved in any language, and usually can be quickly knocked out by someone who has only read K&amp;R “The C Programming Language”. The test for coding questions at this level has very little to do with the semantics of the language used or the power of this or that framework, but everything to do with the clarity of thinking and problem solving displayed while going through the motions. Abstract problem solving and the ability to quickly see problems and solutions is almost the only thing that is permanent, while everything else is transient and depends on the time and place and company and whatever other subject environment things that won’t exist in the job tomorrow. PEs are expected to be powerful tomorrow in situations heretofore undefined, and that just means that they are wise, adaptable, dynamic and potent.</p>
+<p>As for getting there, don’t overthink it. It’s a long road, but you have nothing but time. Software engineering can be extremely fun, so focus on that and as time flies by you will suddenly realize that you have become a master. It turns out everyone else around you will as well, and they will recognize that with lofty titles that at the end of the day still don’t really quantify all of the problems you can solve and things that you can figure out how to build.</p>
+</blockquote>
+
+</div>
+
+<hr>
+
+<div class="block">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = "charukiewicz"; 
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+]]></summary>
+</entry>
+<entry>
+    <title>Switching from Jekyll to Hakyll</title>
+    <link href="https://charukiewi.cz/posts/2015-05-15-hakyll/index.html" />
+    <id>https://charukiewi.cz/posts/2015-05-15-hakyll/index.html</id>
+    <published>2015-05-15T00:00:00Z</published>
+    <updated>2015-05-15T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="info">
+    Posted on May 15, 2015
+    
+</div>
+
+<div class="content-body">
+
+<h2 id="motivations">Motivations</h2>
+<p>Earlier this year I decided to begin learning Haskell. I have been working my way through the <a href="http://learnyouahaskell.com/chapters">Learn You a Haskell</a> textbook. So far it has been a very interesting experience and a pleasant departure from the normalcy of imperative programming that I am used to. As I get further into it, however, I am realizing that the learning curve is only getting steeper. I think the following image is true:</p>
+<img src="/images/haskell-curve.png" />
+<center>
+Source: <a href="https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md">Learning Curves (for different programming languages)</a>
+</center>
+<p>At this point I am fairly sure that I am somewhere between a low and high point in the initial series of peaks. Either way, since <em>Learn You a Haskell</em> is a little slow in terms of how quickly it introduces material, I figured it would be useful to begin doing something practical with Haskell with what I have learned. I read about <a href="http://jaspervdj.be/hakyll/">Hakyll</a> last year, a while after initially making this blog in <a href="http://jekyllrb.com/">Jekyll</a>. At the time I was somewhat intimidated by it. Not knowing any Haskell at all can make looking at even the relatively short <code>site.hs</code> file feel like reading hieroglyphics.</p>
+<p>Now that I am fairly comfortable with the basic syntax of Haskell, I realize that there is not really all that much to Hakyll in terms of complexity. Getting a blog up with Hakyll might be even faster than getting a blog up with Jekyll (barring the couple couple of <em>gigabytes</em> of data and <em>dozens</em> of dependencies required to get Hakyll working).</p>
+<h2 id="the-experience-so-far">The Experience so Far</h2>
+<p>The initial switch to Hakyll was incredibly simple and easy. In fact, I was not even intending on doing it on the night that I did, I only meant to take a read through the website and had planned on doing it some weekend soon. Instead, after updating <code>hakyll</code>, compiling the default <code>site.hs</code> file, and then running a local preview server with the executable’s <code>watch</code> command, I realized that that was all there was to it.</p>
+<p>Experience with both Markdown and Jekyll did definitely help me understand what I was doing. I moved the content from my Jekyll directory over to my Hakyll directory, built the site, initiated a git repository, and after a push to GitHub and a pull on my droplet, the Hakyll version of the blog was live.</p>
+<p>I find the simplicity of Hakyll to be really appealing, although I realize that there must be a ton of moving parts abstracted away from the user that go into making the whole thing work. With little to no premade Hakyll themes floating around, and what seems like far fewer directories and files then Jekyll throws at the user by default, I get the impression that building a site with Hakyll will feel a lot more like a “ground up” approach.</p>
+<h2 id="not-all-positives">Not All Positives</h2>
+<p>Although I have an overall positive impression of Hakyll at the moment, even in my very short time using it I have encountered a string of issues. I will say that the initial process of getting the site up and running was very smoothly done on my <a href="https://manjaro.github.io/">Manjaro Linux</a> PC. I am grateful for Manjaro’s access to the <a href="https://aur.archlinux.org/">Arch User Repository</a>, where I have been able to download every single application I have ever needed since I started using it. That last statement is not an exaggeration; literally <em>every single one</em>.</p>
+<p>The issues that I had encountered, however, have been on both my Digital Ocean droplet (where this blog is hosted) as well as in the <a href="https://github.com/dnschneid/crouton">crouton</a> chroot of my Chromebook. In both the droplet and in crouton, I am running Ubuntu 14.04. I began by attempting to install Hakyll on the droplet, and the first thing I got was strange exit errors even when trying to update <code>cabal</code>. It turns out that even updating <code>cabal</code> requires a lot of memory, so I scaled up my droplet from 500 MB to 2 GB.</p>
+<p>Resizing the droplet solved the memory issue, but allowed me to discover that the install process would crash when attempting to install <code>pandoc</code>. After doing some research it appeared that the issue was caused by a <code>cabal</code> bug.</p>
+<p>I <a href="https://gist.github.com/yantonov/10083524">found instructions</a> on how to move past Ubuntu’s default <code>ghc</code> version of 7.6.3 to 7.10.1, along with a newer <code>cabal</code>. After quite a bit of waiting for everything to install multiple times, I finally managed to get Hakyll running and my <code>site.hs</code> file compiled on my droplet. Except, when I resized my droplet back down to 500 MB it appeared that <code>ghc</code> was broken, my <code>site</code> executable file was broken, and <code>cabal</code> was having issues.</p>
+<p>Having conceded that getting Hakyll working on the droplet was a lost cause, I decided to try to get it working on the Chromebook. I went through the entire 45 minute long install process on the Chromebook, only to find that when I finally ran the <code>build</code> command with the <code>site</code> executable, I was getting some sort of text encoding error from <code>pandoc</code>.</p>
+<p>At this point I have given up on both the Chromebook and the droplet. I assume the Chromebook’s issue is fixable. For the time being I am content with only being able to compile and build my website from my Manjaro PC.</p>
+<h2 id="a-few-lessons-learned">A Few Lessons Learned</h2>
+<p>I think I have heard the phrase “cabal hell” somewhere on the <a href="http://www.reddit.com/r/haskell">Haskell subreddit</a> a few times. I have also heard mention of things like different <code>ghc</code> versions leaving people with uncompilable code. I think that I am now catching a glimpse of both of these.</p>
+<p>These issues are both unpleasant and costly, particularly in terms of time. I certainly hope that other experiences I have plan on having with Haskell do not turn into more of the same. I have faith in Haskell and its incredibly helpful community, but I have now witnessed firsthand not everything always being hunky-dory.</p>
+
+</div>
+
+<hr>
+
+<div class="block">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = "charukiewicz"; 
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+]]></summary>
+</entry>
+<entry>
+    <title>Four Principles of Providing Information</title>
+    <link href="https://charukiewi.cz/posts/2014-10-14-providing-information/index.html" />
+    <id>https://charukiewi.cz/posts/2014-10-14-providing-information/index.html</id>
+    <published>2014-10-14T00:00:00Z</published>
+    <updated>2014-10-14T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="info">
+    Posted on October 14, 2014
+    
+</div>
+
+<div class="content-body">
+
+<h2 id="the-information-problem">The Information Problem</h2>
+<p>A couple of months ago, while faced with a number of design decisions in a project I was working on, I decided to sit down and qualify the fundamental principles of providing information to someone. I felt that there was certainly a systematic way to approach the problem of attempting to serve someone the information that they were either looking for or expecting to receive.</p>
+<p>It quickly became quite evident that there were certain decisions I could make that would be desirable to the end user, and other decisions that could make receiving the desired information a painful process. Ultimately, after a lot of thinking, I came up with what I believe to be four fundamental principles that are always relevant when the goal is to convey information in any way to another individual.</p>
+<p>The four principles are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Clarity</li>
+<li>Relevance</li>
+<li>Accessibility</li>
+<li>Density</li>
+</ol>
+<p>I will explain each of these principles in detail.</p>
+<h2 id="clarity">Clarity</h2>
+<p>Information clarity is perhaps the most easily identifiable principle in regards to how information should be handled. It is also probably the least abstract of the four principles. This principle is relatively simple; information must be provided and presented in an intelligible and unambiguous manner.</p>
+<p>Information that is being presented should not be confusing. It should also not require supplementary material or additional searching to understand (at least not when the goal is to be sufficiently thorough).</p>
+<p>If the information you are providing to someone else (be it an end user or a friend receiving an email) causes them to do any of the following, your information is lacking clarity (this list is certainly not exhaustive):</p>
+<ul>
+<li>Your recipient has to Google search something you said to understand it.</li>
+<li>Your recipient does not understand the context of what you are saying.</li>
+<li>Your recipient has to decipher errors (spelling, grammar, formatting).</li>
+<li>Your recipient has to ask followup questions before taking further action.</li>
+</ul>
+<p>It is important to realize that having mostly clear information is challenging but quite achievable. Having <em>crystal</em> clear information, however, is significantly harder. Getting a reply email with followup questions from a colleague is certainly going to happen at some point, even when you thought you explained everything thoroughly. There are users out there who will not understand what you assume everyone understands, forcing them to Google search for what you are attempting to explain. But, this is not necessarily going to be your fault. This may be because they accidentally stumble into material that is too advanced for them, which they are definitely not the target audience of. What is clear to some will not always be clear to others.</p>
+<p>Providing clear information requires a strong attention to detail, a meticulous approach towards providing explanation, and a very good understanding of the audience you are reaching out to. It might be pretty easy to know what your colleague or friend knows, but it is insanely difficult to try to anticipate what is clear for all of the 25,000 users that visit your website each month.</p>
+<p>As the entity providing the information, you are responsible for its clarity. Your assumptions about your recipient(s) must be reasonable, and you must cater to their needs. Failure to do this will result in confusion, ineffectiveness, and eventually even negligence in regards to your information on the part of your recipient.</p>
+<p>Clarity is a sort of foundation for providing information. If your information is horribly unclear, none of the other principles I am going to discuss will even begin to matter. A reasonable level of clarity absolutely must be present.</p>
+<h2 id="relevance">Relevance</h2>
+<p>Information relevance is the idea that the information you are providing should be useful to the person you are providing it to. Ideally, our goal with regards to relevance is to provide information whose subject matter is what the recipient expects. That is, we explain or touch on everything they need, without any additional, superfluous or unneeded content.</p>
+<p>Achieving relevance is a balancing act. In my opinion, it is better to err on the slide of slightly irrelevant rather than on the side of slightly lacking. Something that is slightly irrelevant may be an annoyance or cause the person who is receiving your information to take a bit longer to digest it. But, by contrast, something that is slightly lacking may actually be lacking a key detail. The last thing you want to do is force your recipient to have to go hunt down this detail on their own, or wait hours or days because they need a followup question answered.</p>
+<p>If your recipient does any of the following while taking in your information, your information is likely not completely relevant:</p>
+<ul>
+<li>Your recipient’s focus is shifted to something else as he is processing your information.</li>
+<li>Your recipient has to skim or jump through what you are sending him.</li>
+<li>Your recipient has to ignore opinions or other non-factual content.</li>
+</ul>
+<p>As with clarity, providing information that is relevant to your recipient requires an understanding of your recipient. Why are they accessing this information? What do they expect? What do they not expect but still need?</p>
+<p>Google search is a service implements the principle of relevance extremely well. For example, if I search for ‘Python’ in Google, I will not get any references to the animal. All of the results on my screen will be related to the Python programming language. If a zoologist were to perform the same search, it is quite likely that they would get the animal instead (unless they were also a hobbyist Python programmer). The reason for this is that Google catalogs my data and my behavior. In a certain sense, Google <em>understands</em> me and is able to provide what is relevant to me as a result of this. Google search manages to hit information relevance right on the head in this way.</p>
+<p>It is almost a challenge to provide absolutely no relevant information. Typically what you write or provide will have some relevance in some way. The goal with regards to relevance, as mentioned earlier, is to find the meeting point between information that is superfluous and information that is lacking.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Information accessibility is about the flow of actions that the recipient of your information has to take before he actually receives it. Unlike relevance and clarity, accessibility has nothing to do with the actual content of the information itself. Accessibility is also not directly applicable to simple forms of communication (such as an email) or basic information (such as a static webpage with no navigation whatsoever).</p>
+<p>Accessibility is the idea that your recipient should have to take as few steps as possible to reach or find the information that he is looking for. Accessibility also means that the recipient should be able to easily find the information he is looking for, even if he does not know exactly which steps to take to find it.</p>
+<p>Many services fall far short of making information (or functionality) easily accessible to their users. An example of very poor accessibility I encountered recently was when I was attempting to manage my recurring payments in my PayPal account. As it currently stands, PayPal makes cancelling a recurring payment <a href="https://www.paypal.com/us/webapps/helpcenter/helphub/article/?solutionId=FAQ2327">a five step process</a>. Worse yet, I was unable to find this solution on my own, I had to Google search “paypal cancel recurring payments” because the option to view and manage them is buried so far down in the user options.</p>
+<p>As a PayPal user, it is quite evident that managing where my money is going should be one of the most important things to me. PayPal’s decision to make it so difficult to manage recurring payments (coupled with the fact that you are forced into recurring payments with certain services you purchase using PayPal) is an example of very poor accessibility.</p>
+<p>A general example of excellent accessibility is the availability of an ‘omnisearch’ that many services and products now offer. This feature is typically a search bar located on the homepage or dashboard of the service. Typing into the search bar will usually provide a comprehensive search of all types of options and content. For example, typing ‘change password’ into this type of search bar in most services will instantaneously load a link to the account management page that allows you to change your password. This is fantastic, because as the user, I just need to type in what I want to do and perform one click, and I am in a spot to perform said action.</p>
+<p>In the end, determining whether the principle of information accessibility is being applied well enough is subjective. Generally speaking, the more easily accessible, the better.</p>
+<h2 id="density">Density</h2>
+<p>Finally, information density is about providing the proper scope of information to your recipient. This principle is about how compact or ‘condensed’ the information you are providing is. Compared to clarity or relevance, this is a relatively abstract idea that I will explain carefully.</p>
+<p>Information can be clear, relevant, and accessible yet be provided with the wrong level of density, making it significantly less useful than it otherwise could be. Information density is also unique in that it is manifested both through actual content (like clarity and relevance) as well as through design and functionality (like accessibility).</p>
+<p>The general idea behind information density is to supply the recipient with information in a way that allows him to spend as little time as possible digesting it, while still giving him everything he needs or expects.</p>
+<p>This may initially sound like information relevance. That is not the case, however. If we go back to my ‘Python’ Google search example. Google returns results about the programming language and not the reptile because it knows that the programming language is more relevant to me. This has nothing to do with density.</p>
+<p>A great example of the principle of information density in action in the form of an activity digest email that many services provide. Suppose I get a daily digest of new posts of a particular forum I visit. The daily digest is designed to summarize the new content from each day, emailed automatically at the end of the day. The daily digest will likely list at least the title of each post, and a link directly to it. But there are other pieces of information which might also be worth including.</p>
+<p>For example, the digest may also include the specific time that each post was made, or the author of each post. It may include the number of replies each post has, or even include the first few sentences of each post. And to contrast this, we can think about the daily digest of a forum administrator rather than a regular user. The forum administrator may be more concerned with user activity and statistics rather than individual posts, so he would prefer that the daily digest simply included the number of posts made that day, in addition to the number of user logins, pageviews, replies, etc.</p>
+<p>None of these pieces of information are irrelevant. Yet changing which ones are included changes the density of the information. One other facet of information density is that most ‘condensed’ information is provided with an option to expand the information. In the case of the user facing daily digest, this is a link to each forum post, allowing him to access the full post.</p>
+<p>Altering the density of the information that you are providing to your users can completely change how your product or service is used. It can change how much time users spend on it, how many visit, and most fundamentally, how the service itself ends up getting used. It is this fact that makes information density a crucially important principle to consider when designing a service that provides information.</p>
+<h2 id="summary-i-crad">Summary: ‘I-CRAD’</h2>
+<p>I believe that these four principles are a comprehensive approach to providing information. They are applicable to virtually every type of environment, service, or product in some way. Their implementation can also spell the difference between a booming success and a total failure.</p>
+<p>To recap, the principles are:</p>
+<ul>
+<li><strong>Clarity</strong>: Information should be intelligible and unambiguous</li>
+<li><strong>Relevance</strong>: Information should be of the correct subject matter</li>
+<li><strong>Accessibility</strong>: Information should be easy to find and quick to navigate to</li>
+<li><strong>Density</strong>: Information should be compressed to an optimally useful level</li>
+</ul>
+<p>The way I have come to remember these four principles is using the acronym ‘I-CRAD’. That is, <strong>I</strong>nformation <strong>C</strong>larity, <strong>R</strong>elevance, <strong>A</strong>ccessibility, and <strong>D</strong>ensity.</p>
+
+</div>
+
+<hr>
+
+<div class="block">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = "charukiewicz"; 
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+]]></summary>
+</entry>
+<entry>
+    <title>Everything Can Be An Algorithm</title>
+    <link href="https://charukiewi.cz/posts/2014-10-07-algorithm/index.html" />
+    <id>https://charukiewi.cz/posts/2014-10-07-algorithm/index.html</id>
+    <published>2014-10-07T00:00:00Z</published>
+    <updated>2014-10-07T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="info">
+    Posted on October  7, 2014
+    
+</div>
+
+<div class="content-body">
+
+<h2 id="what-is-an-algorithm">What is an Algorithm?</h2>
+<p>I think that when most people hear the word ‘algorithm’ they tend to imagine some mathematician or software engineer doing some complex mathematical or computer related task. This is a correct assumption. Mathematicians, programmers, software developers, and engineers all regularly use algorithms to complete various professional and academic tasks. It is algorithms that play a key role in critical developments in science and technology. Algorithms have been and continue to be used in developing the world we live in today. But, I think that people oftentimes do not really understand what algorithms really are, and that their reach extends far beyond the realm of the various aforementioned professionals and significant scientific developments.</p>
+<p>So what is an algorithm? Here is a definition from <a href="http://web.engr.illinois.edu/~jeffe/">Professor Jeff Erickson</a> from the University of Illinois:</p>
+<blockquote>
+<p>An algorithm is an explicit, precise, unambiguous, mechanically-executable sequence of elementary instructions.</p>
+</blockquote>
+<p>This is one of the first things that I was met with when I took his <a href="http://web.engr.illinois.edu/~jeffe/teaching/algorithms/">Algorithms</a> course as a Senior. This definition is great. I like this definition because it captures exactly what an algorithm is in just a few words. However, this definition is still very intimidating. I do not think it helps people move away from the image of the mathematician or software engineer I described above.</p>
+<p>Let’s try another definition. The following is my own definition of the word ‘algorithm’. I am going to set aside the rigorous academic requirements for an algorithm and instead focus on what I believe is the very essence of an algorithm, in more simple terms. My definition is as follows:</p>
+<blockquote>
+<p>An algorithm is a sequence of steps that, when followed, will complete a specific task.</p>
+</blockquote>
+<p>This definition is an excellent starting point for algorithmic thinking.</p>
+<h2 id="algorithms-everywhere">Algorithms Everywhere</h2>
+<p>I believe that a person can think in terms of algorithms in many different contexts. These are situations and environments that reach far past a academia or a technical job. What I mean by this is that it is possible to think of common day tasks algorithmically.</p>
+<p>Why? Well, since I took the algorithms course I mentioned above, my approach to most problems changed. I adopted an algorithmic mindset towards virtually every task I had to perform. I found that thinking about the algorithm involved in executing a particular task is a recipe for great productivity. By doing this, it becomes easier to get started, harder to get distracted, makes mistakes during execution less likely, and can make the actual time the task makes shorter than when not using this mindset.</p>
+<p>So what does this really entail? Well just like a computer scientist would do, thinking algorithmically outside of the realm of computers involves breaking a task or problem down to fundamental units, or small steps, and designing a plan or procedure on how to complete these units in order. I find that thinking about the small details of a task helps as well.</p>
+<p>For example, suppose that I have to do the laundry. I am sitting in my room, in front of my laptop. I can just think, “well, I guess it’s time to go do my laundry,” and then just go start doing things. There is no doubt that this is an acceptable way for me to do the laundry. In my opinion it just is not ideal.</p>
+<p>Suppose I have to get my laundry done, but instead of just deciding to do it, I develop an algorithm to do it. The algorithm to get the laundry done is as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Perform a quick scan of my room for any miscellaneous articles of clothing that are not in the laundry basket.</li>
+<li>Pick up every article of clothing.</li>
+<li>Put them all in the laundry basket.</li>
+<li>Grab the laundry detergent from the closet.</li>
+<li>Put the laundry detergent on top of the basket.</li>
+<li>Carry the basket downstairs to the laundry room.</li>
+<li>Set the washing machine.</li>
+<li>Start a timer on my watch for 35 minutes.</li>
+<li>Bring the laundry detergent back upstairs, leave the laundry basket.</li>
+</ol>
+<p>Another, shorter algorithm, similar to steps 7-9 would follow a while later for setting the laundry to dry. This seems extremely tedious, right? Why bother doing it this way? To begin with, there is no need to actually write down an algorithm like this. This is just something you should lend about 5-15 seconds of thought to, immediately before you begin to perform the task.</p>
+<p>The advantages of this approach, in this and most cases are:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Efficiency</strong> - By using this approach, I am making a plan that will be at least as efficient as if I just got up and started moving. For example, suppose I forgot my laundry detergent in my closet, and went to the laundry room without it. Now, I have to spend an extra 90 seconds running back to my second floor bedroom and then back down to the laundry room. Not that big of a deal, but could have been avoided with about 10 seconds of planning.</li>
+<li><strong>Ease of Execution</strong> - This may not be the ideal term, but the general idea here is after acknowledging the specific steps a task takes to get from start to finish, I find that the task ends up appearing substantially easier to execute than just looking at the task holistically. In this case, “doing my laundry” seems very tedious. However, scanning my room is quick, grabbing the laundry detergent is quick, carrying the basket is quick, setting the laundry is quick. Looking at it this way, I have a chain of quick, well defined tasks. This is easier to digest and start working on than a single, ambiguous task.</li>
+<li><strong>Focus</strong> - The last element of this type of approach I find is that one develops a better sense of focus during the task. No step in doing the laundry is difficult, but it is still possible to make mistakes during the process. For example, setting the load as cotton sturdy instead of permanent press may end up shrinking and wrecking your clothes. Not starting the timer on my watch can lead me to forget about the load of laundry until bed time when I realize I still have a wet load in the washing machine. Thinking algorithmically about a task increases focus during execution, decreasing the frequency of mistakes.</li>
+</ol>
+<p>The other point to realize here is that this type of approach really can be applied to virtually everything. Doing the laundry, cleaning your room, making a sandwich, grocery shopping, completing a series of errands involving driving around, studying for an exam, mowing the lawn, performing a workout, or my personal favorite, making coffee. It would not be difficult to add a dozen more things to this list.</p>
+<p>Adopting this type of approach for most of the tasks you do takes some time. The ideal way to do this is to turn this type of algorithmic thinking into a habit. Eventually, you will find yourself completing more tasks, more quickly, with fewer errors and less time wasted.</p>
+<p>Ultimately, I believe that your time is the most valuable thing you own. Saving 90 seconds because you made sure to bring your laundry detergent may not seem like a big deal. But, saving 90 seconds four times a day is three hours a month, which is one and a half days per year. This adds up to a couple of months in a lifetime. This, coupled with the fact that the things you do do are performed more accurately, makes such an algorithmic approach worthwhile. Before you know it, you will have lived a lifetime of slightly enhanced efficiency.</p>
+
+</div>
+
+<hr>
+
+<div class="block">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = "charukiewicz"; 
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+]]></summary>
+</entry>
+<entry>
+    <title>Replacing Adblock Plus with the hosts file</title>
+    <link href="https://charukiewi.cz/posts/2014-07-15-hosts-file/index.html" />
+    <id>https://charukiewi.cz/posts/2014-07-15-hosts-file/index.html</id>
+    <published>2014-07-15T00:00:00Z</published>
+    <updated>2014-07-15T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="info">
+    Posted on July 15, 2014
+    
+</div>
+
+<div class="content-body">
+
+<div style="color:#555;font-size:14px;">
+<p><em>Updated on February 15, 2016</em> <small>[<a href="#update">jump</a>]</small></p>
+</div>
+<h2 id="the-reign-of-adblock-plus">The Reign of Adblock Plus</h2>
+<p>I started using Adblock Plus in 2006, the year it was released for Mozilla Firefox. This was two years before Google Chrome was even released. For anyone who was even slightly technologically savvy, the advent of Adblock Plus had a huge impact on web browsing. It changed the playing field and gave people a huge reason to migrate to Firefox and away from Internet Explorer. Between addons (specifically Adblock Plus), and tabbed browsing, Firefox was a big deal.</p>
+<p>In 2011, I encountered an issue with Firefox where it simply refused to open on my Windows machine. Even a reinstall wouldn’t fix whatever problem I had at the time, so I migrated to Google Chrome. I’ve been using Chrome ever since. What came with me, however, was Adblock Plus.</p>
+<p>A few months ago I read <a href="http://www.reddit.com/r/programming/comments/25j41u/adblock_pluss_effect_on_firefoxs_memory_usage/">an article</a> about ad blocking extensions exactly like Adblock Plus. The article came with somewhat surprising news. It turns out that blocking ads in the browser is a demanding process. It uses a bit of CPU power but in particular, it uses a lot of RAM and slows down page load times. This was something I had never really bothered to think about or consider before. Blocking ads seems like it would do nothing but help one’s browser performance.</p>
+<p>This news came to me around a time where my browser usage was becoming more and more intensive. With Google making Chrome more and more into its own self-sufficient ecosystem of applications and dynamic content, I had fewer reasons to have regular applications open and more reasons to have many tabs open. It was (and still is) not uncommon for me to have over 10 tabs open when I am browsing the internet. Between Gmail, Google Music, sometimes Facebook, a few Reddit tabs, and maybe a YouTube tab, I found that I was frequently devoting over 2 gigabytes of RAM to Google Chrome alone. Google Chrome had become sluggish, no longer operating at the high speed Google always claimed it was king of.</p>
+<h2 id="the-hosts-file">The hosts file</h2>
+<p>Enter the hosts file. Well, <em>reenter</em> the hosts file. Originally implemented in the 1970s, the hosts file was used by operating systems to map hostnames (such as google.com) to IP addresses (such as 74.125.224.72). The hosts file was used to navigate <a href="http://en.wikipedia.org/wiki/ARPANET">ARPANET</a>, a precursor to the Internet. Users would either need to create and update, or get their hands on a copy of an updated hosts file to actively be able to browse ARPANET via domain names. In 1984, a system which replaced the need for a manually updated hosts file was released. It was called the Domain Name System, which we typically refer to today as just DNS.</p>
+<p>But the hosts file was here to stay, and had become a key part of virtually every operating system with any sort of networking capability. It gave the user the ability to locally map any hostname to any IP address. Here is an example of what most default hosts files will look like (this one taken from Arch Linux):</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#</span>
+<span class="co"># /etc/hosts: static lookup table for host names</span>
+<span class="co">#</span>
+
+<span class="co">#&lt;ip-address&gt;	&lt;hostname.domain.org&gt;	&lt;hostname&gt;</span>
+<span class="kw">127.0.0.1</span>	localhost.localdomain	localhost
+::<span class="kw">1</span>		localhost.localdomain	localhost
+
+<span class="co"># End of file</span></code></pre></div>
+<p>Any line that starts with # is a comment, and does nothing when the file is actually parsed by the computer. At the start of every other line we have an IP address, and at the end we have a hostname. We can see that the file’s role in its current state is to map the “localhost” hostname to the default loopback IP (127.0.0.1 or 0.0.0.0 in IPv4 and ::1 in IPv6) so that anytime we enter “localhost” in our browser address bar (or anytime any application uses it as a hostname), the computer will connect to itself. This shortcut is often used by anyone who does any sort of web development or other network application work.</p>
+<p>The hosts file above also demonstrates another capability which we can take advantage of. We can, in effect, block connections from any website if we route the site’s hostname to 127.0.0.1 using the hosts file, as the contents of the hosts file takes precedent over any DNS mappings we receive from the internet. So if we add a line such as this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">127.0.0.1</span> reddit.com</code></pre></div>
+<p>we tell our computer to take us to 127.0.0.1 instead of reddit’s normal IP address everytime we enter reddit.com in our browser. So, by redirecting all traffic that would otherwise go to reddit.com to ourselves, reddit becomes unreachable. All we need now is a list of ad serving domains that we want to block and the hosts file serves the exact same purpose as Adblock. The difference being that the hosts file uses no RAM and no CPU. It does not slow down any browser, and it completely eliminates connections to any domain listed in it. So the hosts file affects Firefox, Chrome, and any other browser and application we may be using.</p>
+<p>Fortunately, there are kind people on the internet that have compile pre-existing hosts files filled with thousands of malicious and ad-serving domains. The first site I found is <a href="http://winhelp2002.mvps.org/hosts.htm" class="uri">http://winhelp2002.mvps.org/hosts.htm</a>, which includes not only a hosts file in both .zip and .txt form, but a great explanation of how the hosts file works and various types of domains to block. The second is <a href="http://someonewhocares.org/hosts/" class="uri">http://someonewhocares.org/hosts/</a>, which also offers a great description as well as instructions of how to update the hosts file on your PC.</p>
+<h2 id="time-for-some-automation">Time for some automation</h2>
+<p>I would like to take it a step further and write a short bash script to automatically update our hosts file using the hosts files provided by both of these sites. This will be written to work on Linux, but should probably work on OSX as well. Ideally, every time we run the script we want to grab the most updated versions of each site’s hosts file, so we have the most up-to-date version of a list of malicious and ad-serving domains.</p>
+<p>So, the algorithm we want to perform will be something like this:</p>
+<ol style="list-style-type: decimal">
+<li>Make a copy of our original hosts file as a backup (<strong>only</strong> if this is our first time running the script)</li>
+<li>Download the pre-loaded hosts file from mvps.org</li>
+<li>Append (<strong>not</strong> overwrite) it to our existing hosts file</li>
+<li>Download the pre-loaded hosts file from someonewhocares.org</li>
+<li>Append (<strong>not</strong> overwrite) it to our hosts file</li>
+<li>Delete the files we downloaded from both sites, as we do not need them anymore</li>
+</ol>
+<p>In addition to this, if we run our script a second time or any additional time, instead of making a copy of the current hosts file, we want to overwrite our primary hosts file with the copy we took we ran the first time. This is so that we are starting with a clean hosts file every time we run the script, and not adding tens of thousands of redundant lines.</p>
+<p>After a little bit of experimenting, the script is as follows:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+
+<span class="kw">echo</span> <span class="st">&quot;Checking if copy of original hosts file exists...&quot;</span>
+<span class="kw">if [</span> <span class="ot">-e</span> /etc/hosts-original<span class="kw"> ]</span>
+	<span class="kw">then</span>
+		<span class="kw">echo</span> <span class="st">&quot;Copy of original exists.&quot;</span>
+		<span class="kw">cat</span> /etc/hosts-original <span class="kw">&gt;</span> /etc/hosts	
+	<span class="kw">else</span>
+		<span class="kw">echo</span> <span class="st">&quot;Copy of original does not exist.  Copying...&quot;</span>
+		<span class="kw">cat</span> /etc/hosts <span class="kw">&gt;</span> /etc/hosts-original
+<span class="kw">fi</span>
+
+<span class="kw">echo</span> <span class="st">&quot;Downloading mvps.org hosts file...&quot;</span>
+<span class="kw">wget</span> http://winhelp2002.mvps.org/hosts.txt --output-document=hosts-mvps
+
+<span class="kw">echo</span> <span class="st">&quot;Downloading someonewhocares.org hosts file...&quot;</span>
+<span class="kw">wget</span> http://someonewhocares.org/hosts/zero/hosts --output-document=hosts-swc
+
+<span class="kw">echo</span> <span class="st">&quot;Adding mvps.org hosts file content to main hosts file...&quot;</span>
+<span class="kw">cat</span> hosts-mvps <span class="kw">&gt;&gt;</span> /etc/hosts
+<span class="kw">echo</span> <span class="st">&quot;Adding someonewhocares.org hosts file content to main hosts file...&quot;</span>
+<span class="kw">cat</span> hosts-swc <span class="kw">&gt;&gt;</span> /etc/hosts
+
+<span class="kw">echo</span> <span class="st">&quot;Cleaning up...&quot;</span>
+<span class="kw">rm</span> hosts-mvps
+<span class="kw">rm</span> hosts-swc
+
+<span class="kw">echo</span> <span class="st">&quot;Completed!&quot;</span></code></pre></div>
+<p>You can view and download the same file on <a href="https://github.com/charukiewicz/scripts/blob/master/hosts-update.sh">GitHub</a>. I encourage you to open it in a text editor after downloading it to confirm it is exactly what I have in the box above. You will need to run the script with root permissions by prefixing with the <strong>sudo</strong> command because the entire <strong>/etc/</strong> directory is read only.</p>
+<p>If you are a new Linux user (or an old, forgetful, Linux user) attempting to run this script for the first time, open a terminal and type the following commands:</p>
+<pre><code>cd ~/Downloads
+sudo sh hosts-update.sh</code></pre>
+<p>The first line will change to the Downloads directory of your home folder. The second line will actually execute the script. The first line is not necessary if you know what you are doing and/or have moved the script to a different directory. You will be prompted to enter your UNIX password to give yourself the root privileges mentioned above.</p>
+<p>Windows users, unfortunately you will have to do this process manually. You will need to download the contents of both hosts files and open up the one on your computer in a text editor, and then paste both inside. Once again, <strong>do not overwrite the original hosts file content</strong>. Also, do not open long files in regular Notepad. It will crash. Use <a href="http://www.sublimetext.com/">Sublime</a> or <a href="http://notepad-plus-plus.org/">Notepad++</a>. Detailed instructions on how to update the Windows hosts file are on both of the hosts file sites I linked above.</p>
+<p>Android users, if you have rooted your phone you have an option like this as well. There is an app on F-Droid called <a href="https://f-droid.org/repository/browse/?fdid=org.adaway">AdAway</a>, which does exactly what we did here. Installing the app and giving it root permissions will then automatically update your <strong>/system/etc/hosts</strong> file with its own proprietary list of ad-serving domains.</p>
+<p>ChromeOS users, unfortunately there are no good options for ChromeOS. First of all, editing the file even using sudo does not work. There is a workaround method, however every time ChromeOS updates the hosts file will be reset.</p>
+<p>With that, enjoy your Adblock alternative that takes absolutely zero system resources. You will see empty boxes where ads would be on certain websites, or the ads should just be gone all together. Feel free to contact me with any questions. <a href="https://www.twitter.com/charukiewicz/">@charukiewicz</a></p>
+<p><a name="update"></a></p>
+<p><i><strong>Update (Feb, 15, 2016)</strong>: There has been a lot of material that has either come out or I have read about since writing this article. Namely, there are a few really good scripts out there that do what my bash script does, but are more feature filled. They pull from more sources, allow you to include your own whitelist, etc.</p>
+<p>A few options worth checking out:</p>
+<ul>
+<li><a href="https://github.com/StevenBlack/hosts">hosts</a> - A hosts file and updater script written in Python</li>
+<li><a href="https://gaenserich.github.io/hostsblock/">Hostsblock</a> - Another feature-filled utility</li>
+<li><a href="http://pi-hole.net/">Pi-hole</a> - Set up a Raspberry Pi to filter your LAN</li>
+<li><a href="https://www.reddit.com/r/linux/comments/45e27d/adblock_via_etchosts/">Adblock via /etc/hosts</a> - reddit discussion on this topic</li>
+</ul>
+<p></i></p>
+
+</div>
+
+<hr>
+
+<div class="block">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = "charukiewicz"; 
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+]]></summary>
+</entry>
+
+</feed>
