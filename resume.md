@@ -24,9 +24,11 @@ title: Résumé
 **Roompact** <span class="fr">Chicago, IL</span><br>
 *Chief Technology Officer* <span class="fr">Jan 2016 - Present</span>
 
-* Set long term goals for product development, improving software development processes, and development team growth
+* Set long term goals for product development and improving software development processes
+* Led hiring process for technical employees and interns; managed the training of technical employees
 * Designed and built application features using a wide array of technologies
-* Managed application servers; developed and enforced technical contingency plans
+* Planned and executed the transition of company server infrastructure to Amazon Web Services; reduced technical infrastructure costs by 70%
+* Adopted the utilization of server provisioning tools (Ansible) for rapid and repeatable server deployments
 
 **Roompact** <span class="fr">Chicago, IL</span><br>
 *Software Engineer* <span class="fr">Jan 2015 - Jan 2016</span>
