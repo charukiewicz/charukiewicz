@@ -19,6 +19,20 @@ div#content img {
     width: 600px;
 }
 
+div.home-img {
+    text-align: center;
+}
+
+div.home-img img {
+    width:500px !important;
+}
+
+@media (max-width:768px) {
+    div.home-img img {
+        width:600px !important;
+    }
+}
+
 div#header {
     border-bottom: 2px solid black;
     margin-bottom: 30px;
