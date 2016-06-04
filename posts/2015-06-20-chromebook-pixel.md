@@ -1,5 +1,6 @@
 ---
 title: Software Development on the Chromebook Pixel
+disqus: yes
 ---
 
 ## Background

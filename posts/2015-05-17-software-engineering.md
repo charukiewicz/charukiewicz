@@ -1,5 +1,6 @@
 ---
 title: On Software Engineering
+disqus: yes
 ---
 
 ## A Few Words of Wisdom

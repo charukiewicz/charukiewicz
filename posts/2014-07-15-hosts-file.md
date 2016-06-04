@@ -1,5 +1,6 @@
 ---
 title: Replacing Adblock Plus with the hosts file
+disqus: yes
 ---
 
 <div style="color:#555;font-size:14px;">

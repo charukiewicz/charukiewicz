@@ -1,5 +1,6 @@
 ---
 title: Four Principles of Providing Information
+disqus: yes
 ---
 
 ## The Information Problem
