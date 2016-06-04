@@ -11,6 +11,10 @@
         <link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.css" />
         <link href='/images/fav.png' rel='shortcut icon'>
         $partial("templates/ga.html")$
+        $if(thumbnail_image)$
+            $partial("templates/twitter-card.html")$
+            $partial("templates/facebook-og.html")$
+        $endif$
     </head>
     <body>
         <div id="header">
