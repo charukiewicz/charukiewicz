@@ -32,6 +32,11 @@
             <h1>$title$</h1>
 
             $body$
+
+            $if(disqus)$
+                <hr>
+                $partial("templates/disqus.html")$
+            $endif$
         </div>
         <div class="footer">
             <div class="footer-lt">
