@@ -19,10 +19,12 @@ div#content img {
     max-width: 600px;
 }
 
+div.body-img,
 div.home-img {
     text-align: center;
 }
 
+div.body-img img,
 div.home-img img {
     width:500px !important;
 }
