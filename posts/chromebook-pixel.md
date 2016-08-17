@@ -1,6 +1,7 @@
 ---
 title: Software Development on the Chromebook Pixel
 disqus: yes
+date: 2015-06-20
 ---
 
 ## Background

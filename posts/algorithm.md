@@ -1,6 +1,7 @@
 ---
 title: Everything Can Be An Algorithm
 disqus: yes
+date: 2014-10-07
 ---
 
 ## What is an Algorithm?

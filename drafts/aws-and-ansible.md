@@ -3,6 +3,7 @@ title: Building and Maintaining a Robust Technical Infrastructure with AWS and A
 disqus: yes
 thumbnail_image: https://sandbox.charukiewi.cz/charukiewicz/_site/images/sisyphus-thumbnail.png
 thumbnail_description: Amazon Web Services and Ansible make rapidly scaling up or down in order to meet web traffic demands easy and inexpensive.
+date: 2016-05-30
 ---
 
 <img src="/images/sisyphus-embedded2.png" alt="Sisyphus rolling a stone up a hill" title="'One must imagine Sisyphus happy.' —Albert Camus, The Myth of Sisyphus, 1942">

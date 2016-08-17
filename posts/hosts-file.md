@@ -1,6 +1,7 @@
 ---
 title: Replacing Adblock Plus with the hosts file
 disqus: yes
+date: 2014-07-15
 ---
 
 <div style="color:#555;font-size:14px;">

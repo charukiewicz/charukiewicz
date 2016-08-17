@@ -1,6 +1,7 @@
 ---
 title: Let's Encrypt With Let's Encrypt
 disqus: yes
+date: 2015-10-26
 ---
 
 ## What is website encryption?

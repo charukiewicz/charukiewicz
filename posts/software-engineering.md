@@ -1,6 +1,7 @@
 ---
 title: On Software Engineering
 disqus: yes
+date: 2015-05-17
 ---
 
 ## A Few Words of Wisdom

@@ -1,6 +1,7 @@
 ---
 title: Switching from Jekyll to Hakyll
 disqus: yes
+date: 2015-05-15
 ---
 
 ## Motivations
