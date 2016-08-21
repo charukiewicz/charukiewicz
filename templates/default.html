@@ -5,7 +5,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=0.55">
-        <title>Christian Charukiewicz - $title$</title>
+        <meta name="keywords" content="Linux,ChromeOS,HTML,CSS,JavaScript,AWS,Programming,Software Engineering,Software Development,Computer Science,UIUC,CTO">
+        <meta name="description" content="Chief Technology Officer, Computer Scientist, Engineer, Technologist, Linux User, UIUC Alumnus"/>
+        $if(skip_head_title)$
+        <title>Christian Charukiewicz</title>
+        $else$
+        <title>Christian Charukiewicz | $title$</title>
+        $endif$
         <link rel="stylesheet" type="text/css" href="/css/default.css" />
         <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
         <link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.min.css" />
@@ -29,7 +35,11 @@
         </div>
 
         <div id="content">
-            <h1>$title$</h1>
+            $if(skip_body_title)$
+                <!-- no title -->
+            $else$
+                <h1>$title$</h1>
+            $endif$
 
             $body$
 
