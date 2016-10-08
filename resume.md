@@ -150,11 +150,11 @@ EMT-Basic Certification
 
 **Project Euler Problems** - [GitHub](https://github.com/charukiewicz/project-euler)
 
-*A progression through a series of increasingly difficult math problems, solved computationally, using various techniques and programming languages.*
+*A progression through a series of increasingly difficult math problems, solved programmatically, using various techniques and programming languages like Haskell and Python.*
 
 **Beer Manager** - [GitHub](https://github.com/charukiewicz/beer-manager)
 
-*A simple RESTful API built with Flask (a Python microframework) designed to serve as the back end for a beer rating website or application*
+*A simple RESTful API built with Flask (a Python microframework) designed to serve as the back end for a beer rating website or application.*
 
 <hr>
 
