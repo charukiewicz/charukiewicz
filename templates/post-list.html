@@ -1,8 +1,12 @@
-<ul id="posts">
+<div id="posts">
     $for(posts)$
-        <li>
-            <a href="$url$">$title$</a>
-            <span class="pl-date">$date$</span>
-        </li>
+        <div class="pl-item">
+            <div class="pl-title">
+                <a href="$url$">$title$</a>
+            </div>
+            <div class="pl-date">
+                <span >$date$</span>
+            </div>
+        </div>
     $endfor$
-</ul>
+</div>

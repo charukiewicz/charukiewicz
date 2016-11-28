@@ -5,9 +5,9 @@
 
 body {
     color: black;
-    font-size: 16px;
+    font-size: 20px;
     margin: 0px auto 0px auto;
-    width: 600px;
+    width: 680px;
     font-family: Georgia,"Times New Roman",Times,serif;
 }
 
@@ -28,7 +28,7 @@ div.home-img {
 
 div.body-img img,
 div.home-img img {
-    width:500px !important;
+    width:600px !important;
     display: block;
     margin: 0 auto;
 }
@@ -82,10 +82,11 @@ div#content a:hover {
 }
 
 div.content-body {
-    line-height: 25px;
+    line-height: 32px;
 }
 
 div.resume-body {
+    font-size: 16px !important;
     line-height: 20px;
 }
 
@@ -120,18 +121,27 @@ div.contact li {
     margin-top: 10px;
 }
 
-ul#posts li {
+div#posts > div {
     margin-top: 10px;
 }
 
-ul#posts {
-    list-style: none;
-    padding-left: 0;
+div#posts {
+    margin-bottom: 20px;
+}
+
+.pl-item {
+    display: block;
+}
+
+.pl-title {
+    display:inline-block;
+    max-width: 70%;
 }
 
 .pl-date {
     float: right;
     color: #555;
+    display:inline-block;
 }
 
 h1 {
@@ -139,11 +149,11 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 div.info {
@@ -161,8 +171,56 @@ code {
     line-height: 18px;
 }
 
-blockquote {
-    color: #505050;
+blockquote{
+  display:block;
+  background: #fff;
+  padding: 15px 45px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  font-size: 20px;
+  line-height: 28px;
+  color: #666;
+  
+  /*Borders - (Optional)*/
+  /*border-left: 4px solid #d2d2d2;*/
+  
+}
+
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+}
+
+blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+
+blockquote em{
+  font-style: italic;
+}
+
+blockquote p:last-of-type {
+    margin-bottom: 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
 }
 
 .sk {
