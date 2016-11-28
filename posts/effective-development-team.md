@@ -2,7 +2,7 @@
 title: Three Elements of an Effective Software Development Team
 disqus: yes
 thumbnail_image: https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-thumb.png
-thumbnail_description: Christian, the Chief Technology Officer at Roompact, shares some of the guiding principles behind how the Roompact development team excels.
+thumbnail_description: Christian, the CTO at Roompact, shares some of the guiding principles behind how the Roompact development team excels.
 date: 2016-11-28
 ---
 
