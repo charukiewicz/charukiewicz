@@ -25,13 +25,13 @@ title: Résumé
 *Chief Technology Officer* <span class="fr">Jan 2016 - Present</span>
 
 * Set long term goals for product development; elevated standards for application design, architecture, documentation, performance, security
-* Designed and built application features using a wide array of technologies across the full web application stack
-* Established internal code review process to improve overall software quality, encourage sharing of programming knowledge amongst technical team members, and increase the bus factor of various application features
-* Educated employees on use of productivity tools and best practices, such as effective use of Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, and customization of various dotfiles
-* Led hiring process for technical employees and interns; managed the training of technical employees
+* Designed and built web applications using a variety of programming languages and frameworks
 * Planned and executed the transition of company server infrastructure to Amazon Web Services; reduced technical infrastructure costs by 70%
 * Employed a variety of AWS tools and services, including EC2, ELBs, S3, SES, Route 53, Lambda, CloudWatch, etc.
-* Achieved completely automated server deployments with Bash and Ansible
+* Achieved completely automated Linux server deployments with Bash and Ansible
+* Established internal code review process to improve overall software quality, encourage sharing of programming knowledge amongst technical team members, and increase the bus factor of various application features
+* Educated team members on use of productivity tools and best practices, such as effective use of Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, dotfiles configuration, etc.
+* Led hiring process for technical employees and interns; led the training of technical employees
 
 **Roompact** <span class="fr">Chicago, IL</span><br>
 *Software Engineer* <span class="fr">Jan 2015 - Jan 2016</span>
