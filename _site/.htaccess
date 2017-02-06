@@ -16,3 +16,6 @@ Redirect 301 /posts/2014-07-15-hosts-file/ /posts/hosts-file/
 ## software-engineering
 Redirect 301 /posts/2015-05-17-software-engineering/index.html /posts/software-engineering/
 Redirect 301 /posts/2015-05-17-software-engineering/ /posts/software-engineering/
+## providing-information
+Redirect 301 /posts/2014-10-14-providing-information/index.html /posts/providing-information/
+Redirect 301 /posts/2014-10-14-providing-information/ /posts/providing-information/
