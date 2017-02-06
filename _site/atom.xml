@@ -22,7 +22,6 @@
 
 <div class="content-body">
 
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-color.png"></p>
 <p>Between the months of August and October of 2014, <a href="https://roompact.com/">Roompact</a> served 35,000 pages to users. Over the same period of time in 2016, Roompact served well over one million pages. Roompact users today visit more often, navigate to more pages, and spend significantly more time on the site than ever before. These increases are the result of more features, better performance, and improved usability. Roompact today is the most polished and functional version of the software to date.</p>
 <div class="body-img">
 <p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/usage-sm-color-2.png" style="width:300px !important;"></p>
@@ -145,7 +144,7 @@ Within the first three weeks of my internship with Roompact, I was able to learn
 
 <div class="content-body">
 
-<h2 id="background">Background</h2>
+<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-color.png"></p>
 <p>In March of this year, Google released the new <a href="https://www.google.com/chromebook/pixel/">Chromebook Pixel</a>. Having used ChromeOS for most of a year on the Acer C720 Chromebook and very much enjoying it, I did not hesitate to retire the C720 and buy the Chromebook Pixel LS. This “Ludicrous Speed” version of the Pixel comes with a Core i7 processor, 16 GB of RAM, and a 64 GB SSD. Both versions of the new Pixel sport a fantastic 2560 x 1700 pixel resolution screen (which has a unique 3:2 aspect ratio), a great keyboard, touchpad, and a 12 hour battery life. Each Pixel also has two USB-C ports, which can be used for charging, data transfer, display and audio output, and even ethernet.</p>
 <p>The Chromebook Pixel LS is a fantastic device, with very fairly priced hardware. I have absolutely no complaints about the build quality and hardware features at all, although I will admit that I would have happily paid a bit more for a 128 GB SSD. But this post is not a Chromebook Pixel LS review. You can find hundreds of those all over the internet. Instead, I am going to talk about my software development environment and workflow on the Pixel. After using it on a daily basis for nearly 3 months now, I can share the experience of using the Pixel for this purpose with detail.</p>
 <h2 id="environment-setup">Environment Setup</h2>

@@ -6,8 +6,6 @@ thumbnail_description: Christian, the CTO at Roompact, shares some of the guidin
 date: 2016-11-28
 ---
 
-<img src="https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-color.png">
-
 Between the months of August and October of 2014, [Roompact](https://roompact.com/) served 35,000 pages to users. Over the same period of time in 2016, Roompact served well over one million pages.  Roompact users today visit more often, navigate to more pages, and spend significantly more time on the site than ever before.  These increases are the result of more features, better performance, and improved usability.  Roompact today is the most polished and functional version of the software to date.
 
 <div class="body-img">
