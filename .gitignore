@@ -24,6 +24,3 @@ site
 
 ### Vim ###
 *.swp
-
-### Apache ###
-_site/.htaccess

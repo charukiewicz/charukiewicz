@@ -45,6 +45,14 @@ removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
     isLocal uri = not (isInfixOf "://" uri)
 
 
+static :: Pattern -> Rules ()
+static f = match f $ do
+    route   idRoute
+    compile copyFileCompiler
+
+directory :: (Pattern -> Rules a) -> String -> Rules a
+directory act f = act $ fromGlob $ f ++ "/**"
+
 --------------------------------------------------------------------------------
 
 myFeedConfiguration :: FeedConfiguration
@@ -59,80 +67,89 @@ myFeedConfiguration = FeedConfiguration
 --------------------------------------------------------------------------------
 
 main :: IO ()
-main = hakyll $ do
-    match "images/*" $ do
-        route   idRoute
-        compile copyFileCompiler
+main =
+    let
+        myIgnoreFile ".htaccess" = False
+        myIgnoreFile path        = ignoreFile defaultConfiguration path
+        conf = defaultConfiguration { ignoreFile = myIgnoreFile }
+    in
+        hakyllWith conf $ do
+        static ".htaccess"
 
-    match "files/*" $ do
-        route   idRoute
-        compile copyFileCompiler
 
-    match "assets/**" $ do
-        route   idRoute
-        compile copyFileCompiler
+        match "images/*" $ do
+            route   idRoute
+            compile copyFileCompiler
 
-    match "css/*" $ do
-        route   idRoute
-        compile compressCssCompiler
+        match "files/*" $ do
+            route   idRoute
+            compile copyFileCompiler
 
-    match (fromList ["about.md", "resume.md"]) $ do
-        --route   $ setExtension "html"
-        route $ niceBaseRoute
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
-            >>= removeIndexHtml
+        match "assets/**" $ do
+            route   idRoute
+            compile copyFileCompiler
 
-    match "posts/*" $ do
-        --route $ setExtension "html"
-        route $ niceRoute
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
-            >>= removeIndexHtml
+        match "css/*" $ do
+            route   idRoute
+            compile compressCssCompiler
 
-{-
-    create ["archive.html"] $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
-                    defaultContext
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
--}
-
-    match "index.html" $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    defaultContext
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
+        match (fromList ["about.md", "resume.md"]) $ do
+            --route   $ setExtension "html"
+            route $ niceBaseRoute
+            compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
                 >>= removeIndexHtml
 
-    match "templates/*" $ compile templateCompiler
+        match "posts/*" $ do
+            --route $ setExtension "html"
+            route $ niceRoute
+            compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/post.html"    postCtx
+                >>= saveSnapshot "content"
+                >>= loadAndApplyTemplate "templates/default.html" postCtx
+                >>= relativizeUrls
+                >>= removeIndexHtml
 
-    create ["atom.xml"] $ do
-    route idRoute
-    compile $ do
-        let feedCtx = postCtx `mappend` bodyField "description"
-        posts <- fmap (take 10) . recentFirst =<<
-            loadAllSnapshots "posts/*" "content"
-        renderAtom myFeedConfiguration feedCtx posts
+    {-
+        create ["archive.html"] $ do
+            route idRoute
+            compile $ do
+                posts <- recentFirst =<< loadAll "posts/*"
+                let archiveCtx =
+                        listField "posts" postCtx (return posts) `mappend`
+                        constField "title" "Archives"            `mappend`
+                        defaultContext
+
+                makeItem ""
+                    >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
+                    >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                    >>= relativizeUrls
+    -}
+
+        match "index.html" $ do
+            route idRoute
+            compile $ do
+                posts <- recentFirst =<< loadAll "posts/*"
+                let indexCtx =
+                        listField "posts" postCtx (return posts) `mappend`
+                        defaultContext
+
+                getResourceBody
+                    >>= applyAsTemplate indexCtx
+                    >>= loadAndApplyTemplate "templates/default.html" indexCtx
+                    >>= relativizeUrls
+                    >>= removeIndexHtml
+
+        match "templates/*" $ compile templateCompiler
+
+        create ["atom.xml"] $ do
+        route idRoute
+        compile $ do
+            let feedCtx = postCtx `mappend` bodyField "description"
+            posts <- fmap (take 10) . recentFirst =<<
+                loadAllSnapshots "posts/*" "content"
+            renderAtom myFeedConfiguration feedCtx posts
 
 
 --------------------------------------------------------------------------------

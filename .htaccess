@@ -1,0 +1,18 @@
+## chromebook-pixel
+Redirect 301 /posts/2015-06-20-chromebook-pixel/index.html https://charukiewi.cz/posts/chromebook-pixel/
+Redirect 301 /posts/2015-06-20-chromebook-pixel/ https://charukiewi.cz/posts/chromebook-pixel/
+## lets-encrypt
+Redirect 301 /posts/2015-10-26-lets-encrypt/index.html /posts/lets-encrypt/
+Redirect 301 /posts/2015-10-26-lets-encrypt/ /posts/lets-encrypt/
+## algorithm
+Redirect 301 /posts/2014-10-07-algorithm/index.html /posts/algorithm/
+Redirect 301 /posts/2014-10-07-algorithm/ /posts/algorithm/
+## hakyll 
+Redirect 301 /posts/2015-05-15-hakyll/index.html /posts/hakyll/
+Redirect 301 /posts/2015-05-15-hakyll/ /posts/hakyll/
+## hosts-file 
+Redirect 301 /posts/2014-07-15-hosts-file/index.html /posts/hosts-file/
+Redirect 301 /posts/2014-07-15-hosts-file/ /posts/hosts-file/
+## software-engineering
+Redirect 301 /posts/2015-05-17-software-engineering/index.html /posts/software-engineering/
+Redirect 301 /posts/2015-05-17-software-engineering/ /posts/software-engineering/
