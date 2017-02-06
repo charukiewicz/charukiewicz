@@ -1,5 +1,7 @@
 ---
 title: Software Development on the Chromebook Pixel
+thumbnail_image: https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-thumb.png
+thumbnail_description: On using the Chromebook Pixel for professional software development
 disqus: yes
 date: 2015-06-20
 ---
