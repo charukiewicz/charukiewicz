@@ -4,7 +4,7 @@ title: Résumé
 
 <div class="resume-body">
 
-<small>[PDF Version](https://github.com/charukiewicz/resume/raw/master/charukiewicz_resume.pdf)</small>
+<small>[PDF Version (Abridged)](https://github.com/charukiewicz/resume/raw/master/charukiewicz_resume.pdf)</small>
 
 
 <hr>
