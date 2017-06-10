@@ -6,9 +6,16 @@
 body {
     color: black;
     font-size: 18px;
-    margin: 0px auto 0px auto;
-    width: 680px;
     font-family: Georgia,"Times New Roman",Times,serif;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:flex-start;
+    align-items: stretch;
+
+    margin: auto;
+    max-width: 680px;
+    padding: 0px 20px;
 }
 
 body h1, h2, h3, h4, h5, h6 {
@@ -19,6 +26,7 @@ div#content img {
     max-width: 600px;
     display: block;
     margin: 0 auto;
+
 }
 
 div.body-img,
@@ -178,26 +186,26 @@ blockquote{
   padding: 15px 45px 15px 45px;
   margin: 0 0 20px;
   position: relative;
-  
+
   /*Font*/
   font-size: 20px;
   line-height: 28px;
   color: #666;
-  
+
   /*Borders - (Optional)*/
   /*border-left: 4px solid #d2d2d2;*/
-  
+
 }
 
 blockquote::before{
   content: "\201C"; /*Unicode for Left Double Quote*/
-  
+
   /*Font*/
   font-family: Georgia, serif;
   font-size: 60px;
   font-weight: bold;
   color: #999;
-  
+
   /*Positioning*/
   position: absolute;
   left: 10px;
