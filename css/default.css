@@ -14,7 +14,7 @@ body {
     align-items: stretch;
 
     margin: auto;
-    max-width: 680px;
+    max-width: 800px;
     padding: 0px 20px;
 }
 
@@ -23,7 +23,7 @@ body h1, h2, h3, h4, h5, h6 {
 }
 
 div#content img {
-    max-width: 680px;
+    max-width: 800px;
     display: block;
     margin: 0 auto;
 
@@ -153,17 +153,6 @@ div#posts {
     display:inline-block;
 }
 
-h1 {
-    font-size: 24px;
-}
-
-h2 {
-    font-size: 22px;
-}
-
-h3 {
-    font-size: 20px;
-}
 
 div.info {
     color: #555;
