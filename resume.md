@@ -24,14 +24,17 @@ title: Résumé
 **Roompact** <span class="fr">Chicago, IL</span><br>
 *Chief Technology Officer* <span class="fr">Jan 2016 - Present</span>
 
-* Set long term goals for product development; elevated standards for application design, architecture, documentation, performance, security
+* Set long term road map for product development; continually raised standards for application design, architecture, documentation, performance, security
+* Led hiring process for technical employees and interns; developed and led training of new technical staff
+* Established internal code review process to improve overall software quality, encourage exchange of knowledge among technical team members, and increase the bus factor of various application features
+* Chief architect of new features, functionality, and underlying infrastructure; led team members in making design decisions ranging from database schemas,  to user interfaces, to application-specific RESTful APIs
 * Designed and built web applications using a variety of programming languages and frameworks
+* Introduced the Elm programming language as the primary front end language for new features; taught Elm and functional programming concepts to technical team members with no previous FP experience
 * Planned and executed the transition of company server infrastructure to Amazon Web Services; reduced technical infrastructure costs by 70%
-* Employed a variety of AWS tools and services, including EC2, ELBs, S3, SES, Route 53, Lambda, CloudWatch, etc.
+* Employed a variety of AWS tools and services, including EC2, ELBs, S3, SES, Route 53, Lambda, CloudWatch, CloudFront, etc.
 * Achieved completely automated Linux server deployments with Bash and Ansible
-* Established internal code review process to improve overall software quality, encourage sharing of programming knowledge amongst technical team members, and increase the bus factor of various application features
-* Educated team members on use of productivity tools and best practices, such as effective use of Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, dotfiles configuration, etc.
-* Led hiring process for technical employees and interns; led the training of technical employees
+* Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, dotfile configurations, bash scripts, etc.
+* Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
 **Roompact** <span class="fr">Chicago, IL</span><br>
 *Software Engineer* <span class="fr">Jan 2015 - Jan 2016</span>
