@@ -175,8 +175,27 @@ code {
     border: 1px solid #eeeed2;
     color: #555555;
     display: inline-block;
-    padding: 2px 4px;
-    line-height: 18px;
+    padding: 5px;
+    line-height: 24px;
+}
+
+ol code,
+ul code,
+p code {
+    padding: 4px 2px !important;
+}
+
+@media (min-width: 768px) {
+    ol code,
+    ul code,
+    p code {
+        line-height: 16px !important;
+    }
+}
+
+.sourceCode code {
+    width: 100%;
+    overflow-x: scroll;
 }
 
 blockquote{
