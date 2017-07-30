@@ -18,6 +18,14 @@ body h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
 }
 
+.content-body h2 {
+    margin-top: 50px;
+}
+
+.content-body h3 {
+    margin-top: 40px;
+}
+
 div#content img {
     max-width: 800px;
     display: block;
