@@ -29,7 +29,7 @@ A few weeks after finishing my little project, I introduced one of my engineers 
 3. Treat compiler errors as helpful feedback, rather than as a signal indicating failure
 4. Practice approaching each problem with a functional mindset (e.g. "How can we apply `List.map` or `List.filter` rather than a `for` loop and array mutation?")
 
-This project took him a few weeks to complete. The end result was highly successful, and both him and I learned quite a bit about Elm as we worked on it together. Most importantly, by the end, my engineer was comfortable enough with Elm as to work independently for extended periods of time. The lesson had been a success, and it also proved that about a week of intense training, someone who has never written functional code can build a solid understanding of the basics of Elm. Within month, they should be able to work independently on code that will eventually make it into production.
+This project took him a few weeks to complete. The end result was highly successful, and both him and I learned quite a bit about Elm as we worked on it together. Most importantly, by the end, my engineer was comfortable enough with Elm as to work independently for extended periods of time. The lesson had been a success, and it also proved that about a week of intense training, someone who has never written functional code can build a solid understanding of the basics of Elm. Within a month, they should be able to work independently on code that will eventually make it into production.
 
 <blockquote>
 <p>Work has gotten really interesting again.</p>
@@ -57,7 +57,7 @@ In the rest of this post I am going to outline what we have learned as we have u
 
 Relative to other front end tools, Elm's type system is its most distinct and powerful feature. Elm is statically typed, meaning all code is verified during the compilation process (more on that later). More importantly, Elm allows for the creation of Algebraic Data Types, which are referred to as [Union Types](https://guide.elm-lang.org/types/union_types.html) in Elm. This allows the programmer to model much of the business logic of the application in type system, to be verified statically by the compiler, rather than in code that will be evaluated at runtime.
 
-One simple example is that of a three-way state. Suppose I have a tag input field. When I arrive to the page with this input, certain tags may already be present. I can then edit the tag list, either by adding or removing tags. But here's the catch: if I press "Cancel" to return to a previous view in the application, the tag list much revert to its original state. If I press "Save" the changes must be applied.
+One simple example is that of a three-way state. Suppose I have a tag input field. When I arrive to the page with this input, certain tags may already be present. I can then edit the tag list, either by adding or removing tags. But here's the catch: if I press "Cancel" to return to a previous view in the application, the tag list must revert to its original state. If I press "Save" the changes must be applied.
 
 There are a number of ways to do this in JavaScript, one solution would be:
 
@@ -167,7 +167,7 @@ Everyone who knows about Elm knows that it is a functional language. However, I 
 
 **Pure Functions** - Virtually all functions in Elm are considered 'pure'. This means that given a set of parameters, a function will always produce the same result. Such functions also referred to as being [referentially transparent](https://en.wikipedia.org/wiki/Referential_transparency), meaning they can be replaced with their corresponding return values without altering the behavior of the program. Because of the constraints that enforce this property, pure functions lack the ability to produce side effects (making HTTP requests, changing HTML on the page, printing output somewhere, etc.).
 
-These traits combine to result in a significantly lower the cognitive load required to read Elm code. For example, if you see a function whose type signature is `Int -> Int`, meaning that it takes one `Int` parameter and returns an `Int` value, you can safely assume that it will at most be doing some sort of numerical manipulation without any other side effects. If you are searching for code that validates email addresses, you know that you can look elsewhere (perhaps for a function that takes a `String` and returns a `Bool`).
+These traits combine to result in a significantly lower cognitive load required to read Elm code. For example, if you see a function whose type signature is `Int -> Int`, meaning that it takes one `Int` parameter and returns an `Int` value, you can safely assume that it will at most be doing some sort of numerical manipulation without any other side effects. If you are searching for code that validates email addresses, you know that you can look elsewhere (perhaps for a function that takes a `String` and returns a `Bool`).
 
 **Immutable Values** - All values in Elm are immutable; they cannot be changed after they are set. This may seem limiting to someone coming from writing JavaScript, but in a functional paradigm, changing values is not necessary. The standard approach is to return a new value rather that overwrite an old one. Immutability eliminates a whole array of possible issues in a program, ranging from race conditions caused by concurrent code, to uncontrolled global state modification.
 
@@ -229,7 +229,7 @@ So in general, the execution of an Elm program is as follows:
 3. The user interacts with the application, a `Msg` value is produced
 4. The Update is called, receiving the `Msg` value as a parameter, which results in a change to the Model (return to step 1)
 
-This structure and the separation of concerns between the different portions of the application make it easy to both build and later refactor even extremely large applications. This structure also eliminates nearly all issues with data going out of sync with the DOM, or different DOM elements being out of sync from one-another, as the View will always re-render the DOM based off of the contents of the Model. To someone who is not used to using this type of architecture, seeing it in action for the first time may feel like magic. It is not uncommon to think "wow all I did was change the value in the model and all of the HTML relies on that value updated automatically".
+This structure and the separation of concerns between the different portions of the application make it easy to both build and later refactor even extremely large applications. This structure also eliminates nearly all issues with data going out of sync with the DOM, or different DOM elements being out of sync from one-another, as the View will always re-render the DOM based off of the contents of the Model. To someone who is not used to using this type of architecture, seeing it in action for the first time may feel like magic. It is not uncommon to think "wow all I did was change the value in the model and all of the HTML that relies on that value updated automatically".
 
 ### Elm has a very powerful debugger
 
