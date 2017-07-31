@@ -39,7 +39,7 @@ Another important factor that emerged during this process was a human one: writi
 
 ## Using Elm
 
-With these two trials of Elm being very successful, I had all the evidence I needed: we were going to more forward with Elm. Our first user-facing application of Elm would come in short order. Without going into extensive detail, we spent the entire first half of 2017 making the largest and most complex feature that Roompact has ever seen: a highly customizable form-builder system with integrations to the rest of the data in out software.
+With these two trials of Elm being very successful, I had all the evidence I needed: we were going to more forward with Elm. Our first user-facing application of Elm would come in short order. Without going into extensive detail, we spent the entire first half of 2017 making the largest and most complex feature that Roompact has ever seen: a highly customizable form-builder system with integrations to the rest of the data in our software.
 
 With almost every single piece of data on each page in this feature being dynamic (questions, input types, order values, tags, answers, form template and submission edit histories, etc.), the need for managing all of this data effectively was paramount. Moreover, this data would have to be shared across multiple views seamlessly: an edit to a form template would have to be reflected in the corresponding form submission creation page immediately; a new form submission would have to be visible in the multiple tabular views in addition to its own individual page view.
 
