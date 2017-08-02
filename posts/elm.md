@@ -29,7 +29,7 @@ A few weeks after finishing my little project, I introduced one of my engineers 
 3. Treat compiler errors as helpful feedback, rather than as a signal indicating failure
 4. Practice approaching each problem with a functional mindset (e.g. "How can we apply `List.map` or `List.filter` rather than a `for` loop and array mutation?")
 
-This project took him a few weeks to complete. The end result was highly successful, and both him and I learned quite a bit about Elm as we worked on it together. Most importantly, by the end, my engineer was comfortable enough with Elm as to work independently for extended periods of time. The lesson had been a success, and it also proved that about a week of intense training, someone who has never written functional code can build a solid understanding of the basics of Elm. Within a month, they should be able to work independently on code that will eventually make it into production.
+This project took him a few weeks to complete. The end result was highly successful, and both he and I learned quite a bit about Elm as we worked on it together. Most importantly, by the end, my engineer was comfortable enough with Elm as to work independently for extended periods of time. The lesson had been a success, and it also proved that about a week of intense training, someone who has never written functional code can build a solid understanding of the basics of Elm. Within a month, they should be able to work independently on code that will eventually make it into production.
 
 <blockquote>
 <p>Work has gotten really interesting again.</p>

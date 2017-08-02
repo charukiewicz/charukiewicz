@@ -38,7 +38,7 @@
 <li>Treat compiler errors as helpful feedback, rather than as a signal indicating failure</li>
 <li>Practice approaching each problem with a functional mindset (e.g. “How can we apply <code>List.map</code> or <code>List.filter</code> rather than a <code>for</code> loop and array mutation?”)</li>
 </ol>
-<p>This project took him a few weeks to complete. The end result was highly successful, and both him and I learned quite a bit about Elm as we worked on it together. Most importantly, by the end, my engineer was comfortable enough with Elm as to work independently for extended periods of time. The lesson had been a success, and it also proved that about a week of intense training, someone who has never written functional code can build a solid understanding of the basics of Elm. Within a month, they should be able to work independently on code that will eventually make it into production.</p>
+<p>This project took him a few weeks to complete. The end result was highly successful, and both he and I learned quite a bit about Elm as we worked on it together. Most importantly, by the end, my engineer was comfortable enough with Elm as to work independently for extended periods of time. The lesson had been a success, and it also proved that about a week of intense training, someone who has never written functional code can build a solid understanding of the basics of Elm. Within a month, they should be able to work independently on code that will eventually make it into production.</p>
 <blockquote>
 <p>
 Work has gotten really interesting again.
