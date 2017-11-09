@@ -1,7 +1,8 @@
 ---
-title: Setting Deadlines is at odds with Building Excellent Software
+title: Why Setting Deadlines is at odds with Building Excellent Software
 disqus: yes
-thumbnail_description: Imposing strict deadlines in software development harms software quality while falling short of its purported benefits.
+thumbnail_title: Setting Deadlines is at odds with Building Excellent Software
+thumbnail_description: Imposing strict deadlines in software development diminishes software quality while falling short of its purported benefits.
 thumbnail_image: https://s3.amazonaws.com/charukiewicz/assets/images/calendar-deadline-trim-sm-thumbnail.png
 date: 2017-11-07
 ---
