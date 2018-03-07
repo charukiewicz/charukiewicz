@@ -37,7 +37,7 @@ title: Résumé
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
 **Illini Emergency Medical Services** <span class="fr">Champaign, IL</span><br>
-*EMT-Basic* <span class="fr">2012 - 2014</span>
+*EMT-Basic* <small>(Volunteer Position)</small> <span class="fr">2012 - 2014</span>
 
 * Staffed various types of events as on-site EMT
 * Led teams of other EMS providers (typical team size was 2-4 EMS personnel)
