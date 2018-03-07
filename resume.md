@@ -22,7 +22,7 @@ title: Résumé
 <div class="exp">
 
 **Roompact** <span class="fr">Chicago, IL</span><br>
-*Chief Technology Officer* <span class="fr">Jan 2016 - Present</span>
+*Chief Technology Officer* <span class="fr">2014 - Present</span>
 
 * Set long term road map for product development; continually raised standards for application design, architecture, documentation, performance, security
 * Led hiring process for technical employees and interns; developed and led training of new technical staff
@@ -36,35 +36,8 @@ title: Résumé
 * Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, dotfile configurations, bash scripts, etc.
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
-**Roompact** <span class="fr">Chicago, IL</span><br>
-*Software Engineer* <span class="fr">Jan 2015 - Jan 2016</span>
-
-* Designed, built, tested, deployed, and maintained complex application features using various web technologies; examples:
-    * Built a news feed allowing users to make posts, replies, and receive notifications in real-time (Node.js, CakePHP, Redis, Websockets, JavaScript, jQuery, HTML, CSS)
-    * Built a statistics tool capable of generating reports containing a quantitative overview of software usage in an easily understandable and visually appealing format (CakePHP, MySQL, HTML, CSS, JavaScript)
-    * Configured and maintained over half a dozen virtual servers (Linux, BASH, Supervisor, cron, Apache2, Nginx, iptables)
-    * Designed and built RESTful API to interface with third-party clients; created and maintained corresponding documentation (CakePHP)
-    * Created internal library allowing other developers to easily implement the sending of email/text messages using queue-worker system, greatly improving end-user performance (CakePHP, MySQL)
-    * Redesigned and significantly improved strategies and architecture for caching of dynamic data (CakePHP, Linux, Redis)
-    * Implemented single sign-on system (CAS protocol), allowing clients to use existing account systems for user authentication (CakePHP, MySQL)
-* Acted as technical contact for partner software vendors and clients implementing API and single sign-on integration
-* Wrote custom SQL queries during exploratory data analysis as well as for specially made internal and client-facing data reports
-* Participated in business strategy meetings; provided technical expertise in planning future growth opportunities and key software features
-* Mentored software development interns; provided guidance to ensure skill development and progress towards internship project completion
-
-**Roompact** <span class="fr">Chicago, IL</span><br>
-*Software Development Intern* <span class="fr">May 2014 - Aug 2014</span>
-
-* Built application software with CakePHP, MySQL backend and HTML5, JQuery, AJAX frontend
-* Configured and maintained Linux servers; automated server tasks through BASH and cronjobs
-* Built distributed process notification system capable of sending thousands of emails/text messages per minute
-* Created live information data feed capable of displaying nation-wide user activity in real time
-* Developed and implemented data collection algorithms to collect user data for subsequent analysis
-* Researched and developed methods of to provide incentives for users; wrote report and presented findings to colleagues and management staff
-* Rapidly adapted to new project requirements to meet client needs
-
 **Illini Emergency Medical Services** <span class="fr">Champaign, IL</span><br>
-*EMT-Basic* <span class="fr">Sept 2012 - May 2014</span>
+*EMT-Basic* <span class="fr">2012 - 2014</span>
 
 * Staffed various types of events as on-site EMT
 * Led teams of other EMS providers (typical team size was 2-4 EMS personnel)
@@ -73,7 +46,7 @@ title: Résumé
 * Coordinated with other agencies (Police, Fire, EMS) during large events (marathons, football games, etc.) to ensure coverage
 
 **Next Generation Gaming, LLC** <span class="fr">Remote Position</span><br>
-*Director of Community Experience* <span class="fr">Oct 2012 - Nov 2013</span>
+*Director of Community Experience* <span class="fr">2012 - 2013</span>
 
 * Product management position; led a team of 5 software developers, 10 beta testers, and 5 sales staff members
 * Designed and implemented a system which automated and expanded all product sales; removed sales overhead costs and released multiple new categories of products which *increased average monthly revenue of the company by 35%*
