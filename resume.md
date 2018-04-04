@@ -32,7 +32,8 @@ title: Résumé
 * Introduced the Elm programming language as the primary front end language for new features; taught Elm and functional programming concepts to technical team members with no previous FP experience
 * Planned and executed the transition of company server infrastructure to Amazon Web Services; reduced technical infrastructure costs by 70%
 * Employed a variety of AWS tools and services, including EC2, ELBs, S3, SES, Route 53, Lambda, CloudWatch, CloudFront, etc.
-* Achieved completely automated Linux server deployments with Bash and Ansible
+* Achieved completely automated and reproducible Linux server deployments and configuration management with Bash and Ansible
+* Utilized a variety of programming languages, tools, and frameworks: Elm, JavaScript, CakePHP, Jekyll, HTML, SASS/SCSS, Node.js, Nginx, MySQL, Redis, Supervisor
 * Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, dotfile configurations, bash scripts, etc.
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
@@ -48,11 +49,12 @@ title: Résumé
 **Next Generation Gaming, LLC** <span class="fr">Remote Position</span><br>
 *Director of Community Experience* <span class="fr">2012 - 2013</span>
 
-* Product management position; led a team of 5 software developers, 10 beta testers, and 5 sales staff members
-* Designed and implemented a system which automated and expanded all product sales; removed sales overhead costs and released multiple new categories of products which *increased average monthly revenue of the company by 35%*
-* Performed quantitative analysis of product sales, used results to develop marketing and sales strategies, instructed sales staff on how to execute sales strategies
-* Implemented a system which streamlined planning, development, testing, release, and public feedback of multiple simultaneous projects and software updates
-* Created new software features with the PAWN language, MySQL, and PHP
+* Product management position; led and coordinated a team of software developers, QA testers, and customer relations staff to create features and digital products leading to increased player engagement and revenue in an online-RPG environment with over 20,000 players per month
+* Designed and led the implementation of an in-game credit system which automated all product sales, removed sales overhead costs, and allowed for the creation of several new categories of products; increased average monthly revenue of the company by 35%
+* Planned and assigned projects, held development meetings, wrote technical specifications, analyzed player data and trends, determined project costs and time requirements
+* Performed quantitative analysis of product sales, used results to develop marketing and sales strategies, instructed customer relations staff on how to execute sales strategies
+* Surveyed players to gauge response to game updates and gather general feedback
+* Worked extensively with the PAWN language, MySQL, and PHP
 
 </div>
 

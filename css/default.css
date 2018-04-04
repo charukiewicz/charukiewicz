@@ -145,8 +145,9 @@ li {
     margin-top: 10px;
 }
 
-div.contact li {
-    margin-top: 10px;
+.contact div {
+    padding: 5px;
+    font-size: 20px;
 }
 
 div#posts > div {
