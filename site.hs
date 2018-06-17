@@ -144,12 +144,12 @@ main =
         match "templates/*" $ compile templateCompiler
 
         create ["atom.xml"] $ do
-        route idRoute
-        compile $ do
-            let feedCtx = postCtx `mappend` bodyField "description"
-            posts <- fmap (take 10) . recentFirst =<<
-                loadAllSnapshots "posts/*" "content"
-            renderAtom myFeedConfiguration feedCtx posts
+            route idRoute
+            compile $ do
+                let feedCtx = postCtx `mappend` bodyField "description"
+                posts <- fmap (take 10) . recentFirst =<<
+                    loadAllSnapshots "posts/*" "content"
+                renderAtom myFeedConfiguration feedCtx posts
 
 
 --------------------------------------------------------------------------------
