@@ -1,5 +1,5 @@
 ---
-title: Elm In Production: 25,000 Lines Later
+title: "Elm In Production: 25,000 Lines Later"
 disqus: yes
 thumbnail_description: Reflecting on our experience of using Elm in production and an evaluation of Elm's distinguishing features
 thumbnail_image: https://s3.amazonaws.com/charukiewicz/assets/images/elm-logo-color-corrected-thumbnail-sm.png

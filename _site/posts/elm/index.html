@@ -78,7 +78,7 @@
 <p>I decided to follow the general strategy outlined in Evan Czaplicki’s <a href="http://elm-lang.org/blog/how-to-use-elm-at-work">How to Use Elm at Work</a> post. One day in November of 2016 I set out to make a small internal tool that solved the problem of having no UI to configure a certain one of our features. The project took me about three full days to complete. The experience involved a lot of fighting against the compiler and resisting the feeling of being trapped by having to write in a functional style. By the end, I had written a bit over 500 lines of Elm. I realize that despite running into compiler errors often, and having to completely eschew techniques that were commonplace in imperative code, the constraints imposed by Elm were actually rather helpful. The compiler offered protection against silly mistakes, and functional code was easy to read and naturally highly composable. These were the types of benefits that I had read about when learning the fundamentals of Haskell.</p>
 <h2 id="teaching-elm">Teaching Elm</h2>
 <p>A few weeks after finishing my little project, I introduced one of my engineers to Elm. He would be writing another internal tool that was quite a bit larger than mine. More importantly, he had no previous functional programming experience whatsoever. In order to be able to adopt Elm at our company, it was absolutely imperative that I would be able to get him productive in what was to him a completely foreign language rather quickly. In order to accomplish this, my approach was to:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Pair program with him on a significant portion of this initial project, but make him write most of the code</li>
 <li>Emphasize the importance of reading type signatures, both in our own code and in any documentation we were referencing</li>
 <li>Treat compiler errors as helpful feedback, rather than as a signal indicating failure</li>
@@ -103,7 +103,7 @@ Work has gotten really interesting again.
 <p>Relative to other front end tools, Elm’s type system is its most distinct and powerful feature. Elm is statically typed, meaning all code is verified during the compilation process (more on that later). More importantly, Elm allows for the creation of Algebraic Data Types, which are referred to as <a href="https://guide.elm-lang.org/types/union_types.html">Union Types</a> in Elm. This allows the programmer to model much of the business logic of the application in type system, to be verified statically by the compiler, rather than in code that will be evaluated at runtime.</p>
 <p>One simple example is that of a three-way state. Suppose I have a tag input field. When I arrive to the page with this input, certain tags may already be present. I can then edit the tag list, either by adding or removing tags. But here’s the catch: if I press “Cancel” to return to a previous view in the application, the tag list must revert to its original state. If I press “Save” the changes must be applied.</p>
 <p>There are a number of ways to do this in JavaScript, one solution would be:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>in addition to the master tag array for that field, create temporary arrays for added and for removed tags</li>
 <li>for each tag change, apply it to the master array and keep a record of the change in the corresponding temporary array
 <ul>
@@ -121,39 +121,39 @@ Work has gotten really interesting again.
 <p>I chose this approach because there is no great way to model the current state of each tag in the tag itself. Attempting to do so might involve adding a <code>status</code> field containing a string that indicates one of the three possible states. Or worse yet, I could try to model this by juggling several boolean fields (e.g. <code>added_status</code>, <code>removed_status</code>).</p>
 <p>Even the single-field approach likely to result in chains of if-statements that perform string comparisons in several places in the program. I will also have to ensure that my <code>status</code> field is always initialized with any tag object in order to protect against runtime errors. I could attempt to solve this latter problem by creating prototype functions that extend a <code>Tag</code> constructor object, but there is nothing forcing anyone to use these prototypal functions to create <code>Tag</code> objects to begin with. In short, adding such a field to my tag object is an encumbrance, as I have to remember to handle this extra field throughout my program.</p>
 <p>By contrast, in Elm, modeling the possible states of each tag is incredibly easy. We can write this as follows:</p>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="co">-- The type representing the possible states of the tag</span>
-<span class="kw">type</span> <span class="dt">TagState</span> <span class="fu">=</span> <span class="dt">Current</span> <span class="fu">|</span> <span class="dt">Added</span> <span class="fu">|</span> <span class="dt">Removed</span>
-
-
-<span class="co">-- The type representing a single tag</span>
-<span class="kw">type</span> alias <span class="dt">Tag</span> <span class="fu">=</span>
-    { tagId <span class="fu">:</span> <span class="dt">Int</span>
-    , tagName <span class="fu">:</span> <span class="dt">String</span>
-    , tagStatus <span class="fu">:</span> <span class="dt">TagState</span>
-    }</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">-- The type representing the possible states of the tag</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">type</span> <span class="dt">TagState</span> <span class="fu">=</span> <span class="dt">Current</span> <span class="fu">|</span> <span class="dt">Added</span> <span class="fu">|</span> <span class="dt">Removed</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">-- The type representing a single tag</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">type</span> alias <span class="dt">Tag</span> <span class="fu">=</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">    { tagId <span class="fu">:</span> <span class="dt">Int</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">    , tagName <span class="fu">:</span> <span class="dt">String</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">    , tagStatus <span class="fu">:</span> <span class="dt">TagState</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    }</a></code></pre></div>
 <p>In the above example, every value of type <code>Tag</code> will contain a <code>tagStatus</code> field, which will contain a value of type <code>TagState</code>, which in turn has to be one of the three states I want to represent. The important thing to note here is that now every tag value <strong>must</strong> have a <code>tagStatus</code> field, and it <strong>must</strong> always contain one of the three defined <code>TagState</code> values. If this field is not initialized (e.g. at the JSON decoder for a tag) or its values are not handled exhaustively (e.g. in my view code), the program will not compile. I will show an example of the latter scenario below.</p>
 <h3 id="elm-has-a-great-compiler">Elm has a great compiler</h3>
 <p>Elm’s compiler is what does the heavy lifting of enforcing the constraints of the type system, and I would consider it to be a huge asset when writing Elm code. Other statically typed languages have compilers, but Elm’s is in a league of its own.</p>
 <p>Let’s consider the snippet of code in the section above. With the above types, every <code>Tag</code> in my application to always have a <code>TagState</code>. Let’s see how we would use this to our advantage to address the problem of keeping our DOM in sync with our data:</p>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="co">-- Function that takes a tag value and returns an html</span>
-<span class="co">-- value that will be rendered by the Elm program</span>
-displayTag <span class="fu">:</span> <span class="dt">Tag</span> <span class="ot">-&gt;</span> <span class="dt">Html</span> <span class="dt">Msg</span>
-displayTag tag <span class="fu">=</span>
-    <span class="co">-- perform a match against the tagStatus field of the tag parameter</span>
-    <span class="kw">case</span> tag<span class="fu">.</span>tagStatus <span class="kw">of</span>
-
-        <span class="dt">Current</span> <span class="ot">-&gt;</span>
-            <span class="co">-- Display a standard tag</span>
-            div [ <span class="kw">class</span> <span class="st">&quot;tag&quot;</span> ] [ text tag<span class="fu">.</span>tagName ]
-
-        <span class="dt">Added</span> <span class="ot">-&gt;</span>
-            <span class="co">-- Display a tag, but include the 'tag-added' class</span>
-            <span class="co">-- so that we can style these tags differently</span>
-            div [ <span class="kw">class</span> <span class="st">&quot;tag tag-added&quot;</span> ] [ text tag<span class="fu">.</span>tagName ]
-
-        <span class="dt">Removed</span> <span class="ot">-&gt;</span>
-            <span class="co">-- Display an empty div*</span>
-            div [] []</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">-- Function that takes a tag value and returns an html</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">-- value that will be rendered by the Elm program</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">displayTag <span class="fu">:</span> <span class="dt">Tag</span> <span class="ot">-&gt;</span> <span class="dt">Html</span> <span class="dt">Msg</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">displayTag tag <span class="fu">=</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">    <span class="co">-- perform a match against the tagStatus field of the tag parameter</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">    <span class="kw">case</span> tag<span class="fu">.</span>tagStatus <span class="kw">of</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">        <span class="dt">Current</span> <span class="ot">-&gt;</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">            <span class="co">-- Display a standard tag</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">            div [ <span class="kw">class</span> <span class="st">&quot;tag&quot;</span> ] [ text tag<span class="fu">.</span>tagName ]</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">        <span class="dt">Added</span> <span class="ot">-&gt;</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">            <span class="co">-- Display a tag, but include the 'tag-added' class</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">            <span class="co">-- so that we can style these tags differently</span></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">            div [ <span class="kw">class</span> <span class="st">&quot;tag tag-added&quot;</span> ] [ text tag<span class="fu">.</span>tagName ]</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb2-17" data-line-number="17">        <span class="dt">Removed</span> <span class="ot">-&gt;</span></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18">            <span class="co">-- Display an empty div*</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19">            div [] []</a></code></pre></div>
 <p><small style="color: #999;"> * Note that it would be possible to restructure this code in a way that does not display an empty &lt;div&gt; in the case of a removed tag, but the above code results in the clearest example. </small></p>
 <p>But what if we had forgotten to handle one of our cases? Suppose we did not include the <code>Removed</code> case.</p>
 <div class="sourceCode">
@@ -190,35 +190,35 @@ Detected errors in 1 module.</code></pre>
 <p>These traits combine to result in a significantly lower cognitive load required to read Elm code. For example, if you see a function whose type signature is <code>Int -&gt; Int</code>, meaning that it takes one <code>Int</code> parameter and returns an <code>Int</code> value, you can safely assume that it will at most be doing some sort of numerical manipulation without any other side effects. If you are searching for code that validates email addresses, you know that you can look elsewhere (perhaps for a function that takes a <code>String</code> and returns a <code>Bool</code>).</p>
 <p><strong>Immutable Values</strong> - All values in Elm are immutable; they cannot be changed after they are set. This may seem limiting to someone coming from writing JavaScript, but in a functional paradigm, changing values is not necessary. The standard approach is to return a new value rather that overwrite an old one. Immutability eliminates a whole array of possible issues in a program, ranging from race conditions caused by concurrent code, to uncontrolled global state modification.</p>
 <p><strong>Higher-Order Functions</strong> - A higher order function is simply a function that takes another function as a parameter, or returns a function as its result. This style of programming is very common in Elm and leads to code that is well suited function composition, and in turn, reusability. Take a look at an example of the <code>map</code> function below (which takes a function and applies that function to every element in a list):</p>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">square <span class="fu">:</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span>
-square x <span class="fu">=</span> x <span class="fu">*</span> x
-
-normalList <span class="fu">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]
-
-squaredList <span class="fu">=</span> List.map square normalList</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb4-1" data-line-number="1">square <span class="fu">:</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">square x <span class="fu">=</span> x <span class="fu">*</span> x</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">normalList <span class="fu">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">squaredList <span class="fu">=</span> List.map square normalList</a></code></pre></div>
 <p>In the above code, the <code>square</code> function is applied to every element in <code>normalList</code>. When this code is evaluated, <code>squaredList</code> will contain <code>[1, 4, 9, 16, 25]</code>.</p>
 <p><strong>Pattern Matching</strong> - This is without a doubt one of the most useful features in Elm. Pattern matching allows you to to write code that will only get evaluated when the “shape” of the value being examined matches the defined pattern. Consider the following example:</p>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">type</span> <span class="dt">PermissionLevel</span> <span class="fu">=</span> <span class="dt">AdministratorPermissionLevel</span> <span class="fu">|</span> <span class="dt">StandardPermissionLevel</span>
-
-<span class="kw">type</span> <span class="dt">UserGroup</span> <span class="fu">=</span> <span class="dt">AdministratorUserGroup</span> <span class="fu">|</span> <span class="dt">StandardUserGroup</span>
-
-
-<span class="co">-- Function checks whether a user can edit a post</span>
-
-checkIfUserCanEditPost <span class="fu">:</span> <span class="dt">PermissionLevel</span> <span class="ot">-&gt;</span> <span class="dt">UserGroup</span> <span class="ot">-&gt;</span> <span class="dt">Bool</span>
-checkIfUserCanEditPost requiredPermissionLevel currentUserGroup <span class="fu">=</span>
-    <span class="kw">case</span> (requiredPermissionLevel, currentUserGroup) <span class="kw">of</span>
-        <span class="co">-- A standard user can edit a standard post</span>
-        (<span class="dt">StandardPermissionLevel</span>, <span class="dt">StandardUserGroup</span>) <span class="ot">-&gt;</span>
-            <span class="dt">True</span>
-
-        <span class="co">-- An administrator can edit any post</span>
-        (_, <span class="dt">AdministratorUserGroup</span>) <span class="ot">-&gt;</span>
-            <span class="dt">True</span>
-
-        <span class="co">-- Deny any other possible combination of values</span>
-        _ <span class="ot">-&gt;</span>
-            <span class="dt">False</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">type</span> <span class="dt">PermissionLevel</span> <span class="fu">=</span> <span class="dt">AdministratorPermissionLevel</span> <span class="fu">|</span> <span class="dt">StandardPermissionLevel</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">type</span> <span class="dt">UserGroup</span> <span class="fu">=</span> <span class="dt">AdministratorUserGroup</span> <span class="fu">|</span> <span class="dt">StandardUserGroup</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">-- Function checks whether a user can edit a post</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">checkIfUserCanEditPost <span class="fu">:</span> <span class="dt">PermissionLevel</span> <span class="ot">-&gt;</span> <span class="dt">UserGroup</span> <span class="ot">-&gt;</span> <span class="dt">Bool</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">checkIfUserCanEditPost requiredPermissionLevel currentUserGroup <span class="fu">=</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">    <span class="kw">case</span> (requiredPermissionLevel, currentUserGroup) <span class="kw">of</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">        <span class="co">-- A standard user can edit a standard post</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">        (<span class="dt">StandardPermissionLevel</span>, <span class="dt">StandardUserGroup</span>) <span class="ot">-&gt;</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13">            <span class="dt">True</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15">        <span class="co">-- An administrator can edit any post</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16">        (_, <span class="dt">AdministratorUserGroup</span>) <span class="ot">-&gt;</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17">            <span class="dt">True</span></a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb5-19" data-line-number="19">        <span class="co">-- Deny any other possible combination of values</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20">        _ <span class="ot">-&gt;</span></a>
+<a class="sourceLine" id="cb5-21" data-line-number="21">            <span class="dt">False</span></a></code></pre></div>
 <p>In the above code, we combine the <code>requiredPermissionLevel</code> and <code>currentUserGroup</code> parameters into a tuple in the <code>case</code> statement and evaluate them together as we try to match one of the cases. The <code>_</code> value will match any value in the case statement. We use it to avoid having to define <code>(StandardPermissionLevel, AdministratorUserGroup)</code> and <code>(AdministratorPermissionLevel, AdministratorUserGroup)</code> as two separate cases. Instead, we tell compiler to produce code that evaluates to true anytime the user is an administrator. We also use the <code>_</code> value in the final case statement as a catch-all, to deny all other possible combinations of required permission level and user group.</p>
 <h3 id="elms-model-update-view-architecture-is-very-well-suited-for-building-web-applications">Elm’s Model-Update-View architecture is very well-suited for building web applications</h3>
 <p>The core architectural pattern in every Elm web application is what is referred to as <a href="https://guide.elm-lang.org/architecture/">The Elm Architecture</a>, consisting of three main parts:</p>
@@ -226,7 +226,7 @@ checkIfUserCanEditPost requiredPermissionLevel currentUserGroup <span class="fu"
 <p>The <strong>Update</strong> is the portion of the application that handles both changes to the Model as well as any I/O that the Elm application has to perform (http requests, calling external JavaScript functions, etc.). No other portion of the program can change the state of the Model or perform I/O. The Update is called anytime a <code>Msg</code> value is produced in the application. Such a <code>Msg</code> value will usually represent the action and may have additional data bound to it (e.g. <code>UserSearchInput &quot;john&quot;</code>).</p>
 <p>The <strong>View</strong> is the portion of the program that renders HTML and handles user inputs. The View always takes the Model as an argument, so any conditional logic that uses data to dictate how the HTML on the page is changed during runtime must be based off of data in the Model. The View is automatically called by the Elm runtime anytime any value in the Model changes. User inputs in the View will produce <code>Msg</code> values, which will result in the Elm runtime invoking the Update.</p>
 <p>So in general, the execution of an Elm program is as follows:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>The Model enters a particular state</li>
 <li>The View is rendered based off of the state of the Model</li>
 <li>The user interacts with the application, a <code>Msg</code> value is produced</li>
