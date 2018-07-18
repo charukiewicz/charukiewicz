@@ -1,6 +1,6 @@
 body {
     color: black;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'PT Serif';
 
     display: flex;
@@ -47,7 +47,7 @@ div.home-img img {
 
 @media (max-width:768px) {
     div.home-img img {
-        width:600px !important;
+        max-width: 100% !important;
     }
 
     body {
@@ -66,6 +66,14 @@ div#header {
     letter-spacing: 1px;
 }
 
+@media (max-width:768px) {
+    div#header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
 div#logo a {
     color: black;
     float: left;
@@ -80,9 +88,11 @@ div#header #navigation {
 div#header #navigation a {
     color: black;
     font-size: 18px;
-    margin-left: 12px;
     text-decoration: none;
     text-transform: uppercase;
+}
+div#header #navigation a:not(:first-child) {
+    margin-left: 12px;
 }
 
 div#content a {
@@ -102,19 +112,15 @@ div#content a:hover {
 
 @media (min-width:768px) {
     div.content-body :not(.post-list) {
-        line-height: 30px;
+        line-height: 1.8em;
     }
 }
 
 @media (max-width:767px) {
     div.content-body :not(.post-list) {
-        line-height: 50px;
+        line-height: 2em;
+        font-size: 30px;
     }
-}
-
-div.resume-body {
-    font-size: 16px !important;
-    line-height: 20px;
 }
 
 div.footer {
@@ -171,6 +177,24 @@ div#posts {
     float: right;
     color: #555;
     display:inline-block;
+}
+
+
+@media (max-width:767px) {
+    .pl-item {
+        margin-top: 20px !important;
+        display: flex;
+        flex-direction: column;
+    }
+    .pl-title {
+        max-width:100%;
+    }
+    .pl-date span {
+        font-size: 0.8em !important;
+    }
+    .pl-date {
+        margin-top: -5px;
+    }
 }
 
 
