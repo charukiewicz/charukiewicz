@@ -93,16 +93,16 @@ main =
             route   idRoute
             compile compressCssCompiler
 
-        match (fromList ["about.md", "resume.md"]) $ do
-            --route   $ setExtension "html"
+
+        match "pages/*" $ do
             route $ niceBaseRoute
             compile $ pandocCompiler
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
                 >>= removeIndexHtml
 
+
         match "posts/*" $ do
-            --route $ setExtension "html"
             route $ niceRoute
             compile $ pandocCompiler
                 >>= loadAndApplyTemplate "templates/post.html"    postCtx
