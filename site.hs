@@ -111,22 +111,6 @@ main =
                 >>= relativizeUrls
                 >>= removeIndexHtml
 
-    {-
-        create ["archive.html"] $ do
-            route idRoute
-            compile $ do
-                posts <- recentFirst =<< loadAll "posts/*"
-                let archiveCtx =
-                        listField "posts" postCtx (return posts) `mappend`
-                        constField "title" "Archives"            `mappend`
-                        defaultContext
-
-                makeItem ""
-                    >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                    >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                    >>= relativizeUrls
-    -}
-
         match "index.html" $ do
             route idRoute
             compile $ do
