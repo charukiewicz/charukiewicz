@@ -30,7 +30,7 @@ body h1, h2, h3, h4, h5, h6 {
     margin-top: 40px;
 }
 
-div#content img {
+div.content img {
     max-width: 800px;
     display: block;
     margin: 0 auto;
@@ -61,7 +61,7 @@ div.home-img img {
     }
 }
 
-div#header {
+div.header {
     border-bottom: 2px solid black;
     margin-bottom: 30px;
     padding: 12px 0px 12px 0px;
@@ -71,42 +71,49 @@ div#header {
 }
 
 @media (max-width:768px) {
-    div#header {
+    div.header {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
 }
 
-div#logo a {
+div.logo {
+    display: flex;
+}
+
+div.logo a {
     color: black;
     float: left;
     font-weight: bold;
     text-decoration: none;
+    font-size: 40px;
 }
 
-div#header #navigation {
-    text-align: right;
+div.header .navigation {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 10px;
 }
 
-div#header #navigation a {
+div.header .navigation a {
     color: black;
-    font-size: 18px;
+    font-size: 24px;
     text-decoration: none;
     text-transform: uppercase;
 }
-div#header #navigation a:not(:first-child) {
-    margin-left: 12px;
+div.header .navigation a:not(:last-child) {
+    margin-right: 20px;
 }
 
-div#content a {
+div.content a {
     text-decoration: none;
     color: #3D65A3;
     -webkit-transition: 0.2s ease;
     transition: 0.2s ease;
 }
 
-div#content a:hover {
+div.content a:hover {
     text-decoration: none;
     color: #0045B0;
     background-color: #e6f1ff;
@@ -162,6 +169,8 @@ li {
 
 div#posts > div {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 div#posts {
@@ -174,13 +183,13 @@ div#posts {
 
 .pl-title {
     display:inline-block;
-    max-width: 70%;
 }
 
 .pl-date {
     float: right;
     color: #555;
     display:inline-block;
+    white-space: nowrap;
 }
 
 
@@ -335,4 +344,25 @@ hr {
 
 .exp ul ul {
     margin-bottom: 15px;
+}
+
+.book {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    margin-bottom: 30px;
+}
+
+.book .book-title {
+    font-size: 26px;
+    width: 100%;
+}
+
+.book .book-author {
+    color: #777777;
+}
+
+.book-current {
+    font-size: 18px;
+    color: #777777;
 }
