@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Hakyll.Web.Sass
 import           Data.List (isInfixOf)
 import           System.FilePath.Posix (splitFileName,takeBaseName
                                         ,takeDirectory, (</>), replaceDirectory)
@@ -32,6 +33,11 @@ niceBaseRoute :: Routes
 niceBaseRoute = customRoute base
     where 
       base ident = takeBaseName (toFilePath ident) </> "index.html"
+
+stylesheetRoute :: Routes
+stylesheetRoute = customRoute cssRoute
+  where
+    cssRoute ident = "css" </> (takeBaseName $ toFilePath ident) ++ ".css"
 
 -- replace url of the form foo/bar/index.html by foo/bar
 removeIndexHtml :: Item String -> Compiler (Item String)
@@ -89,9 +95,9 @@ main =
             route   idRoute
             compile copyFileCompiler
 
-        match "css/*" $ do
-            route   idRoute
-            compile compressCssCompiler
+        match "stylesheets/*" $ do
+            route   stylesheetRoute
+            compile sassCompiler
 
 
         match "pages/*" $ do

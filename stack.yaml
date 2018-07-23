@@ -38,7 +38,9 @@ packages:
 # Dependency packages to be pulled from upstream that are not in the resolver
 # using the same syntax as the packages field.
 # (e.g., acme-missiles-0.3)
-# extra-deps: []
+extra-deps:
+    - git: git@github.com:meoblast001/hakyll-sass.git
+      commit: b9c08afc9d81abc5bc57a9adc6bd7b70d562ea46
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

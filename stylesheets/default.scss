@@ -351,18 +351,16 @@ hr {
     flex-flow: row wrap;
     align-items: baseline;
     margin-bottom: 30px;
-}
 
-.book .book-title {
-    font-size: 26px;
-    width: 100%;
-}
-
-.book .book-author {
-    color: #777777;
-}
-
-.book-current {
-    font-size: 18px;
-    color: #777777;
+    .book-title {
+        font-size: 26px;
+        width: 100%;
+    }
+    .book-author {
+        color: #777777;
+    }
+    .book-current {
+        font-size: 18px;
+        color: #777777;
+    }
 }
