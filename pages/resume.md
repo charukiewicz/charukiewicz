@@ -29,9 +29,9 @@ title: Résumé
 * Established internal code review process to improve overall software quality, encourage exchange of knowledge among technical team members, and increase the bus factor of various application features
 * Chief architect of new features, functionality, and underlying infrastructure; led team members in making design decisions ranging from database schemas,  to user interfaces, to application-specific RESTful APIs
 * Designed and built web applications using a variety of programming languages and frameworks
-* Introduced the Elm programming language as the primary front end language for new features; taught Elm and functional programming concepts to technical team members with no previous FP experience
+* Introduced the Haskell and Elm programming languages as the foundation for new development; taught Haskell, Elm, and functional programming concepts to technical team members with no previous FP experience
 * Planned and executed the transition of company server infrastructure to Amazon Web Services; reduced technical infrastructure costs by 70%
-* Employed a variety of AWS tools and services, including EC2, ELBs, S3, SES, Route 53, Lambda, CloudWatch, CloudFront, etc.
+* Employed a variety of AWS tools and services, including EC2, ELBs, S3, SES, Route 53, Lambda, CloudWatch, CloudFront, IAM, Inspector, etc.
 * Achieved completely automated and reproducible Linux server deployments and configuration management with Bash and Ansible
 * Utilized a variety of programming languages, tools, and frameworks: Elm, JavaScript, CakePHP, Jekyll, HTML, SASS/SCSS, Node.js, Nginx, MySQL, Redis, Supervisor
 * Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, dotfile configurations, bash scripts, etc.
@@ -113,7 +113,7 @@ title: Résumé
 ## Education
 
 **Universitiy of Illinois at Urbana-Champaign** <span class="fr">2010 - 2014</span><br>
-B.Sc. in Mathematics & Computer Science and Philosophy <span style="font-size:11px;font-style:italic;">(Double Major)</span>
+B.Sc. in Mathematics & Computer Science, Philosophy 
 
 <small>**Coursework**: Calculus, Discrete Mathematics, Statistics, Linear Algebra, Real Analysis, Graph Theory, Data Structures, System Programming, Computer Architecture, Programming Languages & Compilers, Numerical Methods, Numerical Analysis, Computational Theory, Fundamental Algorithms, Symbolic Logic, Ancient & Early Modern Philosophy, Value Theory, Metaphysics, Ethical Theories, Epistemology, Philosophy of Law & State, Philosophy of Mathematics</small>
 
@@ -140,19 +140,14 @@ EMT-Basic Certification
 
 ## Skills & Interests
 
-<table>
-<tr>
-<td width="32%">**Spoken Languages**</td>
-<td>Native proficiency in English; bilingual proficiency in Polish</td>
-</tr>
-<tr>
-<td>**Medical Certifications**</td>
-<td>AHA CPR, Illinois EMT-Basic</td>
-</tr>
-<tr>
-<td>**Personal Interests**</td>
-<td>Algorithm Development, User Experience Design, Functional Programming, Business Management & Leadership, Emergency Medicine, Military and Law Enforcement</td>
-</tr>
-</table>
+**Spoken Languages**
 
-</div>
+* English
+* Polish
+
+**Personal Interests**
+
+* [Reading](/reading)
+* Drawing – Pen & Ink
+* Photography – Street, Long Exposure
+* Culinary – General Cooking, Grilling, Baking, Fermentation, Coffee Brewing
