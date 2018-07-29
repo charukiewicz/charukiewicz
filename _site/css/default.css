@@ -289,6 +289,7 @@ hr {
     width: 100%; }
   .book .book-author {
     color: #777777; }
+  .book .book-notes-link,
   .book .book-current {
     font-size: 18px;
     color: #777777; }
