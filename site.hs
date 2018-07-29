@@ -107,6 +107,13 @@ main =
                 >>= relativizeUrls
                 >>= removeIndexHtml
 
+        match "books/*" $ do
+            route $ niceRoute
+            compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/default.html" defaultContext
+                >>= relativizeUrls
+                >>= removeIndexHtml
+
 
         match "posts/*" $ do
             route $ niceRoute
