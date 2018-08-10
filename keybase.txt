@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/charukiewicz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://charukiewi.cz
+  * I am charukiewicz (https://keybase.io/charukiewicz) on keybase.
+  * I have a public key ASAMwlzJ87N3JzBcyWwQZHjemTHigiNEZ0OdbcgVC00UHQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101d5dcf604fe57c7bbe8344462d04cd40effde1f36981cf9ad2c3f9817918eaa9e0a",
+      "host": "keybase.io",
+      "kid": "01200cc25cc9f3b37727305cc96c106478de9931e282234467439d6dc8150b4d141d0a",
+      "uid": "ff78f99c49f31186dd2e38e013fa4319",
+      "username": "charukiewicz"
+    },
+    "merkle_root": {
+      "ctime": 1533889459,
+      "hash": "8db1c565449c89019fa7fe1aade9e9baa41d50f327e135692cb0b58898cc8fa6e861f2cbdabc5d46e763bd8c68e43e62380a4c0f81cd25c1ef83ba76ed1eb067",
+      "hash_meta": "b3095ff809102b71e8511795a5f147a192061b3c624d4426640897b466f89bc9",
+      "seqno": 3436899
+    },
+    "service": {
+      "entropy": "8cpNabwXXmG5Xr4LezNwHRER",
+      "hostname": "charukiewi.cz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.6.0"
+  },
+  "ctime": 1533889468,
+  "expire_in": 504576000,
+  "prev": "57172baf68076161bdd2390c718956fff09ad7bb76393ada734581e2c4078d35",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgDMJcyfOzdycwXMlsEGR43pkx4oIjRGdDnW3IFQtNFB0Kp3BheWxvYWTESpcCDsQgVxcrr2gHYWG90jkMcYlW//Ca17t2OTrac0WB4sQHjTXEIN9aknrD1lqJvsAoeiMgLUGLWzDVZQM+4kRWaKTppW03AgHCo3NpZ8RAh8A+wDg+AP0zr6wvZ1MC5MSGLkuosxh9fkndLD3dy2t4Nf9CFDoFOSLol57LyQJpswtv9ultYrqbb/tC8Jk2AahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFp6aLdwKOb7beCgZe6gXiBO0qlDlErj0k/SVkMHxQu/o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/charukiewicz
+
+==================================================================

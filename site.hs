@@ -81,7 +81,7 @@ main =
     in
         hakyllWith conf $ do
         static ".htaccess"
-
+        static "keybase.txt"
 
         match "images/*" $ do
             route   idRoute
@@ -98,7 +98,6 @@ main =
         match "stylesheets/*" $ do
             route   stylesheetRoute
             compile sassCompiler
-
 
         match "pages/*" $ do
             route $ niceBaseRoute
