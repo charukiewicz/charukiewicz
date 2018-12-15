@@ -118,7 +118,6 @@ div.footer a {
 
 div.footer-lt {
   margin-top: 9px;
-  font-size: 18px;
   float: left; }
 
 div.footer-rt {
@@ -293,3 +292,15 @@ hr {
   .book .book-current {
     font-size: 18px;
     color: #777777; }
+
+#mail-wrap {
+  cursor: pointer;
+  display: flex;
+  align-items: center; }
+  #mail-wrap button {
+    background-color: #f7f7f7;
+    color: #3c3c3c;
+    line-height: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    border-width: 0.15em; }
