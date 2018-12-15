@@ -6,7 +6,7 @@ disqus: yes
 date: 2015-06-20
 ---
 
-<img src="https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-color.png">
+<img alt="Hand-drawn laptop with code on the screen by Christian Charukiewicz" src="https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-color.png">
 
 In March of this year, Google released the new [Chromebook Pixel](https://www.google.com/chromebook/pixel/).  Having used ChromeOS for most of a year on the Acer C720 Chromebook and very much enjoying it, I did not hesitate to retire the C720 and buy the Chromebook Pixel LS.  This "Ludicrous Speed" version of the Pixel comes with a Core i7 processor, 16 GB of RAM, and a 64 GB SSD.  Both versions of the new Pixel sport a fantastic 2560 x 1700 pixel resolution screen (which has a unique 3:2 aspect ratio), a great keyboard, touchpad, and a 12 hour battery life.  Each Pixel also has two USB-C ports, which can be used for charging, data transfer, display and audio output, and even ethernet.
 

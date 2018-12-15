@@ -7,7 +7,7 @@ date: 2017-07-30
 ---
 
 <div style="margin-bottom:50px;margin-top:25px;">
-<img src="https://s3.amazonaws.com/charukiewicz/assets/images/elm-logo-color-corrected-xs.png">
+<img alt="Hand-drawn Elm logo by Christian Charukiewicz" src="https://s3.amazonaws.com/charukiewicz/assets/images/elm-logo-color-corrected-xs.png">
 </div>
 
 At [Roompact](https://roompact.com), we make a SaaS product used by university residence life departments across the United States. Our software provides an array of features that range from form-based tools, to digital roommate agreements, to email and text message broadcasting, to a central news feed that acts as both a communications tool and data aggregator for residence hall staff.

@@ -7,7 +7,7 @@ date: 2017-06-10
 ---
 
 <div style="margin-bottom:50px;">
-<img src="https://s3.amazonaws.com/charukiewicz/assets/images/sisyphus-embedded-crop.png">
+<img alt="Hand-drawn picture of Sisyphus pushing a stone up a hill by Christian Charukiewicz" src="https://s3.amazonaws.com/charukiewicz/assets/images/sisyphus-embedded-crop.png">
 </div>
 
 
@@ -25,7 +25,7 @@ More recent issues in other industries have occurred as well. In 2012, the tradi
 High profile examples such as these get people's attention, but they also serve to demonstrate that seemingly minor mistakes can and do result in critical software failures. When building software, the details matter.
 
 <div class="body-img">
-<img src="https://s3.amazonaws.com/charukiewicz/assets/images/features-vs-complexity-sm2.png">
+<img alt="Hand-drawn graph showing complexity increasing exponentially as number of features increases" src="https://s3.amazonaws.com/charukiewicz/assets/images/features-vs-complexity-sm2.png">
 </div>
 
 ## 2. Software complexity grows exponentially
@@ -73,7 +73,7 @@ The process of creating a user interface can be compared to drawing a portrait. 
 
 
 <div class="body-img">
-<img src="https://s3.amazonaws.com/charukiewicz/assets/images/expectation-vs-reality.png">
+<img alt="Hand-drawn image of expectation being a fairly straight line and reality being a curvy, loopy line" src="https://s3.amazonaws.com/charukiewicz/assets/images/expectation-vs-reality.png">
 </div>
 
 ## 4. Nobody really knows how long building something will take
@@ -92,7 +92,7 @@ To complicate matters further, the cause of a delay may have nothing to do with 
 
 
 <div class="body-img">
-<img src="https://s3.amazonaws.com/charukiewicz/assets/images/delete-button.png">
+<img alt="Hand-drawn image of a button with the word 'Delete' underneath it" src="https://s3.amazonaws.com/charukiewicz/assets/images/delete-button.png">
 </div>
 
 ## 5. Sometimes the best solution is to delete something

@@ -52,7 +52,7 @@
 <div class="content-body">
 
 <div style="margin-bottom:50px;margin-top:25px;">
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/elm-logo-color-corrected-xs.png"></p>
+<p><img alt="Hand-drawn Elm logo by Christian Charukiewicz" src="https://s3.amazonaws.com/charukiewicz/assets/images/elm-logo-color-corrected-xs.png"></p>
 </div>
 <p>At <a href="https://roompact.com">Roompact</a>, we make a SaaS product used by university residence life departments across the United States. Our software provides an array of features that range from form-based tools, to digital roommate agreements, to email and text message broadcasting, to a central news feed that acts as both a communications tool and data aggregator for residence hall staff.</p>
 <p>Roompact was founded in 2013, and since its inception, a combination of plain JavaScript, jQuery, and an assortment of jQuery-esque libraries had been what the entire front end of the application was built with. In October of 2016, I realized that we were long past due for an upgrade. The straw that broke the camel’s back occurred when a feature we had worked on over the summer and released in August had already started feeling like a legacy application. Built as a single-page application (SPA) making very heavy use of Ajax calls to a JSON-based RESTful API as its back end, its 5,000 lines of front end code were already becoming very difficult to work with and modify, hardly a month after release. “When did this turn into jQuery spaghetti?” I thought.</p>
@@ -310,7 +310,7 @@ Detected errors in 1 module.</code></pre>
 <div class="content-body">
 
 <div style="margin-bottom:50px;">
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/sisyphus-embedded-crop.png"></p>
+<p><img alt="Hand-drawn picture of Sisyphus pushing a stone up a hill by Christian Charukiewicz" src="https://s3.amazonaws.com/charukiewicz/assets/images/sisyphus-embedded-crop.png"></p>
 </div>
 <p>Software in an omnipresent aspect in the world of today. The vast majority of people today have a continuous interaction with software. Nearly every moment of every day for most is in some way reliant on code somebody has written. For this large majority of people, software is a <em>sine qua non</em>.</p>
 <p>But the minority of people who create software that sees use by others know that building it is remarkably difficult. Making it comes with obstacles that are unique to it. In this post I will describe a few of these defining challenges.</p>
@@ -319,7 +319,7 @@ Detected errors in 1 module.</code></pre>
 <p>More recent issues in other industries have occurred as well. In 2012, the trading firm Knight Capital lost $440 million in 45 minutes because <a href="https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption">someone forgot to remove an unintended block of code from one of their eight trading servers</a>. Just a few weeks ago, in February of this year, an engineer at Amazon Web Services doing server maintenance <a href="https://aws.amazon.com/message/41926/">typed a command with a few erroneous parameters</a>, resulting in thousands of websites and other services going offline for several hours. Dozens of well known organizations such as Expedia, Kickstarter, and U.S. Securities and Exchange Comission were affected.</p>
 <p>High profile examples such as these get people’s attention, but they also serve to demonstrate that seemingly minor mistakes can and do result in critical software failures. When building software, the details matter.</p>
 <div class="body-img">
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/features-vs-complexity-sm2.png"></p>
+<p><img alt="Hand-drawn graph showing complexity increasing exponentially as number of features increases" src="https://s3.amazonaws.com/charukiewicz/assets/images/features-vs-complexity-sm2.png"></p>
 </div>
 <h2 id="software-complexity-grows-exponentially">2. Software complexity grows exponentially</h2>
 <p>Let’s play a game. I am going to give you a certain number of coins and you need to tell me how many possible arrangements of “heads” and “tails” there are. For example, if I give you one coin, there are obviously only two arrangements, one for each face of the coin. If I give you two coins, there are four possible arrangements…</p>
@@ -347,7 +347,7 @@ Detected errors in 1 module.</code></pre>
 <p>User interfaces also take a very long time to make. The end user will never see the long hours that go into interating over designs, perfecting layouts, and deciding on things like color, spacing, and numerous other details that can completely change an end user’s experience. Doing this requires a lot of time, regardless of how experienced a software developer is at making user interfaces.</p>
 <p>The process of creating a user interface can be compared to drawing a portrait. Most people can recognize a well drawn portrait. But few people will be able to draw one themselves. Those that will be able to will have had years of practice, and the process will still require time and patience. Software developers that make user interfaces, even if they do it by writing code, require a similar progression of skill development that can take years to achieve mastery in.</p>
 <div class="body-img">
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/expectation-vs-reality.png"></p>
+<p><img alt="Hand-drawn image of expectation being a fairly straight line and reality being a curvy, loopy line" src="https://s3.amazonaws.com/charukiewicz/assets/images/expectation-vs-reality.png"></p>
 </div>
 <h2 id="nobody-really-knows-how-long-building-something-will-take">4. Nobody really knows how long building something will take</h2>
 <p>We are going to go on a road trip from New York City to San Francisco. Let’s pull out our United States road atlas and plan the route we will take. We trace a path following Interstate 80 westbound from New York to our destination. Looking at the map key, we try to estimate the distance; about 3,000 miles.</p>
@@ -357,7 +357,7 @@ Detected errors in 1 module.</code></pre>
 <p>Estimating the length of a software project is in many ways like planning our road trip. But whereas the road trip is measured in hours or days, a software project is measured in weeks or months. Even after spending several days planning a large piece of software, issues will arise over the course of development. Problems will emerge only as certain details are decided and small issues are resolved. This cycle of discovery and resolution of problems is an inherent trait of software development. This is also exactly why a component that is slated to take two weeks may end up taking five. A project planned to take 16 weeks can end up spaning 28.</p>
 <p>To complicate matters further, the cause of a delay may have nothing to do with the project itself. A bug in an unrelated feature may require several hours of attention in order to fix. A completely unrelated meeting may end up taking an afternoon. Small delays over a period of months can add up to weeks. When planning a large piece of software, the best we can do is have rough guess as to how long building it will take. It is prudent to realize that any such guess is subject to change.</p>
 <div class="body-img">
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/delete-button.png"></p>
+<p><img alt="Hand-drawn image of a button with the word 'Delete' underneath it" src="https://s3.amazonaws.com/charukiewicz/assets/images/delete-button.png"></p>
 </div>
 <h2 id="sometimes-the-best-solution-is-to-delete-something">5. Sometimes the best solution is to delete something</h2>
 <p>When a physical object gets worn out and need to be discarded or replaced, the need to do so ends up being quite apparent. A bicycle tire gets worn down to its innertube, causing a flat. A computer’s motherboard fails after several years, preventing it from turning on. A car’s transmission blows out after it has driven 350,000 miles and it will no longer start. Even a derelict apartment building may need to be demolished as renovating it may not be economical.</p>
@@ -503,7 +503,7 @@ Within the first three weeks of my internship with Roompact, I was able to learn
 
 <div class="content-body">
 
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-color.png"></p>
+<p><img alt="Hand-drawn laptop with code on the screen by Christian Charukiewicz" src="https://s3.amazonaws.com/charukiewicz/assets/images/laptop-sm-color.png"></p>
 <p>In March of this year, Google released the new <a href="https://www.google.com/chromebook/pixel/">Chromebook Pixel</a>. Having used ChromeOS for most of a year on the Acer C720 Chromebook and very much enjoying it, I did not hesitate to retire the C720 and buy the Chromebook Pixel LS. This “Ludicrous Speed” version of the Pixel comes with a Core i7 processor, 16 GB of RAM, and a 64 GB SSD. Both versions of the new Pixel sport a fantastic 2560 x 1700 pixel resolution screen (which has a unique 3:2 aspect ratio), a great keyboard, touchpad, and a 12 hour battery life. Each Pixel also has two USB-C ports, which can be used for charging, data transfer, display and audio output, and even ethernet.</p>
 <p>The Chromebook Pixel LS is a fantastic device, with very fairly priced hardware. I have absolutely no complaints about the build quality and hardware features at all, although I will admit that I would have happily paid a bit more for a 128 GB SSD. But this post is not a Chromebook Pixel LS review. You can find hundreds of those all over the internet. Instead, I am going to talk about my software development environment and workflow on the Pixel. After using it on a daily basis for nearly 3 months now, I can share the experience of using the Pixel for this purpose with detail.</p>
 <h2 id="environment-setup">Environment Setup</h2>
