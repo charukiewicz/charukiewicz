@@ -72,7 +72,11 @@ div.logo a {
 div.header .navigation {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
   margin-top: 10px; }
+  @media (max-width: 768px) {
+    div.header .navigation {
+      justify-content: flex-start; } }
 
 div.header .navigation a {
   color: black;

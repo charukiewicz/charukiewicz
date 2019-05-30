@@ -119,6 +119,10 @@ EMT-Basic Certification
 
 ## Projects
 
+**QuickPhrase** - [GitHub](https://github.com/charukiewicz/quickphrase)
+
+*A browser-based game designed to be played on a phone written in the [Elm programming language](https://elm-lang.org).*
+
 **charukiewi.cz** <small>(this website)</small> - [GitHub](https://github.com/charukiewicz/charukiewicz)
 
 *An ongoing project.  A blog website (currently built using Hakyll).  A test bed for various design ideas and other web related experimentation.*
@@ -146,3 +150,5 @@ EMT-Basic Certification
 * Drawing – Pen & Ink
 * Photography – Street, Long Exposure
 * Culinary – General Cooking, Grilling, Baking, Fermentation, Coffee Brewing
+
+</div>

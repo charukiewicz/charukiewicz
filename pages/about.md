@@ -10,25 +10,4 @@ My name is Christian.  I am the Chief Technology Officer at [Roompact](https://r
 
 I always try to pay very strong attention to detail, expand my knowledge of computer science, and improve my understanding of software engineering as a whole.  I am not afraid to take time to learn a new technology or a new subject, particularly if it helps solve a problem I am working on.
 
-## Contact
-
-<div class="contact">
-<div><a href="https://github.com/charukiewicz"><i class="fa fa-github"></i>&nbsp;charukiewicz</a></div>
-<div><a href="https://twitter.com/charukiewicz"><i class="fa fa-twitter"></i>&nbsp;@charukiewicz</a></div>
-<div id="mail-wrap"><a><i class="fa fa-envelope"></i>&nbsp;ch…</a>&nbsp;<button>Click to Reveal</button></div>
-<div></div>
 </div>
-
-</div>
-
-<script>
-    var emNode = document.getElementById('mail-wrap');
-    function revealEm() {
-        var emComp1 = "ch.cz";
-        var emComp2 = "@";
-        var emComp3 = "pm.me";
-        var em = emComp1 + emComp2 + emComp3;
-        emNode.innerHTML = '<a href="mailto:' + em + '"><i class="fa fa-envelope"></i>&nbsp;' + em + '</a>'
-    }
-    emNode.addEventListener('click', function() { revealEm() });
-</script>
