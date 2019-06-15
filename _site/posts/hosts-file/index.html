@@ -66,18 +66,18 @@
 <h2 id="the-hosts-file">The hosts file</h2>
 <p>Enter the hosts file. Well, <em>reenter</em> the hosts file. Originally implemented in the 1970s, the hosts file was used by operating systems to map hostnames (such as google.com) to IP addresses (such as 74.125.224.72). The hosts file was used to navigate <a href="http://en.wikipedia.org/wiki/ARPANET">ARPANET</a>, a precursor to the Internet. Users would either need to create and update, or get their hands on a copy of an updated hosts file to actively be able to browse ARPANET via domain names. In 1984, a system which replaced the need for a manually updated hosts file was released. It was called the Domain Name System, which we typically refer to today as just DNS.</p>
 <p>But the hosts file was here to stay, and had become a key part of virtually every operating system with any sort of networking capability. It gave the user the ability to locally map any hostname to any IP address. Here is an example of what most default hosts files will look like (this one taken from Arch Linux):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># /etc/hosts: static lookup table for host names</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&lt;ip-address&gt;	&lt;hostname.domain.org&gt;	&lt;hostname&gt;</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="ex">127.0.0.1</span>	localhost.localdomain	localhost</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">::<span class="ex">1</span>		localhost.localdomain	localhost</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co"># End of file</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># /etc/hosts: static lookup table for host names</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">#&lt;ip-address&gt;	&lt;hostname.domain.org&gt;	&lt;hostname&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="ex">127.0.0.1</span>	localhost.localdomain	localhost</a>
+<a class="sourceLine" id="cb1-7" title="7">::<span class="ex">1</span>		localhost.localdomain	localhost</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co"># End of file</span></a></code></pre></div>
 <p>Any line that starts with # is a comment, and does nothing when the file is actually parsed by the computer. At the start of every other line we have an IP address, and at the end we have a hostname. We can see that the file’s role in its current state is to map the “localhost” hostname to the default loopback IP (127.0.0.1 or 0.0.0.0 in IPv4 and ::1 in IPv6) so that anytime we enter “localhost” in our browser address bar (or anytime any application uses it as a hostname), the computer will connect to itself. This shortcut is often used by anyone who does any sort of web development or other network application work.</p>
 <p>The hosts file above also demonstrates another capability which we can take advantage of. We can, in effect, block connections from any website if we route the site’s hostname to 127.0.0.1 using the hosts file, as the contents of the hosts file takes precedent over any DNS mappings we receive from the internet. So if we add a line such as this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">127.0.0.1</span> reddit.com</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">127.0.0.1</span> reddit.com</a></code></pre></div>
 <p>we tell our computer to take us to 127.0.0.1 instead of reddit’s normal IP address everytime we enter reddit.com in our browser. So, by redirecting all traffic that would otherwise go to reddit.com to ourselves, reddit becomes unreachable. All we need now is a list of ad serving domains that we want to block and the hosts file serves the exact same purpose as Adblock. The difference being that the hosts file uses no RAM and no CPU. It does not slow down any browser, and it completely eliminates connections to any domain listed in it. So the hosts file affects Firefox, Chrome, and any other browser and application we may be using.</p>
 <p>Fortunately, there are kind people on the internet that have compile pre-existing hosts files filled with thousands of malicious and ad-serving domains. The first site I found is <a href="http://winhelp2002.mvps.org/hosts.htm" class="uri">http://winhelp2002.mvps.org/hosts.htm</a>, which includes not only a hosts file in both .zip and .txt form, but a great explanation of how the hosts file works and various types of domains to block. The second is <a href="http://someonewhocares.org/hosts/" class="uri">http://someonewhocares.org/hosts/</a>, which also offers a great description as well as instructions of how to update the hosts file on your PC.</p>
 <h2 id="time-for-some-automation">Time for some automation</h2>
@@ -93,34 +93,34 @@
 </ol>
 <p>In addition to this, if we run our script a second time or any additional time, instead of making a copy of the current hosts file, we want to overwrite our primary hosts file with the copy we took we ran the first time. This is so that we are starting with a clean hosts file every time we run the script, and not adding tens of thousands of redundant lines.</p>
 <p>After a little bit of experimenting, the script is as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="bu">echo</span> <span class="st">&quot;Checking if copy of original hosts file exists...&quot;</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="kw">if</span><span class="bu"> [</span> <span class="ot">-e</span> /etc/hosts-original<span class="bu"> ]</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">	<span class="kw">then</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">		<span class="bu">echo</span> <span class="st">&quot;Copy of original exists.&quot;</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">		<span class="fu">cat</span> /etc/hosts-original <span class="op">&gt;</span> /etc/hosts	</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">	<span class="kw">else</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">		<span class="bu">echo</span> <span class="st">&quot;Copy of original does not exist.  Copying...&quot;</span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10">		<span class="fu">cat</span> /etc/hosts <span class="op">&gt;</span> /etc/hosts-original</a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="kw">fi</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="bu">echo</span> <span class="st">&quot;Downloading mvps.org hosts file...&quot;</span></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="fu">wget</span> http://winhelp2002.mvps.org/hosts.txt --output-document=hosts-mvps</a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="bu">echo</span> <span class="st">&quot;Downloading someonewhocares.org hosts file...&quot;</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="fu">wget</span> http://someonewhocares.org/hosts/zero/hosts --output-document=hosts-swc</a>
-<a class="sourceLine" id="cb3-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="bu">echo</span> <span class="st">&quot;Adding mvps.org hosts file content to main hosts file...&quot;</span></a>
-<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="fu">cat</span> hosts-mvps <span class="op">&gt;&gt;</span> /etc/hosts</a>
-<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="bu">echo</span> <span class="st">&quot;Adding someonewhocares.org hosts file content to main hosts file...&quot;</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="fu">cat</span> hosts-swc <span class="op">&gt;&gt;</span> /etc/hosts</a>
-<a class="sourceLine" id="cb3-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="bu">echo</span> <span class="st">&quot;Cleaning up...&quot;</span></a>
-<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="fu">rm</span> hosts-mvps</a>
-<a class="sourceLine" id="cb3-26" data-line-number="26"><span class="fu">rm</span> hosts-swc</a>
-<a class="sourceLine" id="cb3-27" data-line-number="27"></a>
-<a class="sourceLine" id="cb3-28" data-line-number="28"><span class="bu">echo</span> <span class="st">&quot;Completed!&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="bu">echo</span> <span class="st">&quot;Checking if copy of original hosts file exists...&quot;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">if</span><span class="bu"> [</span> <span class="ot">-e</span> /etc/hosts-original<span class="bu"> ]</span></a>
+<a class="sourceLine" id="cb3-5" title="5">	<span class="kw">then</span></a>
+<a class="sourceLine" id="cb3-6" title="6">		<span class="bu">echo</span> <span class="st">&quot;Copy of original exists.&quot;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">		<span class="fu">cat</span> /etc/hosts-original <span class="op">&gt;</span> /etc/hosts	</a>
+<a class="sourceLine" id="cb3-8" title="8">	<span class="kw">else</span></a>
+<a class="sourceLine" id="cb3-9" title="9">		<span class="bu">echo</span> <span class="st">&quot;Copy of original does not exist.  Copying...&quot;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">		<span class="fu">cat</span> /etc/hosts <span class="op">&gt;</span> /etc/hosts-original</a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="kw">fi</span></a>
+<a class="sourceLine" id="cb3-12" title="12"></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="bu">echo</span> <span class="st">&quot;Downloading mvps.org hosts file...&quot;</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="fu">wget</span> http://winhelp2002.mvps.org/hosts.txt --output-document=hosts-mvps</a>
+<a class="sourceLine" id="cb3-15" title="15"></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="bu">echo</span> <span class="st">&quot;Downloading someonewhocares.org hosts file...&quot;</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="fu">wget</span> http://someonewhocares.org/hosts/zero/hosts --output-document=hosts-swc</a>
+<a class="sourceLine" id="cb3-18" title="18"></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="bu">echo</span> <span class="st">&quot;Adding mvps.org hosts file content to main hosts file...&quot;</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="fu">cat</span> hosts-mvps <span class="op">&gt;&gt;</span> /etc/hosts</a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="bu">echo</span> <span class="st">&quot;Adding someonewhocares.org hosts file content to main hosts file...&quot;</span></a>
+<a class="sourceLine" id="cb3-22" title="22"><span class="fu">cat</span> hosts-swc <span class="op">&gt;&gt;</span> /etc/hosts</a>
+<a class="sourceLine" id="cb3-23" title="23"></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="bu">echo</span> <span class="st">&quot;Cleaning up...&quot;</span></a>
+<a class="sourceLine" id="cb3-25" title="25"><span class="fu">rm</span> hosts-mvps</a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="fu">rm</span> hosts-swc</a>
+<a class="sourceLine" id="cb3-27" title="27"></a>
+<a class="sourceLine" id="cb3-28" title="28"><span class="bu">echo</span> <span class="st">&quot;Completed!&quot;</span></a></code></pre></div>
 <p>You can view and download the same file on <a href="https://github.com/charukiewicz/scripts/blob/master/hosts-update.sh">GitHub</a>. I encourage you to open it in a text editor after downloading it to confirm it is exactly what I have in the box above. You will need to run the script with root permissions by prefixing with the <strong>sudo</strong> command because the entire <strong>/etc/</strong> directory is read only.</p>
 <p>If you are a new Linux user (or an old, forgetful, Linux user) attempting to run this script for the first time, open a terminal and type the following commands:</p>
 <pre><code>cd ~/Downloads
