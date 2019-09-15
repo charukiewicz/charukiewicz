@@ -68,6 +68,9 @@ div.header {
     font-family: 'Lato';
     font-size: 30px;
     letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 @media (max-width:768px) {
@@ -87,13 +90,15 @@ div.logo a {
     float: left;
     font-weight: bold;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 30px;
+    @media (max-width:768px) {
+        font-size: 40px;
+    }
 }
 
 div.header .navigation {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
     margin-top: 10px;
     @media (max-width:768px) {
         justify-content: flex-start;
@@ -102,9 +107,15 @@ div.header .navigation {
 
 div.header .navigation a {
     color: black;
-    font-size: 24px;
+    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
+    &:hover {
+        text-decoration: underline;
+    }
+    @media (max-width:768px) {
+        font-size: 24px;
+    }
 }
 div.header .navigation a:not(:last-child) {
     margin-right: 20px;
@@ -113,16 +124,10 @@ div.header .navigation a:not(:last-child) {
 div.content a {
     text-decoration: none;
     color: #3D65A3;
-    -webkit-transition: 0.2s ease;
-    transition: 0.2s ease;
 }
 
 div.content a:hover {
-    text-decoration: none;
-    color: #0045B0;
-    background-color: #e6f1ff;
-    -webkit-transition: 0.2s ease;
-    transition: 0.2s ease;
+    text-decoration: underline;
 }
 
 @media (min-width:768px) {
@@ -149,6 +154,9 @@ div.footer {
 div.footer a {
     color: #000;
     text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 div.footer-lt {

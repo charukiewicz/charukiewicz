@@ -51,7 +51,10 @@ div.header {
   padding: 12px 0px 12px 0px;
   font-family: 'Lato';
   font-size: 30px;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; }
 
 @media (max-width: 768px) {
   div.header {
@@ -67,12 +70,14 @@ div.logo a {
   float: left;
   font-weight: bold;
   text-decoration: none;
-  font-size: 40px; }
+  font-size: 30px; }
+  @media (max-width: 768px) {
+    div.logo a {
+      font-size: 40px; } }
 
 div.header .navigation {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   margin-top: 10px; }
   @media (max-width: 768px) {
     div.header .navigation {
@@ -80,25 +85,24 @@ div.header .navigation {
 
 div.header .navigation a {
   color: black;
-  font-size: 24px;
+  font-size: 14px;
   text-decoration: none;
   text-transform: uppercase; }
+  div.header .navigation a:hover {
+    text-decoration: underline; }
+  @media (max-width: 768px) {
+    div.header .navigation a {
+      font-size: 24px; } }
 
 div.header .navigation a:not(:last-child) {
   margin-right: 20px; }
 
 div.content a {
   text-decoration: none;
-  color: #3D65A3;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease; }
+  color: #3D65A3; }
 
 div.content a:hover {
-  text-decoration: none;
-  color: #0045B0;
-  background-color: #e6f1ff;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease; }
+  text-decoration: underline; }
 
 @media (min-width: 768px) {
   div.content-body :not(.post-list) {
@@ -119,6 +123,8 @@ div.footer {
 div.footer a {
   color: #000;
   text-decoration: none; }
+  div.footer a:hover {
+    text-decoration: underline; }
 
 div.footer-lt {
   margin-top: 9px;
