@@ -51,13 +51,19 @@
             <div class="content-body">
 <p>Interested in getting in touch? Feel free to contact me using any of the methods below. I have expertise in:</p>
 <ul>
-<li>Growing a software development team in a SaaS company/startup</li>
-<li>Selecting tools and programming languages for commercial software projects</li>
-<li>Using functional programming commercially, including evaluating trade-offs</li>
-<li>Teaching technical skills both to experienced programmers and non-programmers</li>
+<li>Growing a software development team in a SaaS company/startup.</li>
+<li>Selecting tools and programming languages for software projects.</li>
+<li>Using functional programming commercially, including evaluating trade-offs.</li>
+<li>Teaching technical skills both to experienced programmers as well as novices.</li>
 </ul>
 <h4 id="contact-methods">Contact Methods</h4>
 <div class="contact">
+<noscript>
+<style>#mail-wrap{ display: none; }</style>
+<div title="Email">
+<i class="fa fa-envelope"></i> c [dot] charukiewicz [at] gmail [dot] com
+</div>
+</noscript>
 <div id="mail-wrap" title="Email">
 <a><i class="fa fa-envelope"></i> c.ch…</a> <button>Click to Reveal</button>
 </div>
@@ -77,6 +83,9 @@
         var emComp3 = "gmail.com";
         var em = emComp1 + emComp2 + emComp3;
         emNode.innerHTML = '<a href="mailto:' + em + '"><i class="fa fa-envelope"></i>&nbsp;' + em + '</a>'
+        if(typeof ga == "function") {
+            ga('send', 'event', 'contact_page', 'contact_info', 'show_email', null);
+        }
     }
     emNode.addEventListener('click', function() { revealEm() });
 </script>

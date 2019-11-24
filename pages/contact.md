@@ -6,14 +6,18 @@ title: Contact
 
 Interested in getting in touch? Feel free to contact me using any of the methods below. I have expertise in:
 
-- Growing a software development team in a SaaS company/startup
-- Selecting tools and programming languages for commercial software projects
-- Using functional programming commercially, including evaluating trade-offs
-- Teaching technical skills both to experienced programmers and non-programmers
+- Growing a software development team in a SaaS company/startup.
+- Selecting tools and programming languages for software projects.
+- Using functional programming commercially, including evaluating trade-offs.
+- Teaching technical skills both to experienced programmers as well as novices.
 
 #### Contact Methods
 
 <div class="contact">
+<noscript>
+<style>#mail-wrap{ display: none; }</style>
+<div title="Email"><i class="fa fa-envelope"></i>&nbsp;c&nbsp;[dot]&nbsp;charukiewicz&nbsp;[at]&nbsp;gmail&nbsp;[dot]&nbsp;com</div>
+</noscript>
 <div title="Email" id="mail-wrap"><a><i class="fa fa-envelope"></i>&nbsp;c.ch…</a>&nbsp;<button>Click to Reveal</button></div>
 <div title="GitHub"><a href="https://github.com/charukiewicz"><i class="fa fa-github"></i>&nbsp;charukiewicz</a></div>
 <div title="Twitter"><a href="https://twitter.com/charukiewicz"><i class="fa fa-twitter"></i>&nbsp;@charukiewicz</a></div>
@@ -29,6 +33,9 @@ Interested in getting in touch? Feel free to contact me using any of the methods
         var emComp3 = "gmail.com";
         var em = emComp1 + emComp2 + emComp3;
         emNode.innerHTML = '<a href="mailto:' + em + '"><i class="fa fa-envelope"></i>&nbsp;' + em + '</a>'
+        if(typeof ga == "function") {
+            ga('send', 'event', 'contact_page', 'contact_info', 'show_email', null);
+        }
     }
     emNode.addEventListener('click', function() { revealEm() });
 </script>
