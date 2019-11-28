@@ -16,9 +16,9 @@ Interested in getting in touch? Feel free to contact me using any of the methods
 <div class="contact">
 <noscript>
 <style>#mail-wrap{ display: none; }</style>
-<div title="Email"><i class="fa fa-envelope"></i>&nbsp;c&nbsp;[dot]&nbsp;charukiewicz&nbsp;[at]&nbsp;gmail&nbsp;[dot]&nbsp;com</div>
+<div title="Email"><i class="fa fa-envelope"></i>&nbsp;ch&nbsp;[dot]&nbsp;cz&nbsp;[at]&nbsp;pm&nbsp;[dot]&nbsp;me</div>
 </noscript>
-<div title="Email" id="mail-wrap"><a><i class="fa fa-envelope"></i>&nbsp;c.ch…</a>&nbsp;<button>Click to Reveal</button></div>
+<div title="Email" id="mail-wrap"><a><i class="fa fa-envelope"></i>&nbsp;ch…</a>&nbsp;<button>Click to Reveal</button></div>
 <div title="GitHub"><a href="https://github.com/charukiewicz"><i class="fa fa-github"></i>&nbsp;charukiewicz</a></div>
 <div title="Twitter"><a href="https://twitter.com/charukiewicz"><i class="fa fa-twitter"></i>&nbsp;@charukiewicz</a></div>
 </div>
@@ -28,9 +28,9 @@ Interested in getting in touch? Feel free to contact me using any of the methods
 <script>
     var emNode = document.getElementById('mail-wrap');
     function revealEm() {
-        var emComp1 = "c.charukiewicz";
+        var emComp1 = "ch.cz";
         var emComp2 = "@";
-        var emComp3 = "gmail.com";
+        var emComp3 = "pm.me";
         var em = emComp1 + emComp2 + emComp3;
         emNode.innerHTML = '<a href="mailto:' + em + '"><i class="fa fa-envelope"></i>&nbsp;' + em + '</a>'
         if(typeof ga == "function") {
