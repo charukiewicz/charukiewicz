@@ -52,6 +52,20 @@ title: Résumé
 
 <hr>
 
+## Open Source Software Contributions
+
+**Yesod** - *The most popular Haskell web framework ([top 0.1% of all Haskell packages](https://hackage.haskell.org/packages/top))*
+
+- Made improvements to the [yesod-auth](https://hackage.haskell.org/package/yesod-auth) package, enhancing the developer-facing API to enable more control over user registration and password reset workflows
+- Improved developer-facing framework documentation
+
+**Esqueleto** - *One of the most popular Haskell libraries for interacting with SQL databases ([top 0.1% of all Haskell packages](https://hackage.haskell.org/packages/top))*
+
+- Ported elements of SQL into the [esqueleto](https://hackage.haskell.org/package/esqueleto) package, improving the package's coverage of SQL and helping developers avoid resorting to using prepared statements
+- Wrote detailed documentation and examples for an experimental new syntax in the package, demonstrating usage of new package features and explaining design decisions
+
+<hr>
+
 ## Technical Skills
 
 <b>
@@ -63,6 +77,7 @@ title: Résumé
 <table class="sk-table">
 <tr>
 <td class="sk sk-6">
+<span>Haskell</span><br/>
 <span>Elm</span><br/>
 <span>Linux</span><br/>
 <span>JavaScript</span><br/>
@@ -71,7 +86,7 @@ title: Résumé
 <span>Redis</span>
 </td>
 <td class="sk sk-5">
-<span>Haskell</span><br/>
+<span>Nix</span><br/>
 <span>Git</span><br/>
 <span>AWS</span><br/>
 <span>Ansible</span><br/>
@@ -80,6 +95,7 @@ title: Résumé
 <span>HTML</span>
 </td>
 <td class="sk sk-4">
+<span>PostgreSQL</span><br/>
 <span>Apache</span><br/>
 <span>Bash</span><br/>
 <span>Node.js</span><br/>
