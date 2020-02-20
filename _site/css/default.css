@@ -238,8 +238,11 @@ blockquote p:last-of-type {
 
 hr {
   border: 0;
-  height: 1px;
+  height: 2px;
   background-color: #ccc; }
+
+.resume-body hr {
+  margin: 2rem 0; }
 
 .sk-6 {
   color: #333; }
