@@ -23,9 +23,9 @@ title: Résumé
 * Designed and built web applications using a variety of programming languages and frameworks
 * Introduced the Haskell and Elm programming languages as the foundation for new development; taught Haskell, Elm, and functional programming concepts to technical team members with no previous FP experience
 * Planned and executed the transition of company server infrastructure to Amazon Web Services; reduced technical infrastructure costs by 70%
-* Employed a variety of AWS tools and services, including EC2, ELBs, S3, SES, Route 53, Lambda, CloudWatch, CloudFront, IAM, Inspector, etc.
+* Employed a variety of AWS tools and services, including EC2, ELBs, S3, RDS, SES, Route 53, Lambda, CloudWatch, CloudFront, IAM, Inspector, etc.
 * Achieved completely automated and reproducible Linux server deployments and configuration management with Bash and Ansible
-* Utilized a variety of programming languages, tools, and frameworks: Elm, JavaScript, CakePHP, Jekyll, HTML, SASS/SCSS, Node.js, Nginx, MySQL, Redis, Supervisor
+* Utilized a variety of programming languages, tools, and frameworks: Haskell, Elm, JavaScript, CakePHP, Jekyll, HTML, SASS/SCSS, Node.js, Nginx, MySQL, Redis, Supervisor
 * Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, dotfile configurations, bash scripts, etc.
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
