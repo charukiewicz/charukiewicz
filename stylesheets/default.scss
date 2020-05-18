@@ -121,9 +121,13 @@ div.header .navigation a:not(:last-child) {
     margin-right: 20px;
 }
 
+a code,
 div.content a {
     text-decoration: none;
     color: #3D65A3;
+}
+a:hover code {
+    text-decoration: underline;
 }
 
 div.content a:hover {
