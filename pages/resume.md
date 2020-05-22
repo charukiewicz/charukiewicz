@@ -18,15 +18,14 @@ title: Résumé
 
 * Set long term road map for product development; continually raised standards for application design, architecture, documentation, performance, security
 * Led hiring process for technical employees and interns; developed and led training of new technical staff
-* Established internal code review process to improve overall software quality, encourage exchange of knowledge among technical team members, and increase the bus factor of various application features
-* Chief architect of new features, functionality, and underlying infrastructure; led team members in making design decisions ranging from database schemas,  to user interfaces, to application-specific RESTful APIs
-* Designed and built web applications using a variety of programming languages and frameworks
+* Chief architect of new features, functionality, and underlying infrastructure; led team members in making design decisions ranging from database schemas, to user interfaces, to application-specific RESTful APIs
 * Introduced the Haskell and Elm programming languages as the foundation for new development; taught Haskell, Elm, and functional programming concepts to technical team members with no previous FP experience
 * Planned and executed the transition of company server infrastructure to Amazon Web Services; reduced technical infrastructure costs by 70%
-* Employed a variety of AWS tools and services, including EC2, ELBs, S3, RDS, SES, Route 53, Lambda, CloudWatch, CloudFront, IAM, Inspector, etc.
+* Employed a variety of AWS tools and services, including EC2, RDS, S3, ELBs, SES, Route 53, Lambda, CloudWatch, CloudFront, IAM, Inspector, etc.
 * Achieved completely automated and reproducible Linux server deployments and configuration management with Bash and Ansible
-* Utilized a variety of programming languages, tools, and frameworks: Haskell, Elm, JavaScript, CakePHP, Jekyll, HTML, SASS/SCSS, Node.js, Nginx, MySQL, Redis, Supervisor
-* Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, version control (git), command line power tools (grep, sed, awk, tail, pipes), code linters, refactoring tools, dotfile configurations, bash scripts, etc.
+* Utilized and educated team members on the use of a variety of programming languages, infrastructure tools, and frameworks: Haskell, Elm, JavaScript, CakePHP, Node.js, Jekyll, HTML, SASS/SCSS, Nginx, MySQL, Redis, Supervisor, Ansible, Nix
+* Established internal code review process to improve overall software quality, encourage exchange of knowledge among technical team members, and increase the bus factor of various system components
+* Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, git, Linux CLI tools such as grep, sed, awk, tail, piping, filtering logs, use of code linters, refactoring tools, dotfile configurations, Bash and Python scripting, etc.
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
 **Illini Emergency Medical Services** <span class="fr">Champaign, IL</span><br>
