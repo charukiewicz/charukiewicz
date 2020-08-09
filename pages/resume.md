@@ -13,8 +13,8 @@ title: Résumé
 
 <div class="exp">
 
-**Roompact** <span class="fr">Chicago, IL</span><br>
-*Chief Technology Officer* <span class="fr">2014 - Present</span>
+**Chief Technology Officer** <span class="fr">Chicago, IL</span><br>
+Roompact <span class="fr">2014 - Present</span>
 
 * Set long term road map for product development; continually raised standards for application design, architecture, documentation, performance, security
 * Led hiring process for technical employees and interns; developed and led training of new technical staff
@@ -28,8 +28,8 @@ title: Résumé
 * Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, git, Linux CLI tools such as grep, sed, awk, tail, piping, filtering logs, use of code linters, refactoring tools, dotfile configurations, Bash and Python scripting, etc.
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
-**Illini Emergency Medical Services** <span class="fr">Champaign, IL</span><br>
-*EMT-Basic* <small>(Volunteer Position)</small> <span class="fr">2012 - 2014</span>
+**EMT-Basic** <span class="fr">Champaign, IL</span><br>
+Illini Emergency Medical Services <small>(Volunteer Position)</small> <span class="fr">2012 - 2014</span>
 
 * Staffed various types of events as on-site EMT
 * Led teams of other EMS providers (typical team size was 2-4 EMS personnel)
@@ -37,8 +37,8 @@ title: Résumé
 * Performed equipment checks and recorded equipment inventory
 * Coordinated with other agencies (Police, Fire, EMS) during large events (marathons, football games, etc.) to ensure coverage
 
-**Next Generation Gaming, LLC** <span class="fr">Remote Position</span><br>
-*Director of Community Experience* <span class="fr">2012 - 2013</span>
+**Director of Community Experience** <span class="fr">Remote Position</span><br>
+Next Generation Gaming, LLC <span class="fr">2012 - 2013</span>
 
 * Product management position; led and coordinated a team of software developers, QA testers, and customer relations staff to create features and digital products leading to increased player engagement and revenue in an online-RPG environment with over 20,000 players per month
 * Designed and led the implementation of an in-game credit system which automated all product sales, removed sales overhead costs, and allowed for the creation of several new categories of products; increased average monthly revenue of the company by 35%
@@ -82,43 +82,45 @@ title: Résumé
 <table class="sk-table">
 <tr>
 <td class="sk sk-6">
-<span>Haskell</span><br/>
-<span>Elm</span><br/>
-<span>Linux</span><br/>
-<span>JavaScript</span><br/>
-<span>PHP</span><br/>
-<span>MySQL</span><br/>
+<span>Haskell</span>
+<span>Elm</span>
+<span>Linux</span>
+<span>JavaScript</span>
+<span>PHP</span>
+<span>MySQL</span>
 <span>Redis</span>
-</td>
-<td class="sk sk-5">
-<span>Nix</span><br/>
-<span>Git</span><br/>
-<span>AWS</span><br/>
-<span>Ansible</span><br/>
-<span>Nginx</span><br/>
-<span>CSS/SCSS</span><br/>
+<span>SQLite</span>
+<span>CSS/SCSS</span>
 <span>HTML</span>
 </td>
+<td class="sk sk-5">
+<span>PostgreSQL</span>
+<span>Nix</span>
+<span>Git</span>
+<span>AWS</span>
+<span>Ansible</span>
+<span>Nginx</span>
+<span>Python</span>
+</td>
 <td class="sk sk-4">
-<span>PostgreSQL</span><br/>
-<span>Apache</span><br/>
-<span>Bash</span><br/>
-<span>Node.js</span><br/>
+<span>Apache</span>
+<span>Bash</span>
+<span>Node.js</span>
 <span>DNS</span>
+<span>SPF, DKIM, DMARC</span>
 </td>
 <td class="sk sk-3">
-<span>Python</span><br/>
 <span>Svn</span>
 </td>
 <td class="sk sk-2">
-<span>LaTeX</span><br/>
+<span>LaTeX</span>
 <span>OCaml</span>
 </td>
 <td class="sk sk-1">
-<span>Java</span><br/>
+<span>Java</span>
 </td>
 <td class="sk sk-0">
-<span>C</span><br/>
+<span>C</span>
 <span>C++</span>
 </td>
 </tr>
@@ -130,8 +132,6 @@ title: Résumé
 
 **Universitiy of Illinois at Urbana-Champaign** <span class="fr">2010 - 2014</span><br>
 B.Sc. in Mathematics & Computer Science, Philosophy 
-
-<small>**Coursework**: Calculus, Discrete Mathematics, Statistics, Linear Algebra, Real Analysis, Graph Theory, Data Structures, System Programming, Computer Architecture, Programming Languages & Compilers, Numerical Methods, Numerical Analysis, Computational Theory, Fundamental Algorithms, Symbolic Logic, Ancient & Early Modern Philosophy, Value Theory, Metaphysics, Ethical Theories, Epistemology, Philosophy of Law & State, Philosophy of Mathematics</small>
 
 **College of DuPage** <span class="fr">2012</span><br>
 EMT-Basic Certification
@@ -158,18 +158,8 @@ EMT-Basic Certification
 
 <hr>
 
-## Skills & Interests
+## Spoken Languages
 
-**Spoken Languages**
-
-* English
-* Polish
-
-**Personal Interests**
-
-* [Reading](/reading)
-* Drawing – Pen & Ink
-* Photography – Street, Long Exposure
-* Culinary – General Cooking, Grilling, Baking, Fermentation, Coffee Brewing
+*English, Polish*
 
 </div>

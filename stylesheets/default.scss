@@ -315,8 +315,25 @@ hr {
     margin: 2rem 0;
 }
 
-.sk-table { }
-.sk { }
+.sk-table {
+    tr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media(max-width: 660px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            td {
+                padding: 5px 0;
+            }
+        }
+    }
+}
+.sk {
+    display: flex;
+    flex-direction: column;
+}
 .sk-6 {
     color: #333;
 }
