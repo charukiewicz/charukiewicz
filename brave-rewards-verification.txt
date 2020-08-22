@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: charukiewi.cz
+Token: 3dc3a3bce87bea982717b134aa18d2bc356806b33d2c0b8cecb207e2f022bf45

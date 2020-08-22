@@ -4,7 +4,7 @@ import           Data.Monoid (mappend)
 import           Hakyll
 import           Hakyll.Web.Sass
 import           Data.List (isInfixOf)
-import           System.FilePath.Posix (splitFileName,takeBaseName
+import           System.FilePath.Posix (splitFileName,takeBaseName,takeFileName
                                         ,takeDirectory, (</>), replaceDirectory)
 
 
@@ -82,6 +82,10 @@ main =
         hakyllWith conf $ do
         static ".htaccess"
         static "keybase.txt"
+
+        match "brave-rewards-verification.txt" $ do
+            route $ customRoute $ (\identifier -> ".well-known" </> takeFileName (toFilePath identifier))
+            compile copyFileCompiler
 
         match "images/*" $ do
             route   idRoute
