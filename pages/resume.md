@@ -13,8 +13,13 @@ title: Résumé
 
 <div class="exp">
 
-**Chief Technology Officer** <span class="fr">Chicago, IL</span><br>
-Roompact <span class="fr">2014 - Present</span>
+**Co-Founder & Partner** <span class="fr">2020 - Present</span><br>
+Foxhound Systems 
+
+* Foxhound Systems is a custom software development company that builds reliable, high performance web applications with superior security. We specialize in using the Haskell and Elm programming languages.
+
+**Chief Technology Officer** <span class="fr">2014 - 2020</span><br>
+Roompact
 
 * Set long term road map for product development; continually raised standards for application design, architecture, documentation, performance, security
 * Led hiring process for technical employees and interns; developed and led training of new technical staff
@@ -28,24 +33,24 @@ Roompact <span class="fr">2014 - Present</span>
 * Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, git, Linux CLI tools such as grep, sed, awk, tail, piping, filtering logs, use of code linters, refactoring tools, dotfile configurations, Bash and Python scripting, etc.
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
-**EMT-Basic** <span class="fr">Champaign, IL</span><br>
-Illini Emergency Medical Services <small>(Volunteer Position)</small> <span class="fr">2012 - 2014</span>
+**Product Development Lead** <span class="fr">2012 - 2013</span><br>
+Next Generation Gaming, LLC
+
+* Product management & development position; led and coordinated a team of software developers, QA testers, and customer relations staff to create features and digital products leading to increased player engagement and revenue in an online-RPG environment with over 20,000 players per month
+* Designed and led the implementation of an in-game credit system which automated all product sales, removed sales overhead costs, and allowed for the creation of several new categories of products; increased average monthly revenue of the company by 35%
+* Planned and assigned projects, held development meetings, wrote technical specifications, analyzed player data and trends, determined project costs and time requirements
+* Performed quantitative analysis of product sales, used results to develop marketing and sales strategies, instructed customer relations staff on how to execute sales strategies
+* Surveyed players to gauge response to game updates and gather general feedback
+* Worked extensively with the PAWN language, MySQL, and PHP
+
+**EMT-Basic** <span class="fr">2012 - 2014</span><br>
+Illini Emergency Medical Services <small>(Volunteer Position)</small>
 
 * Staffed various types of events as on-site EMT
 * Led teams of other EMS providers (typical team size was 2-4 EMS personnel)
 * Provided pre-hospital basic life support to patients
 * Performed equipment checks and recorded equipment inventory
 * Coordinated with other agencies (Police, Fire, EMS) during large events (marathons, football games, etc.) to ensure coverage
-
-**Director of Community Experience** <span class="fr">Remote Position</span><br>
-Next Generation Gaming, LLC <span class="fr">2012 - 2013</span>
-
-* Product management position; led and coordinated a team of software developers, QA testers, and customer relations staff to create features and digital products leading to increased player engagement and revenue in an online-RPG environment with over 20,000 players per month
-* Designed and led the implementation of an in-game credit system which automated all product sales, removed sales overhead costs, and allowed for the creation of several new categories of products; increased average monthly revenue of the company by 35%
-* Planned and assigned projects, held development meetings, wrote technical specifications, analyzed player data and trends, determined project costs and time requirements
-* Performed quantitative analysis of product sales, used results to develop marketing and sales strategies, instructed customer relations staff on how to execute sales strategies
-* Surveyed players to gauge response to game updates and gather general feedback
-* Worked extensively with the PAWN language, MySQL, and PHP
 
 </div>
 

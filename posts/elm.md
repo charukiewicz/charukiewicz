@@ -10,9 +10,13 @@ date: 2017-07-30
 <img alt="Hand-drawn Elm logo by Christian Charukiewicz" src="https://s3.amazonaws.com/charukiewicz/assets/images/elm-logo-color-corrected-xs.png">
 </div>
 
-At [Roompact](https://roompact.com), we make a SaaS product used by university residence life departments across the United States. Our software provides an array of features that range from form-based tools, to digital roommate agreements, to email and text message broadcasting, to a central news feed that acts as both a communications tool and data aggregator for residence hall staff.
+*<b>2020 Update</b>: Since writing this post, I've co-founded [Foxhound Systems](https://www.foxhound.systems), a software development company that specializes in building software and training development teams on using functional programming. If you're considering using Elm in production, have an existing Elm code base that you need help with, or are looking for specialized training for your team, we can help. Take a look at our [Services](https://www.foxhound.systems/services/) for more details or email me directly at [christian@foxhound.systems](mailto:christian@foxhound.systems) with questions.*
 
-Roompact was founded in 2013, and since its inception, a combination of plain JavaScript, jQuery, and an assortment of jQuery-esque libraries had been what the entire front end of the application was built with. In October of 2016, I realized that we were long past due for an upgrade. The straw that broke the camel's back occurred when a feature we had worked on over the summer and released in August had already started feeling like a legacy application. Built as a single-page application (SPA) making very heavy use of Ajax calls to a JSON-based RESTful API as its back end, its 5,000 lines of front end code were already becoming very difficult to work with and modify, hardly a month after release. "When did this turn into jQuery spaghetti?" I thought.
+----------
+
+At my job, we make a SaaS product used widely by both students and staff at university dorms across the united states. Our software provides an array of features that range from form-based tools, to email and text message broadcasting, to a central news feed that acts as both a communications tool and data aggregator.
+
+The company was founded in 2013, and since its inception, a combination of plain JavaScript, jQuery, and an assortment of jQuery-esque libraries had been what the entire front end of the application was built with. In October of 2016, I realized that we were long past due for an upgrade. The straw that broke the camel's back occurred when a feature we had worked on over the summer and released in August had already started feeling like a legacy application. Built as a single-page application (SPA) making very heavy use of Ajax calls to a JSON-based RESTful API as its back end, its 5,000 lines of front end code were already becoming very difficult to work with and modify, hardly a month after release. "When did this turn into jQuery spaghetti?" I thought.
 
 ## Trying Elm
 
@@ -39,7 +43,7 @@ Another important factor that emerged during this process was a human one: writi
 
 ## Using Elm
 
-With these two trials of Elm being very successful, I had all the evidence I needed: we were going to move forward with Elm. Our first user-facing application of Elm would come in short order. Without going into extensive detail, we spent the entire first half of 2017 making the largest and most complex feature that Roompact has ever seen: a highly customizable form-builder system with integrations to the rest of the data in our software.
+With these two trials of Elm being very successful, I had all the evidence I needed: we were going to move forward with Elm. Our first user-facing application of Elm would come in short order. Without going into extensive detail, we spent the entire first half of 2017 making the largest and most complex feature that our software had ever seen: a highly customizable form-builder system with integrations to the rest of the data in our software.
 
 With almost every single piece of data on each page in this feature being dynamic (questions, input types, order values, tags, answers, form template and submission edit histories, etc.), the need for managing all of this data effectively was paramount. Moreover, this data would have to be shared across multiple views seamlessly: an edit to a form template would have to be reflected in the corresponding form submission creation page immediately; a new form submission would have to be visible in the multiple tabular views in addition to its own individual page view.
 
@@ -329,6 +333,6 @@ Generally speaking, however, the trade off is worth it. The easy tasks that beco
 
 ## Conclusion
 
-Using Elm in production has been a been a very successful endeavor at Roompact. Our latest project, with a front end written solely in Elm, has exceeded all expectations, both those of our users as well as our own. We have managed to take a set of functionality that would have been exceptionally difficult to build using our old methods, and using the strengths of the Elm language and architecture, successfully developed the largest feature in our entire software product to date. All of this done with a very high degree of maintainability and reliability. This post has been a record of our experiences with Elm up to this point.
+Using Elm in production has been a very successful endeavor at our company. Our latest project, with a front end written solely in Elm, has exceeded all expectations, both those of our users as well as our own. We have managed to take a set of functionality that would have been exceptionally difficult to build using our old methods, and using the strengths of the Elm language and architecture, successfully developed the largest feature in our entire software product to date. All of this done with a very high degree of maintainability and reliability. This post has been a record of our experiences with Elm up to this point.
 
 The decision to use Elm for the first time was difficult due to the risks associated with the unknowns that would come with a departure from normalcy. The decision to continue using Elm will not be.
