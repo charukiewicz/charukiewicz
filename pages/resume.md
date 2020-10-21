@@ -16,7 +16,7 @@ title: Résumé
 **Co-Founder & Partner** <span class="fr">2020 - Present</span><br>
 Foxhound Systems 
 
-* Foxhound Systems is a custom software development company that builds reliable, high performance web applications with superior security. We specialize in using the Haskell and Elm programming languages.
+<small><i>Foxhound Systems is a custom software development company that builds reliable, high performance web applications with superior security. The company focuses on building using the Haskell and Elm programming languages.</i></small>
 
 **Chief Technology Officer** <span class="fr">2014 - 2020</span><br>
 Roompact
@@ -43,8 +43,8 @@ Next Generation Gaming, LLC
 * Surveyed players to gauge response to game updates and gather general feedback
 * Worked extensively with the PAWN language, MySQL, and PHP
 
-**EMT-Basic** <span class="fr">2012 - 2014</span><br>
-Illini Emergency Medical Services <small>(Volunteer Position)</small>
+**EMT-Basic** <small>(Volunteer Position)</small> <span class="fr">2012 - 2014</span><br>
+Illini Emergency Medical Services
 
 * Staffed various types of events as on-site EMT
 * Led teams of other EMS providers (typical team size was 2-4 EMS personnel)
