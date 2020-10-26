@@ -16,7 +16,7 @@ title: Résumé
 **Co-Founder & Partner** <span class="fr">2020 - Present</span><br>
 Foxhound Systems 
 
-<small><i>Foxhound Systems is a custom software development company that builds reliable, high performance web applications with superior security. The company focuses on building using the Haskell and Elm programming languages.</i></small>
+<small><i>Foxhound Systems creates software systems that inspire confidence and enable organizations to do their best work. We specialize in using the Haskell and Elm programming languages coupled with a variety of techniques such as SQL query optimization and database tuning to achieve superior reliability, performance, and security.</i></small>
 
 **Chief Technology Officer** <span class="fr">2014 - 2020</span><br>
 Roompact
