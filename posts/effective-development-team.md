@@ -1,18 +1,12 @@
 ---
 title: Three Elements of an Effective Software Development Team
 disqus: yes
-thumbnail_description: Christian, the CTO at Roompact, shares some of the guiding principles behind how the Roompact development team excels.
+thumbnail_description: Christian  shares some of the guiding principles behind how the a software development team excels.
 thumbnail_image: https://s3.amazonaws.com/charukiewicz/assets/images/branches-lg-color-sm.png
 date: 2016-11-28
 ---
 
-Between the months of August and October of 2014, [Roompact](https://roompact.com/) served 35,000 pages to users. Over the same period of time in 2016, Roompact served well over one million pages.  Roompact users today visit more often, navigate to more pages, and spend significantly more time on the site than ever before.  These increases are the result of more features, better performance, and improved usability.  Roompact today is the most polished and functional version of the software to date.
-
-<div class="body-img">
-<img src="https://s3.amazonaws.com/charukiewicz/assets/images/usage-sm-color-2.png" style="width:300px !important;">
-</div>
-
-In this post, I am going to share a few of the key elements that make our small software development team effective and enable the type of growth mentioned above.  I will discuss our drive to innovate, our emphasis on learning and education, and the essential tools and techniques of our software development methodology.
+In this post, I am going to share a few of the key elements that make a software development team effective and enable the type of growth mentioned above.  I will discuss our drive to innovate, our emphasis on learning and education, and the essential tools and techniques of our software development methodology.
 
 ## Innovation
 
@@ -28,12 +22,7 @@ The design of our new features begins with planning a page layout.  Here, we mus
 
 Once a layout is determined, we make use of things like animation, color, and icons to provide visual cues to the user about where to click, where to focus their attention, and feedback as to whether an action is completed successfully or not.  This entire process of developing a layout and then adding styling and animation can be iterated over several times before a design is deemed suitable for the final product.
 
-The results of this extra effort are evident.  Our newest features are very heavily used, yet they receive the smallest number of related support requests.  Even more affirming is the positive feedback we hear, particularly when it speaks to their ease of use:
-
-<blockquote>
-<p>Shout out to the roompact! I set aside two hours to figure out microsurveys. It took five minutes. And it looks AWESOME. So excited for this new feature. Thanks for making such a useful tool that is so easy to use!</p>
-<p>— [Johnna M.](https://www.facebook.com/roompact/posts/1267808656584118)</p>
-</blockquote>
+The results of this extra effort are evident.  Our newest features are very heavily used, yet they receive the smallest number of related support requests.
 
 Another more technical example of our innovation is in the front end architecture of our newest features.  Every major feature we have released this year has been what can be referred to as a "single page application" (SPA).  What this means is that once a user arrives at one of these features, either through sidebar navigation or via direct link, their browser will download all of the data necessary to perform every function of the feature.
 
@@ -54,8 +43,7 @@ Another major aspect of the success of our development team is a focus on educat
 Our emphasis on learning begins immediately.  Each new team member is given small tasks that will build their skills as a productive software engineer.  As time goes on, larger projects require a composition of the skills that are learned early on.  Even interns begin working independently within a few days of starting their internships.  There is no better way to learn software development than to be actively engaged in it.
 
 <blockquote>
-<p>Within the first three weeks of my internship with Roompact, I was able to learn more than I have ever learned in an entire year of schooling.</p>
-<p>— [Artur S.](https://blog.roompact.com/2016/09/21/reflections-from-artur-sak-one-of-roompacts-2016-summer-interns/)</p>
+<p>Within the first three weeks of my internship with the company, I was able to learn more than I have ever learned in an entire year of schooling.</p>
 </blockquote>
 
 One other component of education that goes beyond building knowledge is developing understanding.  Everyone on the development team is challenged to not only learn *how* to build software, but to also understand *why* it is built the way it is.  This may range from understanding why a single line of code works the way it does, to why it is better to use one database schema over another, to why architectural decisions that initially seem appropriate may be problematic in the long run.
@@ -83,12 +71,8 @@ This process may be somewhat daunting for new engineers, as their work is examin
 
 ## Continual Improvement
 
-The aspects of the Roompact software development team I described in this post are key contributors to its success.  However, if there is one additional point to end this post on, it is to mention that we are continually seeking to improve each of these aspects of our team.
+The aspects of a software development team I described in this post are key contributors to its success.  However, if there is one additional point to end this post on, it is to mention that we are continually seeking to improve each of these aspects of our team.
 
 This quarter, we have begun to put additional focus on the deliberate learning of specific technologies and concepts, rather than just a broad improvement of software development skill.  Just last week we developed a plan for a better code review process, one that will allow for more reviews of smaller segments of code rather than lengthy reviews that had only come at the end of projects up until now.  And even at this very moment, we are in the process of evaluating new tools to improve the way in which we build our user interfaces with the goal of producing code that is more terse and comprehensible.
 
 As our product and our company continue to grow and develop, I look forward to the opportunity to continue to innovate in our software, to overcome any challenges we may face, and to continue to build a team of effective software engineers.
-
----------
-
-*This post originally appeared on the [Roompact On Duty Blog](https://blog.roompact.com/). [Roompact](https://roompact.com/) is residential education software for colleges and universities that allows housing and residence life programs to track their educational efforts and make their administrative work more efficient.*

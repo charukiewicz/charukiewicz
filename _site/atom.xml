@@ -8,37 +8,8 @@
         <name>Christian Charukiewicz</name>
         <email>c.charukiewicz@gmail.com</email>
     </author>
-    <updated>2017-11-07T00:00:00Z</updated>
+    <updated>2017-07-30T00:00:00Z</updated>
     <entry>
-    <title>Why Setting Deadlines Is At Odds With Building Excellent Software</title>
-    <link href="https://charukiewi.cz/posts/deadlines/index.html" />
-    <id>https://charukiewi.cz/posts/deadlines/index.html</id>
-    <published>2017-11-07T00:00:00Z</published>
-    <updated>2017-11-07T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<div class="info">
-    Posted on November  7, 2017
-    
-</div>
-
-<div class="content-body">
-
-<div style="margin-bottom:50px;margin-top:25px;">
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/calendar-deadline-trim-sm.png"></p>
-</div>
-<p>The term “deadline” is commonly heard in software development. It generally refers to a date by which a project must be completed. In the software development team at <a href="https://roompact.com">Roompact</a>, however, this term is never used, and the notion of a <em>must-be-completed-by-date</em> is only ever raised in special circumstances. Why? Deadlines exist in a space that is far removed from software development, and the former is mostly incompatible with the latter.</p>
-<p>Deadlines are conceived in a domain of transience, where schedules and calendars are strictly adhered to. Where it somehow makes sense for a meeting to last exactly one hour. Where a presentation is shown once and then fades into the memories of its viewers. Where, more often than not, the output of whatever is mandated by a particular date and time is transitory. In this space, a mistake is experienced once and forgotten shortly thereafter. A hastily designed piece of content never faces heavy scrutiny, as its first examination is often its last. Material is viewed or read but seldom used in a more tangible manner.</p>
-<p>Software exists in a domain of permanence. Its presence comes with an expectation of reliability. Its purpose is to be used directly, often continually. A mistake in this domain will be experienced repeatedly, and manifest itself as far more than a memory. An error can result in wasted time, lost information, frustration, and even tears. Few have ever cried because a Powerpoint presentation contained a mistake—other than the presenters, perhaps. Many have cried because their work failed to save correctly.</p>
-<p>In the domain of transient projects, deadlines can play a positive role. They can guide an individual or a team to get a piece of work done in a predictable amount of time. They create an impetus to push a project towards completion. The rate at which work is being done can be increased at a degree that is inversely proportional to the amount of time remaining. Then, once the deadline arrives, the work can be released as is (bar a few last minute touches and polishing). Whether it be a piece of marketing material, a sales presentation, or a college paper, this technique usually produces satisfactory results.</p>
-<p>However, the aforementioned approach only works when either the life expectancy of the output is short or it will not be heavily relied upon. Both permanency and reliability are expectations that are rigorously applied to most software. As a result, imposing strict deadlines in software development readily becomes counterproductive. A hastily designed piece of software needs to be revised because it is missing key features. Users get angry when they experience bugs. A lot of time and money has to be spent to get software engineers fixing issues that were born out of moving too quickly, or cutting too many corners. Even more expensive is regaining the trust of users who have had unpleasant experiences with the software in question.</p>
-<p>At Roompact, the software development team uses a number of methods to ensure its efficacy. Projects are planned extensively at their outset, so that seldom, if ever, are there surprises as to their overall length and complexity. Communication between engineers is frequent and deliberate, so that time is not wasted on unnecessary or redundant work. Feature scope is often adjusted, both to address feedback that is received over the course of development and to help the team arrive at a point where an initial release is feasible. Expectations are set and then reset. It is through these tenets of planning, communication, and flexibility that productivity remains consistent and the need for deadlines is eliminated.</p>
-<p>Software development is a process of discovery. It involves identifying problems and inventing their solutions. It is also a process of creation; the formation of something new. The act of building software requires an iterative application of this cycle of problem identification and solution invention. The problem is that <a href="/posts/software-development-challenges/">nobody really knows how long building a solution will take</a>. This is why setting deadlines, although enticing, is usually at odds with the goal of building useful and dependable software. Deadlines in software do not produce results faster or more predictably—they just produce inferior results.</p>
-<hr />
-<p><em>A modified version of this post originally appeared on the <a href="https://blog.roompact.com/">Roompact On Duty Blog</a>. <a href="https://roompact.com/">Roompact</a> is residential education software for colleges and universities that allows housing and residence life programs to track their educational efforts and make their administrative work more efficient.</em></p>
-
-</div>
-]]></summary>
-</entry>
-<entry>
     <title>Elm In Production: 25,000 Lines Later</title>
     <link href="https://charukiewi.cz/posts/elm/index.html" />
     <id>https://charukiewi.cz/posts/elm/index.html</id>
@@ -367,8 +338,6 @@ Detected errors in 1 module.</code></pre>
 <p>The need for this type of deletion of software can manifest itself in many ways. Perhaps there is an old feature that is only utilized by a small minority, yet those that do use it frequently report issues. Other times there may be a large component that sees very heavy use, yet it is poorly built and updating it to meet user requests does not make sense. In such a case, building an improved feature that will replace the old one may make sense.</p>
 <p>In all cases, deletion is challenging. Users may get frustrated and annoyed. In the case of a replacement, new documentation has to be created. The time spent making the old component may seem wasted. Or in some cases, the condemned component interacts with several others, so there will be work involved in ensuring that the peripheral components continue to function without it.</p>
 <p>But at the same time, the consequences for not deleting something can be worse than pruning it. The time spent on supporting an old piece of software can end up amounting to more than building an improved replacement. Slow and buggy features may drive users to give up on using a feature altogether. An old feature may be a glutton for system resources, slowing the entire application down for everybody. In such cases, the benefits of removal often outweigh the costs.</p>
-<hr />
-<p><em>A modified version of this post originally appeared on the <a href="https://blog.roompact.com/">Roompact On Duty Blog</a>. <a href="https://roompact.com/">Roompact</a> is residential education software for colleges and universities that allows housing and residence life programs to track their educational efforts and make their administrative work more efficient.</em></p>
 
 </div>
 ]]></summary>
@@ -386,11 +355,7 @@ Detected errors in 1 module.</code></pre>
 
 <div class="content-body">
 
-<p>Between the months of August and October of 2014, <a href="https://roompact.com/">Roompact</a> served 35,000 pages to users. Over the same period of time in 2016, Roompact served well over one million pages. Roompact users today visit more often, navigate to more pages, and spend significantly more time on the site than ever before. These increases are the result of more features, better performance, and improved usability. Roompact today is the most polished and functional version of the software to date.</p>
-<div class="body-img">
-<p><img src="https://s3.amazonaws.com/charukiewicz/assets/images/usage-sm-color-2.png" style="width:300px !important;"></p>
-</div>
-<p>In this post, I am going to share a few of the key elements that make our small software development team effective and enable the type of growth mentioned above. I will discuss our drive to innovate, our emphasis on learning and education, and the essential tools and techniques of our software development methodology.</p>
+<p>In this post, I am going to share a few of the key elements that make a software development team effective and enable the type of growth mentioned above. I will discuss our drive to innovate, our emphasis on learning and education, and the essential tools and techniques of our software development methodology.</p>
 <h2 id="innovation">Innovation</h2>
 <p>Perhaps the most fundamental aspect of our software development team is our drive to innovate. We continuously seek out new techniques, strive for a more performant and better organized architecture, and develop more effective ways to write clean and reusable code. These measures ultimately help us build features that have fewer bugs, take less time to build, and provide a better user experience.</p>
 <p>One specific example of the application of such innovation is in the design of our user interfaces. Newer features are created with painstaking effort to ensure their interfaces are clean and intuitive while giving users the ability to perform their intended actions as easily as possible.</p>
@@ -401,15 +366,7 @@ Detected errors in 1 module.</code></pre>
 <li>Which pieces of data are relevant to someone who will be using this feature?</li>
 </ul>
 <p>Once a layout is determined, we make use of things like animation, color, and icons to provide visual cues to the user about where to click, where to focus their attention, and feedback as to whether an action is completed successfully or not. This entire process of developing a layout and then adding styling and animation can be iterated over several times before a design is deemed suitable for the final product.</p>
-<p>The results of this extra effort are evident. Our newest features are very heavily used, yet they receive the smallest number of related support requests. Even more affirming is the positive feedback we hear, particularly when it speaks to their ease of use:</p>
-<blockquote>
-<p>
-Shout out to the roompact! I set aside two hours to figure out microsurveys. It took five minutes. And it looks AWESOME. So excited for this new feature. Thanks for making such a useful tool that is so easy to use!
-</p>
-<p>
-— <a href="https://www.facebook.com/roompact/posts/1267808656584118">Johnna M.</a>
-</p>
-</blockquote>
+<p>The results of this extra effort are evident. Our newest features are very heavily used, yet they receive the smallest number of related support requests.</p>
 <p>Another more technical example of our innovation is in the front end architecture of our newest features. Every major feature we have released this year has been what can be referred to as a “single page application” (SPA). What this means is that once a user arrives at one of these features, either through sidebar navigation or via direct link, their browser will download all of the data necessary to perform every function of the feature.</p>
 <p>Although this early loading of the data may seem unnecessary, the result is a better user experience. For example, when searching for users to tag in a dynamic form field, the search results in an SPA will always appear instantaneously, regardless of whether the search is being performed at an institution with a few hundred or several thousand users.</p>
 <p>This new approach differs significantly from the one utilized in our older features, where each search query was sent to the server and then used to perform a database lookup. This often resulted in noticeable delay between search input and results display, and would be most apparent when the list of results was very long.</p>
@@ -422,10 +379,7 @@ Shout out to the roompact! I set aside two hours to figure out microsurveys. It 
 <p>Our emphasis on learning begins immediately. Each new team member is given small tasks that will build their skills as a productive software engineer. As time goes on, larger projects require a composition of the skills that are learned early on. Even interns begin working independently within a few days of starting their internships. There is no better way to learn software development than to be actively engaged in it.</p>
 <blockquote>
 <p>
-Within the first three weeks of my internship with Roompact, I was able to learn more than I have ever learned in an entire year of schooling.
-</p>
-<p>
-— <a href="https://blog.roompact.com/2016/09/21/reflections-from-artur-sak-one-of-roompacts-2016-summer-interns/">Artur S.</a>
+Within the first three weeks of my internship with the company, I was able to learn more than I have ever learned in an entire year of schooling.
 </p>
 </blockquote>
 <p>One other component of education that goes beyond building knowledge is developing understanding. Everyone on the development team is challenged to not only learn <em>how</em> to build software, but to also understand <em>why</em> it is built the way it is. This may range from understanding why a single line of code works the way it does, to why it is better to use one database schema over another, to why architectural decisions that initially seem appropriate may be problematic in the long run.</p>
@@ -441,11 +395,9 @@ Within the first three weeks of my internship with Roompact, I was able to learn
 <p>A component of our software development methodology that goes beyond use of tools is our code review process. This is a procedure that we undergo each time a set of code changes are completed. Here, the author of the code will sit with at least one other engineer (the ‘reviewer’) and walk them through their changes. The reviewer will provide feedback, ask questions, and point out any issues with the code that the author is submitting.</p>
 <p>This process may be somewhat daunting for new engineers, as their work is examined to a degree of closeness that is not common outside of software development, but any feelings of anxiety quickly turn into confidence with the right approach. The purpose of a code review is to educate the author as well as any reviewers, to catch bugs early on, and to improve code quality. With a reassuring attitude from the reviewers, code review becomes a collaborative effort to the benefit of everyone involved.</p>
 <h2 id="continual-improvement">Continual Improvement</h2>
-<p>The aspects of the Roompact software development team I described in this post are key contributors to its success. However, if there is one additional point to end this post on, it is to mention that we are continually seeking to improve each of these aspects of our team.</p>
+<p>The aspects of a software development team I described in this post are key contributors to its success. However, if there is one additional point to end this post on, it is to mention that we are continually seeking to improve each of these aspects of our team.</p>
 <p>This quarter, we have begun to put additional focus on the deliberate learning of specific technologies and concepts, rather than just a broad improvement of software development skill. Just last week we developed a plan for a better code review process, one that will allow for more reviews of smaller segments of code rather than lengthy reviews that had only come at the end of projects up until now. And even at this very moment, we are in the process of evaluating new tools to improve the way in which we build our user interfaces with the goal of producing code that is more terse and comprehensible.</p>
 <p>As our product and our company continue to grow and develop, I look forward to the opportunity to continue to innovate in our software, to overcome any challenges we may face, and to continue to build a team of effective software engineers.</p>
-<hr />
-<p><em>This post originally appeared on the <a href="https://blog.roompact.com/">Roompact On Duty Blog</a>. <a href="https://roompact.com/">Roompact</a> is residential education software for colleges and universities that allows housing and residence life programs to track their educational efforts and make their administrative work more efficient.</em></p>
 
 </div>
 ]]></summary>
@@ -772,6 +724,108 @@ Source: <a href="https://github.com/Dobiasd/articles/blob/master/programming_lan
 <p>The other point to realize here is that this type of approach really can be applied to virtually everything. Doing the laundry, cleaning your room, making a sandwich, grocery shopping, completing a series of errands involving driving around, studying for an exam, mowing the lawn, performing a workout, or my personal favorite, making coffee. It would not be difficult to add a dozen more things to this list.</p>
 <p>Adopting this type of approach for most of the tasks you do takes some time. The ideal way to do this is to turn this type of algorithmic thinking into a habit. Eventually, you will find yourself completing more tasks, more quickly, with fewer errors and less time wasted.</p>
 <p>Ultimately, I believe that your time is the most valuable thing you own. Saving 90 seconds because you made sure to bring your laundry detergent may not seem like a big deal. But, saving 90 seconds four times a day is three hours a month, which is one and a half days per year. This adds up to a couple of months in a lifetime. This, coupled with the fact that the things you do do are performed more accurately, makes such an algorithmic approach worthwhile. Before you know it, you will have lived a lifetime of slightly enhanced efficiency.</p>
+
+</div>
+]]></summary>
+</entry>
+<entry>
+    <title>Replacing Adblock Plus with the hosts file</title>
+    <link href="https://charukiewi.cz/posts/hosts-file/index.html" />
+    <id>https://charukiewi.cz/posts/hosts-file/index.html</id>
+    <published>2014-07-15T00:00:00Z</published>
+    <updated>2014-07-15T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<div class="info">
+    Posted on July 15, 2014
+    
+</div>
+
+<div class="content-body">
+
+<div style="color:#555;font-size:14px;">
+<p><em>Updated on February 15, 2016</em> <small>[<a href="#update">jump</a>]</small></p>
+</div>
+<h2 id="the-reign-of-adblock-plus">The Reign of Adblock Plus</h2>
+<p>I started using Adblock Plus in 2006, the year it was released for Mozilla Firefox. This was two years before Google Chrome was even released. For anyone who was even slightly technologically savvy, the advent of Adblock Plus had a huge impact on web browsing. It changed the playing field and gave people a huge reason to migrate to Firefox and away from Internet Explorer. Between addons (specifically Adblock Plus), and tabbed browsing, Firefox was a big deal.</p>
+<p>In 2011, I encountered an issue with Firefox where it simply refused to open on my Windows machine. Even a reinstall wouldn’t fix whatever problem I had at the time, so I migrated to Google Chrome. I’ve been using Chrome ever since. What came with me, however, was Adblock Plus.</p>
+<p>A few months ago I read <a href="http://www.reddit.com/r/programming/comments/25j41u/adblock_pluss_effect_on_firefoxs_memory_usage/">an article</a> about ad blocking extensions exactly like Adblock Plus. The article came with somewhat surprising news. It turns out that blocking ads in the browser is a demanding process. It uses a bit of CPU power but in particular, it uses a lot of RAM and slows down page load times. This was something I had never really bothered to think about or consider before. Blocking ads seems like it would do nothing but help one’s browser performance.</p>
+<p>This news came to me around a time where my browser usage was becoming more and more intensive. With Google making Chrome more and more into its own self-sufficient ecosystem of applications and dynamic content, I had fewer reasons to have regular applications open and more reasons to have many tabs open. It was (and still is) not uncommon for me to have over 10 tabs open when I am browsing the internet. Between Gmail, Google Music, sometimes Facebook, a few Reddit tabs, and maybe a YouTube tab, I found that I was frequently devoting over 2 gigabytes of RAM to Google Chrome alone. Google Chrome had become sluggish, no longer operating at the high speed Google always claimed it was king of.</p>
+<h2 id="the-hosts-file">The hosts file</h2>
+<p>Enter the hosts file. Well, <em>reenter</em> the hosts file. Originally implemented in the 1970s, the hosts file was used by operating systems to map hostnames (such as google.com) to IP addresses (such as 74.125.224.72). The hosts file was used to navigate <a href="http://en.wikipedia.org/wiki/ARPANET">ARPANET</a>, a precursor to the Internet. Users would either need to create and update, or get their hands on a copy of an updated hosts file to actively be able to browse ARPANET via domain names. In 1984, a system which replaced the need for a manually updated hosts file was released. It was called the Domain Name System, which we typically refer to today as just DNS.</p>
+<p>But the hosts file was here to stay, and had become a key part of virtually every operating system with any sort of networking capability. It gave the user the ability to locally map any hostname to any IP address. Here is an example of what most default hosts files will look like (this one taken from Arch Linux):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># /etc/hosts: static lookup table for host names</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">#&lt;ip-address&gt;	&lt;hostname.domain.org&gt;	&lt;hostname&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="ex">127.0.0.1</span>	localhost.localdomain	localhost</a>
+<a class="sourceLine" id="cb1-7" title="7">::<span class="ex">1</span>		localhost.localdomain	localhost</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co"># End of file</span></a></code></pre></div>
+<p>Any line that starts with # is a comment, and does nothing when the file is actually parsed by the computer. At the start of every other line we have an IP address, and at the end we have a hostname. We can see that the file’s role in its current state is to map the “localhost” hostname to the default loopback IP (127.0.0.1 or 0.0.0.0 in IPv4 and ::1 in IPv6) so that anytime we enter “localhost” in our browser address bar (or anytime any application uses it as a hostname), the computer will connect to itself. This shortcut is often used by anyone who does any sort of web development or other network application work.</p>
+<p>The hosts file above also demonstrates another capability which we can take advantage of. We can, in effect, block connections from any website if we route the site’s hostname to 127.0.0.1 using the hosts file, as the contents of the hosts file takes precedent over any DNS mappings we receive from the internet. So if we add a line such as this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">127.0.0.1</span> reddit.com</a></code></pre></div>
+<p>we tell our computer to take us to 127.0.0.1 instead of reddit’s normal IP address everytime we enter reddit.com in our browser. So, by redirecting all traffic that would otherwise go to reddit.com to ourselves, reddit becomes unreachable. All we need now is a list of ad serving domains that we want to block and the hosts file serves the exact same purpose as Adblock. The difference being that the hosts file uses no RAM and no CPU. It does not slow down any browser, and it completely eliminates connections to any domain listed in it. So the hosts file affects Firefox, Chrome, and any other browser and application we may be using.</p>
+<p>Fortunately, there are kind people on the internet that have compile pre-existing hosts files filled with thousands of malicious and ad-serving domains. The first site I found is <a href="http://winhelp2002.mvps.org/hosts.htm" class="uri">http://winhelp2002.mvps.org/hosts.htm</a>, which includes not only a hosts file in both .zip and .txt form, but a great explanation of how the hosts file works and various types of domains to block. The second is <a href="http://someonewhocares.org/hosts/" class="uri">http://someonewhocares.org/hosts/</a>, which also offers a great description as well as instructions of how to update the hosts file on your PC.</p>
+<h2 id="time-for-some-automation">Time for some automation</h2>
+<p>I would like to take it a step further and write a short bash script to automatically update our hosts file using the hosts files provided by both of these sites. This will be written to work on Linux, but should probably work on OSX as well. Ideally, every time we run the script we want to grab the most updated versions of each site’s hosts file, so we have the most up-to-date version of a list of malicious and ad-serving domains.</p>
+<p>So, the algorithm we want to perform will be something like this:</p>
+<ol type="1">
+<li>Make a copy of our original hosts file as a backup (<strong>only</strong> if this is our first time running the script)</li>
+<li>Download the pre-loaded hosts file from mvps.org</li>
+<li>Append (<strong>not</strong> overwrite) it to our existing hosts file</li>
+<li>Download the pre-loaded hosts file from someonewhocares.org</li>
+<li>Append (<strong>not</strong> overwrite) it to our hosts file</li>
+<li>Delete the files we downloaded from both sites, as we do not need them anymore</li>
+</ol>
+<p>In addition to this, if we run our script a second time or any additional time, instead of making a copy of the current hosts file, we want to overwrite our primary hosts file with the copy we took we ran the first time. This is so that we are starting with a clean hosts file every time we run the script, and not adding tens of thousands of redundant lines.</p>
+<p>After a little bit of experimenting, the script is as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="bu">echo</span> <span class="st">&quot;Checking if copy of original hosts file exists...&quot;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">if</span><span class="bu"> [</span> <span class="ot">-e</span> /etc/hosts-original<span class="bu"> ]</span></a>
+<a class="sourceLine" id="cb3-5" title="5">	<span class="kw">then</span></a>
+<a class="sourceLine" id="cb3-6" title="6">		<span class="bu">echo</span> <span class="st">&quot;Copy of original exists.&quot;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">		<span class="fu">cat</span> /etc/hosts-original <span class="op">&gt;</span> /etc/hosts	</a>
+<a class="sourceLine" id="cb3-8" title="8">	<span class="kw">else</span></a>
+<a class="sourceLine" id="cb3-9" title="9">		<span class="bu">echo</span> <span class="st">&quot;Copy of original does not exist.  Copying...&quot;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">		<span class="fu">cat</span> /etc/hosts <span class="op">&gt;</span> /etc/hosts-original</a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="kw">fi</span></a>
+<a class="sourceLine" id="cb3-12" title="12"></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="bu">echo</span> <span class="st">&quot;Downloading mvps.org hosts file...&quot;</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="fu">wget</span> http://winhelp2002.mvps.org/hosts.txt --output-document=hosts-mvps</a>
+<a class="sourceLine" id="cb3-15" title="15"></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="bu">echo</span> <span class="st">&quot;Downloading someonewhocares.org hosts file...&quot;</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="fu">wget</span> http://someonewhocares.org/hosts/zero/hosts --output-document=hosts-swc</a>
+<a class="sourceLine" id="cb3-18" title="18"></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="bu">echo</span> <span class="st">&quot;Adding mvps.org hosts file content to main hosts file...&quot;</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="fu">cat</span> hosts-mvps <span class="op">&gt;&gt;</span> /etc/hosts</a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="bu">echo</span> <span class="st">&quot;Adding someonewhocares.org hosts file content to main hosts file...&quot;</span></a>
+<a class="sourceLine" id="cb3-22" title="22"><span class="fu">cat</span> hosts-swc <span class="op">&gt;&gt;</span> /etc/hosts</a>
+<a class="sourceLine" id="cb3-23" title="23"></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="bu">echo</span> <span class="st">&quot;Cleaning up...&quot;</span></a>
+<a class="sourceLine" id="cb3-25" title="25"><span class="fu">rm</span> hosts-mvps</a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="fu">rm</span> hosts-swc</a>
+<a class="sourceLine" id="cb3-27" title="27"></a>
+<a class="sourceLine" id="cb3-28" title="28"><span class="bu">echo</span> <span class="st">&quot;Completed!&quot;</span></a></code></pre></div>
+<p>You can view and download the same file on <a href="https://github.com/charukiewicz/scripts/blob/master/hosts-update.sh">GitHub</a>. I encourage you to open it in a text editor after downloading it to confirm it is exactly what I have in the box above. You will need to run the script with root permissions by prefixing with the <strong>sudo</strong> command because the entire <strong>/etc/</strong> directory is read only.</p>
+<p>If you are a new Linux user (or an old, forgetful, Linux user) attempting to run this script for the first time, open a terminal and type the following commands:</p>
+<pre><code>cd ~/Downloads
+sudo sh hosts-update.sh</code></pre>
+<p>The first line will change to the Downloads directory of your home folder. The second line will actually execute the script. The first line is not necessary if you know what you are doing and/or have moved the script to a different directory. You will be prompted to enter your UNIX password to give yourself the root privileges mentioned above.</p>
+<p>Windows users, unfortunately you will have to do this process manually. You will need to download the contents of both hosts files and open up the one on your computer in a text editor, and then paste both inside. Once again, <strong>do not overwrite the original hosts file content</strong>. Also, do not open long files in regular Notepad. It will crash. Use <a href="http://www.sublimetext.com/">Sublime</a> or <a href="http://notepad-plus-plus.org/">Notepad++</a>. Detailed instructions on how to update the Windows hosts file are on both of the hosts file sites I linked above.</p>
+<p>Android users, if you have rooted your phone you have an option like this as well. There is an app on F-Droid called <a href="https://f-droid.org/repository/browse/?fdid=org.adaway">AdAway</a>, which does exactly what we did here. Installing the app and giving it root permissions will then automatically update your <strong>/system/etc/hosts</strong> file with its own proprietary list of ad-serving domains.</p>
+<p>ChromeOS users, unfortunately there are no good options for ChromeOS. First of all, editing the file even using sudo does not work. There is a workaround method, however every time ChromeOS updates the hosts file will be reset.</p>
+<p>With that, enjoy your Adblock alternative that takes absolutely zero system resources. You will see empty boxes where ads would be on certain websites, or the ads should just be gone all together. Feel free to contact me with any questions. <a href="https://www.twitter.com/charukiewicz/">@charukiewicz</a></p>
+<p><a name="update"></a></p>
+<p><i><strong>Update (Feb, 15, 2016)</strong>: There has been a lot of material that has either come out or I have read about since writing this article. Namely, there are a few really good scripts out there that do what my bash script does, but are more feature filled. They pull from more sources, allow you to include your own whitelist, etc.</p>
+<p>A few options worth checking out:</p>
+<ul>
+<li><a href="https://github.com/StevenBlack/hosts">hosts</a> - A hosts file and updater script written in Python</li>
+<li><a href="https://gaenserich.github.io/hostsblock/">Hostsblock</a> - Another feature-filled utility</li>
+<li><a href="http://pi-hole.net/">Pi-hole</a> - Set up a Raspberry Pi to filter your LAN</li>
+<li><a href="https://www.reddit.com/r/linux/comments/45e27d/adblock_via_etchosts/">Adblock via /etc/hosts</a> - reddit discussion on this topic</li>
+</ul>
+<p></i></p>
 
 </div>
 ]]></summary>

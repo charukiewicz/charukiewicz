@@ -106,9 +106,3 @@ The need for this type of deletion of software can manifest itself in many ways.
 In all cases, deletion is challenging. Users may get frustrated and annoyed. In the case of a replacement, new documentation has to be created. The time spent making the old component may seem wasted. Or in some cases, the condemned component interacts with several others, so there will be work involved in ensuring that the peripheral components continue to function without it.
  
 But at the same time, the consequences for not deleting something can be worse than pruning it. The time spent on supporting an old piece of software can end up amounting to more than building an improved replacement. Slow and buggy features may drive users to give up on using a feature altogether. An old feature may be a glutton for system resources, slowing the entire application down for everybody. In such cases, the benefits of removal often outweigh the costs.
-
-
-
----------
-
-*A modified version of this post originally appeared on the [Roompact On Duty Blog](https://blog.roompact.com/). [Roompact](https://roompact.com/) is residential education software for colleges and universities that allows housing and residence life programs to track their educational efforts and make their administrative work more efficient.*
