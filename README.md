@@ -9,6 +9,6 @@ Hi, I'm **Christian Charukiewicz**. I'm a software engineer, technology & produc
 - My favorite way of managing a system is using [**Nix**](https://nixos.org/), and I use it both personally and professionally.
 - I read [at least one book each month](https://charukiewi.cz/reading/).
 
-Want to get in touch? Email me at: [ch.cz@pm.me](mailto:ch.cz@pm.me)
+Want to get in touch? Email me at: [christian@foxhound.systems](mailto:christian@foxhound.systems)
 
 ![Profile views](https://gpvc.arturio.dev/charukiewicz)
