@@ -16,5 +16,3 @@ Hi, I'm Christian Charukiewicz. I'm a software engineer, technology & product le
 - [**esqueleto**](https://hackage.haskell.org/package/isbn) *(Contributor)* - Haskell library for writing type-safe SQL queries. I've improved the library's coverage of SQL and also wrote detailed documentation and examples for its [new query DSL syntax](https://hackage.haskell.org/package/esqueleto-3.4.2.1/docs/Database-Esqueleto-Experimental.html).
 
 Want to get in touch? Email me at: [christian@foxhound.systems](mailto:christian@foxhound.systems)
-
-![Profile views](https://gpvc.arturio.dev/charukiewicz)
