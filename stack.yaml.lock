@@ -5,9 +5,6 @@
 
 packages:
 - completed:
-    cabal-file:
-      size: 939
-      sha256: 4d2fbd8b63f5ef15483fc6dda09e10eefd63b4f873ad38dec2a3607eb504a8ba
     name: hakyll-sass
     version: 0.2.4
     git: git@github.com:meoblast001/hakyll-sass.git
@@ -20,7 +17,7 @@ packages:
     commit: b9c08afc9d81abc5bc57a9adc6bd7b70d562ea46
 snapshots:
 - completed:
-    size: 509471
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/12/26.yaml
-    sha256: 95f014df58d0679b1c4a2b7bf2b652b61da8d30de5f571abb0d59015ef678646
-  original: lts-12.26
+    size: 616897
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/19/0.yaml
+    sha256: bbf2be02f17940bac1f87cb462d4fb0c3355de6dcfc53d84f4f9ad3ee2164f65
+  original: lts-19.0

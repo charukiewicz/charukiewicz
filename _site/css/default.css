@@ -74,7 +74,6 @@ div.logo a {
   @media (max-width: 768px) {
     div.logo a {
       font-size: 40px; } }
-
 div.header .navigation {
   display: flex;
   flex-flow: row wrap;
@@ -82,7 +81,6 @@ div.header .navigation {
   @media (max-width: 768px) {
     div.header .navigation {
       justify-content: flex-start; } }
-
 div.header .navigation a {
   color: black;
   font-size: 14px;
@@ -93,7 +91,6 @@ div.header .navigation a {
   @media (max-width: 768px) {
     div.header .navigation a {
       font-size: 24px; } }
-
 div.header .navigation a:not(:last-child) {
   margin-right: 20px; }
 
@@ -259,7 +256,6 @@ hr {
       align-items: flex-start; }
       .sk-table tr td {
         padding: 5px 0; } }
-
 .sk {
   display: flex;
   flex-direction: column; }

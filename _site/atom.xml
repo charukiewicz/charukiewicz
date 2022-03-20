@@ -38,7 +38,7 @@
 <li>Pair program with him on a significant portion of this initial project, but make him write most of the code</li>
 <li>Emphasize the importance of reading type signatures, both in our own code and in any documentation we were referencing</li>
 <li>Treat compiler errors as helpful feedback, rather than as a signal indicating failure</li>
-<li>Practice approaching each problem with a functional mindset (e.g. “How can we apply <code>List.map</code> or <code>List.filter</code> rather than a <code>for</code> loop and array mutation?”)</li>
+<li>Practice approaching each problem with a functional mindset (e.g. “How can we apply <code>List.map</code> or <code>List.filter</code> rather than a <code>for</code> loop and array mutation?”)</li>
 </ol>
 <p>This project took him a few weeks to complete. The end result was highly successful, and both he and I learned quite a bit about Elm as we worked on it together. Most importantly, by the end, my engineer was comfortable enough with Elm as to work independently for extended periods of time. The lesson had been a success, and it also proved that about a week of intense training, someone who has never written functional code can build a solid understanding of the basics of Elm. Within a month, they should be able to work independently on code that will eventually make it into production.</p>
 <blockquote>
@@ -74,43 +74,45 @@ Work has gotten really interesting again.
 <li>clear the temporary arrays</li>
 </ol>
 <p>In JavaScript, our solution relies on using several data structures to help with the bookkeeping of keeping track of which tags were added or removed. This might work, but I have to make many considerations in order to avoid possible errors. What if something is not re-initialized correctly after the user visits the page for a second time? Are we resetting them every time that we need to? How do we keep the tag list that the user sees in the DOM in sync with the state?</p>
-<p>I chose this approach because there is no great way to model the current state of each tag in the tag itself. Attempting to do so might involve adding a <code>status</code> field containing a string that indicates one of the three possible states. Or worse yet, I could try to model this by juggling several boolean fields (e.g. <code>added_status</code>, <code>removed_status</code>).</p>
+<p>I chose this approach because there is no great way to model the current state of each tag in the tag itself. Attempting to do so might involve adding a <code>status</code> field containing a string that indicates one of the three possible states. Or worse yet, I could try to model this by juggling several boolean fields (e.g. <code>added_status</code>, <code>removed_status</code>).</p>
 <p>Even the single-field approach likely to result in chains of if-statements that perform string comparisons in several places in the program. I will also have to ensure that my <code>status</code> field is always initialized with any tag object in order to protect against runtime errors. I could attempt to solve this latter problem by creating prototype functions that extend a <code>Tag</code> constructor object, but there is nothing forcing anyone to use these prototypal functions to create <code>Tag</code> objects to begin with. In short, adding such a field to my tag object is an encumbrance, as I have to remember to handle this extra field throughout my program.</p>
 <p>By contrast, in Elm, modeling the possible states of each tag is incredibly easy. We can write this as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb1-1" title="1"><span class="co">-- The type representing the possible states of the tag</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">type</span> <span class="dt">TagState</span> <span class="fu">=</span> <span class="dt">Current</span> <span class="fu">|</span> <span class="dt">Added</span> <span class="fu">|</span> <span class="dt">Removed</span></a>
-<a class="sourceLine" id="cb1-3" title="3"></a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">-- The type representing a single tag</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="kw">type</span> alias <span class="dt">Tag</span> <span class="fu">=</span></a>
-<a class="sourceLine" id="cb1-7" title="7">    { tagId <span class="fu">:</span> <span class="dt">Int</span></a>
-<a class="sourceLine" id="cb1-8" title="8">    , tagName <span class="fu">:</span> <span class="dt">String</span></a>
-<a class="sourceLine" id="cb1-9" title="9">    , tagStatus <span class="fu">:</span> <span class="dt">TagState</span></a>
-<a class="sourceLine" id="cb1-10" title="10">    }</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- The type representing the possible states of the tag</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">TagState</span> <span class="ot">=</span> <span class="dt">Current</span> <span class="op">|</span> <span class="dt">Added</span> <span class="op">|</span> <span class="dt">Removed</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- The type representing a single tag</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> alias <span class="dt">Tag</span> <span class="ot">=</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    { tagId <span class="op">:</span> <span class="dt">Int</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    , tagName <span class="op">:</span> <span class="dt">String</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    , tagStatus <span class="op">:</span> <span class="dt">TagState</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div>
 <p>In the above example, every value of type <code>Tag</code> will contain a <code>tagStatus</code> field, which will contain a value of type <code>TagState</code>, which in turn has to be one of the three states I want to represent. The important thing to note here is that now every tag value <strong>must</strong> have a <code>tagStatus</code> field, and it <strong>must</strong> always contain one of the three defined <code>TagState</code> values. If this field is not initialized (e.g. at the JSON decoder for a tag) or its values are not handled exhaustively (e.g. in my view code), the program will not compile. I will show an example of the latter scenario below.</p>
 <h3 id="elm-has-a-great-compiler">Elm has a great compiler</h3>
 <p>Elm’s compiler is what does the heavy lifting of enforcing the constraints of the type system, and I would consider it to be a huge asset when writing Elm code. Other statically typed languages have compilers, but Elm’s is in a league of its own.</p>
 <p>Let’s consider the snippet of code in the section above. With the above types, every <code>Tag</code> in my application to always have a <code>TagState</code>. Let’s see how we would use this to our advantage to address the problem of keeping our DOM in sync with our data:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb2-1" title="1"><span class="co">-- Function that takes a tag value and returns an html</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">-- value that will be rendered by the Elm program</span></a>
-<a class="sourceLine" id="cb2-3" title="3">displayTag <span class="fu">:</span> <span class="dt">Tag</span> <span class="ot">-&gt;</span> <span class="dt">Html</span> <span class="dt">Msg</span></a>
-<a class="sourceLine" id="cb2-4" title="4">displayTag tag <span class="fu">=</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    <span class="co">-- perform a match against the tagStatus field of the tag parameter</span></a>
-<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">case</span> tag<span class="fu">.</span>tagStatus <span class="kw">of</span></a>
-<a class="sourceLine" id="cb2-7" title="7"></a>
-<a class="sourceLine" id="cb2-8" title="8">        <span class="dt">Current</span> <span class="ot">-&gt;</span></a>
-<a class="sourceLine" id="cb2-9" title="9">            <span class="co">-- Display a standard tag</span></a>
-<a class="sourceLine" id="cb2-10" title="10">            <span class="fu">div</span> [ <span class="kw">class</span> <span class="st">&quot;tag&quot;</span> ] [ text tag<span class="fu">.</span>tagName ]</a>
-<a class="sourceLine" id="cb2-11" title="11"></a>
-<a class="sourceLine" id="cb2-12" title="12">        <span class="dt">Added</span> <span class="ot">-&gt;</span></a>
-<a class="sourceLine" id="cb2-13" title="13">            <span class="co">-- Display a tag, but include the &#39;tag-added&#39; class</span></a>
-<a class="sourceLine" id="cb2-14" title="14">            <span class="co">-- so that we can style these tags differently</span></a>
-<a class="sourceLine" id="cb2-15" title="15">            <span class="fu">div</span> [ <span class="kw">class</span> <span class="st">&quot;tag tag-added&quot;</span> ] [ text tag<span class="fu">.</span>tagName ]</a>
-<a class="sourceLine" id="cb2-16" title="16"></a>
-<a class="sourceLine" id="cb2-17" title="17">        <span class="dt">Removed</span> <span class="ot">-&gt;</span></a>
-<a class="sourceLine" id="cb2-18" title="18">            <span class="co">-- Display an empty div*</span></a>
-<a class="sourceLine" id="cb2-19" title="19">            <span class="fu">div</span> [] []</a></code></pre></div>
-<p><small style="color: #999;"> * Note that it would be possible to restructure this code in a way that does not display an empty &lt;div&gt; in the case of a removed tag, but the above code results in the clearest example. </small></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Function that takes a tag value and returns an html</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- value that will be rendered by the Elm program</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>displayTag <span class="op">:</span> <span class="dt">Tag</span> <span class="ot">-&gt;</span> <span class="dt">Html</span> <span class="dt">Msg</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>displayTag tag <span class="ot">=</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- perform a match against the tagStatus field of the tag parameter</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> tag<span class="op">.</span>tagStatus <span class="kw">of</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">Current</span> <span class="ot">-&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">-- Display a standard tag</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">div</span> [ <span class="kw">class</span> <span class="st">&quot;tag&quot;</span> ] [ text tag<span class="op">.</span>tagName ]</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">Added</span> <span class="ot">-&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">-- Display a tag, but include the &#39;tag-added&#39; class</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            <span class="co">-- so that we can style these tags differently</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            <span class="fu">div</span> [ <span class="kw">class</span> <span class="st">&quot;tag tag-added&quot;</span> ] [ text tag<span class="op">.</span>tagName ]</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">Removed</span> <span class="ot">-&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="co">-- Display an empty div*</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="fu">div</span> [] []</span></code></pre></div>
+<p><small style="color: #999;">
+* Note that it would be possible to restructure this code in a way that does not display an empty &lt;div&gt; in the case of a removed tag, but the above code results in the clearest example.
+</small></p>
 <p>But what if we had forgotten to handle one of our cases? Suppose we did not include the <code>Removed</code> case.</p>
 <div class="sourceCode">
 <pre><code>==================================== ERRORS ====================================
@@ -146,40 +148,40 @@ Detected errors in 1 module.</code></pre>
 <p>These traits combine to result in a significantly lower cognitive load required to read Elm code. For example, if you see a function whose type signature is <code>Int -&gt; Int</code>, meaning that it takes one <code>Int</code> parameter and returns an <code>Int</code> value, you can safely assume that it will at most be doing some sort of numerical manipulation without any other side effects. If you are searching for code that validates email addresses, you know that you can look elsewhere (perhaps for a function that takes a <code>String</code> and returns a <code>Bool</code>).</p>
 <p><strong>Immutable Values</strong> - All values in Elm are immutable; they cannot be changed after they are set. This may seem limiting to someone coming from writing JavaScript, but in a functional paradigm, changing values is not necessary. The standard approach is to return a new value rather that overwrite an old one. Immutability eliminates a whole array of possible issues in a program, ranging from race conditions caused by concurrent code, to uncontrolled global state modification.</p>
 <p><strong>Higher-Order Functions</strong> - A higher order function is simply a function that takes another function as a parameter, or returns a function as its result. This style of programming is very common in Elm and leads to code that is well suited function composition, and in turn, reusability. Take a look at an example of the <code>map</code> function below (which takes a function and applies that function to every element in a list):</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb4-1" title="1">square <span class="fu">:</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></a>
-<a class="sourceLine" id="cb4-2" title="2">square x <span class="fu">=</span> x <span class="fu">*</span> x</a>
-<a class="sourceLine" id="cb4-3" title="3"></a>
-<a class="sourceLine" id="cb4-4" title="4">normalList <span class="fu">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb4-5" title="5"></a>
-<a class="sourceLine" id="cb4-6" title="6">squaredList <span class="fu">=</span> List.map square normalList</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>square <span class="op">:</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>square x <span class="ot">=</span> x <span class="op">*</span> x</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>normalList <span class="ot">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>squaredList <span class="ot">=</span> List.map square normalList</span></code></pre></div>
 <p>In the above code, the <code>square</code> function is applied to every element in <code>normalList</code>. When this code is evaluated, <code>squaredList</code> will contain <code>[1, 4, 9, 16, 25]</code>.</p>
 <p><strong>Pattern Matching</strong> - This is without a doubt one of the most useful features in Elm. Pattern matching allows you to to write code that will only get evaluated when the “shape” of the value being examined matches the defined pattern. Consider the following example:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">type</span> <span class="dt">PermissionLevel</span> <span class="fu">=</span> <span class="dt">AdministratorPermissionLevel</span> <span class="fu">|</span> <span class="dt">StandardPermissionLevel</span></a>
-<a class="sourceLine" id="cb5-2" title="2"></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw">type</span> <span class="dt">UserGroup</span> <span class="fu">=</span> <span class="dt">AdministratorUserGroup</span> <span class="fu">|</span> <span class="dt">StandardUserGroup</span></a>
-<a class="sourceLine" id="cb5-4" title="4"></a>
-<a class="sourceLine" id="cb5-5" title="5"></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co">-- Function checks whether a user can edit a post</span></a>
-<a class="sourceLine" id="cb5-7" title="7"></a>
-<a class="sourceLine" id="cb5-8" title="8">checkIfUserCanEditPost <span class="fu">:</span> <span class="dt">PermissionLevel</span> <span class="ot">-&gt;</span> <span class="dt">UserGroup</span> <span class="ot">-&gt;</span> <span class="dt">Bool</span></a>
-<a class="sourceLine" id="cb5-9" title="9">checkIfUserCanEditPost requiredPermissionLevel currentUserGroup <span class="fu">=</span></a>
-<a class="sourceLine" id="cb5-10" title="10">    <span class="kw">case</span> (requiredPermissionLevel, currentUserGroup) <span class="kw">of</span></a>
-<a class="sourceLine" id="cb5-11" title="11">        <span class="co">-- A standard user can edit a standard post</span></a>
-<a class="sourceLine" id="cb5-12" title="12">        (<span class="dt">StandardPermissionLevel</span>, <span class="dt">StandardUserGroup</span>) <span class="ot">-&gt;</span></a>
-<a class="sourceLine" id="cb5-13" title="13">            <span class="dt">True</span></a>
-<a class="sourceLine" id="cb5-14" title="14"></a>
-<a class="sourceLine" id="cb5-15" title="15">        <span class="co">-- An administrator can edit any post</span></a>
-<a class="sourceLine" id="cb5-16" title="16">        (_, <span class="dt">AdministratorUserGroup</span>) <span class="ot">-&gt;</span></a>
-<a class="sourceLine" id="cb5-17" title="17">            <span class="dt">True</span></a>
-<a class="sourceLine" id="cb5-18" title="18"></a>
-<a class="sourceLine" id="cb5-19" title="19">        <span class="co">-- Deny any other possible combination of values</span></a>
-<a class="sourceLine" id="cb5-20" title="20">        _ <span class="ot">-&gt;</span></a>
-<a class="sourceLine" id="cb5-21" title="21">            <span class="dt">False</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">PermissionLevel</span> <span class="ot">=</span> <span class="dt">AdministratorPermissionLevel</span> <span class="op">|</span> <span class="dt">StandardPermissionLevel</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">UserGroup</span> <span class="ot">=</span> <span class="dt">AdministratorUserGroup</span> <span class="op">|</span> <span class="dt">StandardUserGroup</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Function checks whether a user can edit a post</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>checkIfUserCanEditPost <span class="op">:</span> <span class="dt">PermissionLevel</span> <span class="ot">-&gt;</span> <span class="dt">UserGroup</span> <span class="ot">-&gt;</span> <span class="dt">Bool</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>checkIfUserCanEditPost requiredPermissionLevel currentUserGroup <span class="ot">=</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> (requiredPermissionLevel, currentUserGroup) <span class="kw">of</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">-- A standard user can edit a standard post</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        (<span class="dt">StandardPermissionLevel</span>, <span class="dt">StandardUserGroup</span>) <span class="ot">-&gt;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            <span class="dt">True</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">-- An administrator can edit any post</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        (_, <span class="dt">AdministratorUserGroup</span>) <span class="ot">-&gt;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            <span class="dt">True</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="co">-- Deny any other possible combination of values</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        _ <span class="ot">-&gt;</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>            <span class="dt">False</span></span></code></pre></div>
 <p>In the above code, we combine the <code>requiredPermissionLevel</code> and <code>currentUserGroup</code> parameters into a tuple in the <code>case</code> statement and evaluate them together as we try to match one of the cases. The <code>_</code> value will match any value in the case statement. We use it to avoid having to define <code>(StandardPermissionLevel, AdministratorUserGroup)</code> and <code>(AdministratorPermissionLevel, AdministratorUserGroup)</code> as two separate cases. Instead, we tell compiler to produce code that evaluates to true anytime the user is an administrator. We also use the <code>_</code> value in the final case statement as a catch-all, to deny all other possible combinations of required permission level and user group.</p>
 <h3 id="elms-model-update-view-architecture-is-very-well-suited-for-building-web-applications">Elm’s Model-Update-View architecture is very well-suited for building web applications</h3>
 <p>The core architectural pattern in every Elm web application is what is referred to as <a href="https://guide.elm-lang.org/architecture/">The Elm Architecture</a>, consisting of three main parts:</p>
 <p>The <strong>Model</strong> is the state of the application. The Model consists of a single data structure that contains every piece of data used in the application. It will usually grow incrementally as an application grows in features and complexity, but how it is structured is up to the developer. In most applications the Model will take the form of a record type (similar to an object in JavaScript) which may have any number of top level fields that may be any type of data structure (including themselves being record types).</p>
-<p>The <strong>Update</strong> is the portion of the application that handles both changes to the Model as well as any I/O that the Elm application has to perform (http requests, calling external JavaScript functions, etc.). No other portion of the program can change the state of the Model or perform I/O. The Update is called anytime a <code>Msg</code> value is produced in the application. Such a <code>Msg</code> value will usually represent the action and may have additional data bound to it (e.g. <code>UserSearchInput &quot;john&quot;</code>).</p>
+<p>The <strong>Update</strong> is the portion of the application that handles both changes to the Model as well as any I/O that the Elm application has to perform (http requests, calling external JavaScript functions, etc.). No other portion of the program can change the state of the Model or perform I/O. The Update is called anytime a <code>Msg</code> value is produced in the application. Such a <code>Msg</code> value will usually represent the action and may have additional data bound to it (e.g. <code>UserSearchInput "john"</code>).</p>
 <p>The <strong>View</strong> is the portion of the program that renders HTML and handles user inputs. The View always takes the Model as an argument, so any conditional logic that uses data to dictate how the HTML on the page is changed during runtime must be based off of data in the Model. The View is automatically called by the Elm runtime anytime any value in the Model changes. User inputs in the View will produce <code>Msg</code> values, which will result in the Elm runtime invoking the Update.</p>
 <p>So in general, the execution of an Elm program is as follows:</p>
 <ol type="1">
@@ -752,20 +754,20 @@ Source: <a href="https://github.com/Dobiasd/articles/blob/master/programming_lan
 <h2 id="the-hosts-file">The hosts file</h2>
 <p>Enter the hosts file. Well, <em>reenter</em> the hosts file. Originally implemented in the 1970s, the hosts file was used by operating systems to map hostnames (such as google.com) to IP addresses (such as 74.125.224.72). The hosts file was used to navigate <a href="http://en.wikipedia.org/wiki/ARPANET">ARPANET</a>, a precursor to the Internet. Users would either need to create and update, or get their hands on a copy of an updated hosts file to actively be able to browse ARPANET via domain names. In 1984, a system which replaced the need for a manually updated hosts file was released. It was called the Domain Name System, which we typically refer to today as just DNS.</p>
 <p>But the hosts file was here to stay, and had become a key part of virtually every operating system with any sort of networking capability. It gave the user the ability to locally map any hostname to any IP address. Here is an example of what most default hosts files will look like (this one taken from Arch Linux):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co"># /etc/hosts: static lookup table for host names</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">#&lt;ip-address&gt;	&lt;hostname.domain.org&gt;	&lt;hostname&gt;</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="ex">127.0.0.1</span>	localhost.localdomain	localhost</a>
-<a class="sourceLine" id="cb1-7" title="7">::<span class="ex">1</span>		localhost.localdomain	localhost</a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co"># End of file</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /etc/hosts: static lookup table for host names</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&lt;ip-address&gt;	&lt;hostname.domain.org&gt;	&lt;hostname&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">127.0.0.1</span>	localhost.localdomain	localhost</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">::1</span>		localhost.localdomain	localhost</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># End of file</span></span></code></pre></div>
 <p>Any line that starts with # is a comment, and does nothing when the file is actually parsed by the computer. At the start of every other line we have an IP address, and at the end we have a hostname. We can see that the file’s role in its current state is to map the “localhost” hostname to the default loopback IP (127.0.0.1 or 0.0.0.0 in IPv4 and ::1 in IPv6) so that anytime we enter “localhost” in our browser address bar (or anytime any application uses it as a hostname), the computer will connect to itself. This shortcut is often used by anyone who does any sort of web development or other network application work.</p>
 <p>The hosts file above also demonstrates another capability which we can take advantage of. We can, in effect, block connections from any website if we route the site’s hostname to 127.0.0.1 using the hosts file, as the contents of the hosts file takes precedent over any DNS mappings we receive from the internet. So if we add a line such as this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">127.0.0.1</span> reddit.com</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">127.0.0.1</span> reddit.com</span></code></pre></div>
 <p>we tell our computer to take us to 127.0.0.1 instead of reddit’s normal IP address everytime we enter reddit.com in our browser. So, by redirecting all traffic that would otherwise go to reddit.com to ourselves, reddit becomes unreachable. All we need now is a list of ad serving domains that we want to block and the hosts file serves the exact same purpose as Adblock. The difference being that the hosts file uses no RAM and no CPU. It does not slow down any browser, and it completely eliminates connections to any domain listed in it. So the hosts file affects Firefox, Chrome, and any other browser and application we may be using.</p>
-<p>Fortunately, there are kind people on the internet that have compile pre-existing hosts files filled with thousands of malicious and ad-serving domains. The first site I found is <a href="http://winhelp2002.mvps.org/hosts.htm" class="uri">http://winhelp2002.mvps.org/hosts.htm</a>, which includes not only a hosts file in both .zip and .txt form, but a great explanation of how the hosts file works and various types of domains to block. The second is <a href="http://someonewhocares.org/hosts/" class="uri">http://someonewhocares.org/hosts/</a>, which also offers a great description as well as instructions of how to update the hosts file on your PC.</p>
+<p>Fortunately, there are kind people on the internet that have compile pre-existing hosts files filled with thousands of malicious and ad-serving domains. The first site I found is <a href="http://winhelp2002.mvps.org/hosts.htm">http://winhelp2002.mvps.org/hosts.htm</a>, which includes not only a hosts file in both .zip and .txt form, but a great explanation of how the hosts file works and various types of domains to block. The second is <a href="http://someonewhocares.org/hosts/">http://someonewhocares.org/hosts/</a>, which also offers a great description as well as instructions of how to update the hosts file on your PC.</p>
 <h2 id="time-for-some-automation">Time for some automation</h2>
 <p>I would like to take it a step further and write a short bash script to automatically update our hosts file using the hosts files provided by both of these sites. This will be written to work on Linux, but should probably work on OSX as well. Ideally, every time we run the script we want to grab the most updated versions of each site’s hosts file, so we have the most up-to-date version of a list of malicious and ad-serving domains.</p>
 <p>So, the algorithm we want to perform will be something like this:</p>
@@ -779,34 +781,34 @@ Source: <a href="https://github.com/Dobiasd/articles/blob/master/programming_lan
 </ol>
 <p>In addition to this, if we run our script a second time or any additional time, instead of making a copy of the current hosts file, we want to overwrite our primary hosts file with the copy we took we ran the first time. This is so that we are starting with a clean hosts file every time we run the script, and not adding tens of thousands of redundant lines.</p>
 <p>After a little bit of experimenting, the script is as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#!/bin/bash</span></a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="bu">echo</span> <span class="st">&quot;Checking if copy of original hosts file exists...&quot;</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="kw">if</span><span class="bu"> [</span> <span class="ot">-e</span> /etc/hosts-original<span class="bu"> ]</span></a>
-<a class="sourceLine" id="cb3-5" title="5">	<span class="kw">then</span></a>
-<a class="sourceLine" id="cb3-6" title="6">		<span class="bu">echo</span> <span class="st">&quot;Copy of original exists.&quot;</span></a>
-<a class="sourceLine" id="cb3-7" title="7">		<span class="fu">cat</span> /etc/hosts-original <span class="op">&gt;</span> /etc/hosts	</a>
-<a class="sourceLine" id="cb3-8" title="8">	<span class="kw">else</span></a>
-<a class="sourceLine" id="cb3-9" title="9">		<span class="bu">echo</span> <span class="st">&quot;Copy of original does not exist.  Copying...&quot;</span></a>
-<a class="sourceLine" id="cb3-10" title="10">		<span class="fu">cat</span> /etc/hosts <span class="op">&gt;</span> /etc/hosts-original</a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="kw">fi</span></a>
-<a class="sourceLine" id="cb3-12" title="12"></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="bu">echo</span> <span class="st">&quot;Downloading mvps.org hosts file...&quot;</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="fu">wget</span> http://winhelp2002.mvps.org/hosts.txt --output-document=hosts-mvps</a>
-<a class="sourceLine" id="cb3-15" title="15"></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="bu">echo</span> <span class="st">&quot;Downloading someonewhocares.org hosts file...&quot;</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="fu">wget</span> http://someonewhocares.org/hosts/zero/hosts --output-document=hosts-swc</a>
-<a class="sourceLine" id="cb3-18" title="18"></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="bu">echo</span> <span class="st">&quot;Adding mvps.org hosts file content to main hosts file...&quot;</span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="fu">cat</span> hosts-mvps <span class="op">&gt;&gt;</span> /etc/hosts</a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="bu">echo</span> <span class="st">&quot;Adding someonewhocares.org hosts file content to main hosts file...&quot;</span></a>
-<a class="sourceLine" id="cb3-22" title="22"><span class="fu">cat</span> hosts-swc <span class="op">&gt;&gt;</span> /etc/hosts</a>
-<a class="sourceLine" id="cb3-23" title="23"></a>
-<a class="sourceLine" id="cb3-24" title="24"><span class="bu">echo</span> <span class="st">&quot;Cleaning up...&quot;</span></a>
-<a class="sourceLine" id="cb3-25" title="25"><span class="fu">rm</span> hosts-mvps</a>
-<a class="sourceLine" id="cb3-26" title="26"><span class="fu">rm</span> hosts-swc</a>
-<a class="sourceLine" id="cb3-27" title="27"></a>
-<a class="sourceLine" id="cb3-28" title="28"><span class="bu">echo</span> <span class="st">&quot;Completed!&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Checking if copy of original hosts file exists...&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-e</span> /etc/hosts-original <span class="bu">]</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>	<span class="cf">then</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>		<span class="bu">echo</span> <span class="st">&quot;Copy of original exists.&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>		<span class="fu">cat</span> /etc/hosts-original <span class="op">&gt;</span> /etc/hosts	</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>	<span class="cf">else</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>		<span class="bu">echo</span> <span class="st">&quot;Copy of original does not exist.  Copying...&quot;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>		<span class="fu">cat</span> /etc/hosts <span class="op">&gt;</span> /etc/hosts-original</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Downloading mvps.org hosts file...&quot;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://winhelp2002.mvps.org/hosts.txt <span class="at">--output-document</span><span class="op">=</span>hosts-mvps</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Downloading someonewhocares.org hosts file...&quot;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://someonewhocares.org/hosts/zero/hosts <span class="at">--output-document</span><span class="op">=</span>hosts-swc</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Adding mvps.org hosts file content to main hosts file...&quot;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> hosts-mvps <span class="op">&gt;&gt;</span> /etc/hosts</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Adding someonewhocares.org hosts file content to main hosts file...&quot;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> hosts-swc <span class="op">&gt;&gt;</span> /etc/hosts</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Cleaning up...&quot;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> hosts-mvps</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> hosts-swc</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Completed!&quot;</span></span></code></pre></div>
 <p>You can view and download the same file on <a href="https://github.com/charukiewicz/scripts/blob/master/hosts-update.sh">GitHub</a>. I encourage you to open it in a text editor after downloading it to confirm it is exactly what I have in the box above. You will need to run the script with root permissions by prefixing with the <strong>sudo</strong> command because the entire <strong>/etc/</strong> directory is read only.</p>
 <p>If you are a new Linux user (or an old, forgetful, Linux user) attempting to run this script for the first time, open a terminal and type the following commands:</p>
 <pre><code>cd ~/Downloads
