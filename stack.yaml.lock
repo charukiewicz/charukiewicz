@@ -7,13 +7,13 @@ packages:
 - completed:
     name: hakyll-sass
     version: 0.2.4
-    git: git@github.com:meoblast001/hakyll-sass.git
+    git: git@github.com:charukiewicz/hakyll-sass.git
     pantry-tree:
       size: 367
       sha256: acb7990ea96ccc3537071776c8e384921bd82636e87a6590205116db54895a2f
     commit: b9c08afc9d81abc5bc57a9adc6bd7b70d562ea46
   original:
-    git: git@github.com:meoblast001/hakyll-sass.git
+    git: git@github.com:charukiewicz/hakyll-sass.git
     commit: b9c08afc9d81abc5bc57a9adc6bd7b70d562ea46
 snapshots:
 - completed:

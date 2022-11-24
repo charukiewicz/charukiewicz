@@ -13,10 +13,18 @@ title: Résumé
 
 <div class="exp">
 
-**Co-Founder & Partner** <span class="fr">2020 - Present</span><br>
+**Partner & Principal Software Engineer** <span class="fr">2020 - Present</span><br>
 Foxhound Systems 
 
-<small><i>Foxhound Systems creates software systems that inspire confidence and enable organizations to do their best work. We specialize in using the Haskell and Elm programming languages coupled with a variety of techniques such as SQL query optimization and database tuning to achieve superior reliability, performance, and security.</i></small>
+Foxhound Systems creates software systems that inspire confidence and enable organizations to do their best work. We use a wide array of programming languages coupled with a variety of techniques such as SQL query optimization and database tuning to achieve superior reliability, performance, and design.
+
+We recognize every project is different and are committed to using the right tools for each job. When performance, reliability, and maintainability are paramount, one of our specialties is using the Haskell programming language with the PostgreSQL database as we find this combination consistently drives excellent results, allowing us to achieve the excellent outcomes faster and with more consistency than by using any other approach.
+
+* Worked with clients in a variety of industries, including ecommerce, video streaming, and financial services.
+* Served as primary point of contact for all clients and managed all client projects
+* Led the design, build, and delivery of full stack web applications, API systems with strict performance requirements, as well as platform specific projects including Shopify apps
+* Created software systems using numerous tools and technologies, including Haskell, Python, Node.js, React, Ruby on Rails, Laravel, PostgreSQL, MySQL, Tailwind CSS, Stimulus
+* Deployed and maintained client software systems on a variety of platforms, including AWS and Heroku using numerous infrastructure/build tools, such as Docker, Nix, GitHub Actions, BitBucket Pipelines, AWS ECR/ECS, CloudWatch, Sentry
 
 **Chief Technology Officer** <span class="fr">2014 - 2020</span><br>
 Roompact
