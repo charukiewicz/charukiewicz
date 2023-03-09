@@ -7,7 +7,7 @@ Hi, I'm Christian Charukiewicz. I'm a software engineer, technology & product le
 - I think statically typed functional programming is a boon to developer productivity and software quality. I think that it is something that every programmer would benefit from learning.
 - I'm a huge fan of Linux and run it on all of my machines, including my desktop and laptops.
 - My favorite way of managing a system is using [Nix](https://nixos.org/), and I use it both personally and professionally.
-- I read [at least one book each month](https://charukiewi.cz/reading/).
+- I try to read [a variety of books](https://charukiewi.cz/reading/).
 
 ### Open Source
 

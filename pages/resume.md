@@ -13,7 +13,7 @@ title: Résumé
 
 <div class="exp">
 
-**Partner & Principal Software Engineer** <span class="fr">2020 - Present</span><br>
+**Partner & Principal Software Engineer** <span class="fr">Oct 2020 - Present</span><br>
 Foxhound Systems 
 
 Foxhound Systems creates software systems that inspire confidence and enable organizations to do their best work. We use a wide array of programming languages coupled with a variety of techniques such as SQL query optimization and database tuning to achieve superior reliability, performance, and design.
@@ -26,7 +26,7 @@ We recognize every project is different and are committed to using the right too
 * Created software systems using numerous tools and technologies, including Haskell, Python, Node.js, React, Ruby on Rails, Laravel, PostgreSQL, MySQL, Tailwind CSS, Stimulus
 * Deployed and maintained client software systems on a variety of platforms, including AWS and Heroku using numerous infrastructure/build tools, such as Docker, Nix, GitHub Actions, BitBucket Pipelines, AWS ECR/ECS, CloudWatch, Sentry
 
-**Chief Technology Officer** <span class="fr">2014 - 2020</span><br>
+**Chief Technology Officer** <span class="fr">May 2014 - Oct 2020</span><br>
 Roompact
 
 * Set long term road map for product development; continually raised standards for application design, architecture, documentation, performance, security
@@ -41,7 +41,7 @@ Roompact
 * Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, git, Linux CLI tools such as grep, sed, awk, tail, piping, filtering logs, use of code linters, refactoring tools, dotfile configurations, Bash and Python scripting, etc.
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
-**Product Development Lead** <span class="fr">2012 - 2013</span><br>
+**Product Development Lead** <span class="fr">Oct 2011 - Nov 2013</span><br>
 Next Generation Gaming, LLC
 
 * Product management & development position; led and coordinated a team of software developers, QA testers, and customer relations staff to create features and digital products leading to increased player engagement and revenue in an online-RPG environment with over 20,000 players per month
