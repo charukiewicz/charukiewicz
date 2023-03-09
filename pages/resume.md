@@ -51,7 +51,7 @@ Next Generation Gaming, LLC
 * Surveyed players to gauge response to game updates and gather general feedback
 * Worked extensively with the PAWN language, MySQL, and PHP
 
-**EMT-Basic** <small>(Volunteer Position)</small> <span class="fr">2012 - 2014</span><br>
+**EMT-Basic** <small>(Volunteer Position)</small> <span class="fr">Aug 2012 - Dec 2014</span><br>
 Illini Emergency Medical Services
 
 * Staffed various types of events as on-site EMT
