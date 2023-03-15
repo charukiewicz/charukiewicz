@@ -42,7 +42,7 @@ Roompact
 * Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
 
 **Product Development Lead** <span class="fr">Oct 2011 - Nov 2013</span><br>
-Next Generation Gaming, LLC
+Next Generation Gaming
 
 * Product management & development position; led and coordinated a team of software developers, QA testers, and customer relations staff to create features and digital products leading to increased player engagement and revenue in an online-RPG environment with over 20,000 players per month
 * Designed and led the implementation of an in-game credit system which automated all product sales, removed sales overhead costs, and allowed for the creation of several new categories of products; increased average monthly revenue of the company by 35%
