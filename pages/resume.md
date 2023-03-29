@@ -20,26 +20,23 @@ Foxhound Systems creates software systems that inspire confidence and enable org
 
 We recognize every project is different and are committed to using the right tools for each job. When performance, reliability, and maintainability are paramount, one of our specialties is using the Haskell programming language with the PostgreSQL database as we find this combination consistently drives excellent results, allowing us to achieve the excellent outcomes faster and with more consistency than by using any other approach.
 
-* Worked with clients in a variety of industries, including ecommerce, video streaming, and financial services.
-* Served as primary point of contact for all clients and managed all client projects
-* Led the design, build, and delivery of full stack web applications, API systems with strict performance requirements, as well as platform specific projects including Shopify apps
-* Created software systems using numerous tools and technologies, including Haskell, Python, Node.js, React, Ruby on Rails, Laravel, PostgreSQL, MySQL, Tailwind CSS, Stimulus
-* Deployed and maintained client software systems on a variety of platforms, including AWS and Heroku using numerous infrastructure/build tools, such as Docker, Nix, GitHub Actions, BitBucket Pipelines, AWS ECR/ECS, CloudWatch, Sentry
+* Co-founding partner; acquired clients, set growth strategy, and managed staff to provide software engineering and technical services to client companies with engagements spanning from 3 months to 2+ years
+* Successfully managed a team of software engineers, both in-house and embedded in client teams, by assigning tasks, conducting thorough reviews of work output, and providing constructive feedback and mentorship for career growth
+* Collaborated closely with product managers and executives at client companies to identify and solve problems, and gather and refine requirements for optimal results
+* Led the design, build, and delivery of full stack web applications and back end systems for clients in a variety of industries including ecommerce, video streaming, financial services, and developer tools
+* Utilized a broad range of cutting-edge tools and technologies, including Haskell, Node.js, React, TypeScript, Python, PHP (Laravel), Ruby on Rails, Tailwind, MySQL, and PostgreSQL, to create fast and reliable software
+* Deployed and maintained client software systems on a variety of platforms, including AWS and Heroku using numerous infrastructure tools, such as Docker, Nix, GitHub Actions, BitBucket Pipelines, Sentry
+
 
 **Chief Technology Officer** <span class="fr">May 2014 - Oct 2020</span><br>
 Roompact
 
+* Promoted to engineering team lead within a of year getting hired as second software engineer; expanded technology and product driving B2B SaaS revenue growth from $150K to $1MM ARR
+* Successfully grew engineering team from 0 to 5 people; led hiring process for technical employees and interns; developed and led training of new technical staff
 * Set long term road map for product development; continually raised standards for application design, architecture, documentation, performance, security
-* Led hiring process for technical employees and interns; developed and led training of new technical staff
-* Chief architect of new features, functionality, and underlying infrastructure; led team members in making design decisions ranging from database schemas, to user interfaces, to application-specific RESTful APIs
-* Introduced the Haskell and Elm programming languages as the foundation for new development; taught Haskell, Elm, and functional programming concepts to technical team members with no previous FP experience
-* Planned and executed the transition of company server infrastructure to Amazon Web Services; reduced technical infrastructure costs by 70%
-* Employed a variety of AWS tools and services, including EC2, RDS, S3, ELBs, SES, Route 53, Lambda, CloudWatch, CloudFront, IAM, Inspector, etc.
-* Achieved completely automated and reproducible Linux server deployments and configuration management with Bash and Ansible
-* Utilized and educated team members on the use of a variety of programming languages, infrastructure tools, and frameworks: Haskell, Elm, JavaScript, CakePHP, Node.js, Jekyll, HTML, SASS/SCSS, Nginx, MySQL, Redis, Supervisor, Ansible, Nix
-* Established internal code review process to improve overall software quality, encourage exchange of knowledge among technical team members, and increase the bus factor of various system components
-* Educated team members on use of various technical tools, such as Vim, tmux, ssh, remote filesystems, git, Linux CLI tools such as grep, sed, awk, tail, piping, filtering logs, use of code linters, refactoring tools, dotfile configurations, Bash and Python scripting, etc.
-* Facilitated and supported professional development of technical team members; assisted in development of key skills and long term goals; provided guidance in learning specific topics
+* Planned and executed the transition of company server infrastructure to Amazon Web Services; automated server deployments; reduced technical infrastructure costs by 70%
+* Utilized and taught team members on the use of a variety of programming languages, infrastructure tools, and frameworks such as Haskell, Elm, JavaScript, PHP, Node.js, MySQL, Redis, Nix, AWS, etc.
+
 
 **Product Development Lead** <span class="fr">Oct 2011 - Nov 2013</span><br>
 Next Generation Gaming
@@ -47,9 +44,9 @@ Next Generation Gaming
 * Product management & development position; led and coordinated a team of software developers, QA testers, and customer relations staff to create features and digital products leading to increased player engagement and revenue in an online-RPG environment with over 20,000 players per month
 * Designed and led the implementation of an in-game credit system which automated all product sales, removed sales overhead costs, and allowed for the creation of several new categories of products; increased average monthly revenue of the company by 35%
 * Planned and assigned projects, held development meetings, wrote technical specifications, analyzed player data and trends, determined project costs and time requirements
-* Performed quantitative analysis of product sales, used results to develop marketing and sales strategies, instructed customer relations staff on how to execute sales strategies
+* Performed analysis of product sales, used results to develop marketing and sales strategies, instructed customer relations staff on how to execute sales strategies
 * Surveyed players to gauge response to game updates and gather general feedback
-* Worked extensively with the PAWN language, MySQL, and PHP
+* Worked with PHP and MySQL
 
 **EMT-Basic** <small>(Volunteer Position)</small> <span class="fr">Aug 2012 - Dec 2014</span><br>
 Illini Emergency Medical Services
@@ -86,58 +83,10 @@ Illini Emergency Medical Services
 
 ## Technical Skills
 
-<b>
-<span class="sk-6">Advanced</span>
-<span class="sk-0" style="float:right">Basic</span>
-<div class="sk-grad"></div>
-</b>
+* **Programming Languages**: Haskell, Elm, PHP, TypeScript, JavaScript, Python, Ruby, Bash, HTML, SCSS, SQL
+* **Technologies & Frameworks**:  Ruby on Rails, React.js, Laravel, Node.js, Nginx, Apache, Ansible, MySQL, PostgreSQL, SQLite, Git, AWS (EC2, S3, RDS, Lambda, ECS, SES, etc.), Heroku, Linux, Docker, Nix, Redis, Balsamiq
+* **Concepts**: Full stack development, product management, functional programming, object-oriented programming, UI/UX design, database & infrastructure management, CI/CD, system design, API design, database design
 
-<table class="sk-table">
-<tr>
-<td class="sk sk-6">
-<span>Haskell</span>
-<span>Elm</span>
-<span>Linux</span>
-<span>JavaScript</span>
-<span>PHP</span>
-<span>MySQL</span>
-<span>Redis</span>
-<span>SQLite</span>
-<span>CSS/SCSS</span>
-<span>HTML</span>
-</td>
-<td class="sk sk-5">
-<span>PostgreSQL</span>
-<span>Nix</span>
-<span>Git</span>
-<span>AWS</span>
-<span>Ansible</span>
-<span>Nginx</span>
-<span>Python</span>
-</td>
-<td class="sk sk-4">
-<span>Apache</span>
-<span>Bash</span>
-<span>Node.js</span>
-<span>DNS</span>
-<span>SPF, DKIM, DMARC</span>
-</td>
-<td class="sk sk-3">
-<span>Svn</span>
-</td>
-<td class="sk sk-2">
-<span>LaTeX</span>
-<span>OCaml</span>
-</td>
-<td class="sk sk-1">
-<span>Java</span>
-</td>
-<td class="sk sk-0">
-<span>C</span>
-<span>C++</span>
-</td>
-</tr>
-</table>
 
 <hr>
 
