@@ -1,9 +1,9 @@
-Hi, I'm Christian Charukiewicz. I'm a software engineer, technology & product leader, teacher, learner, avid reader, and culinary enthusiast. I'm a Partner & Principal Software Engineer at [Foxhound Systems](https://www.foxhound.systems), a custom software development company that creates fast and reliable software systems. We specialize in using the Haskell and Elm programming languages coupled with a variety of techniques such as SQL query optimization and database tuning to achieve superior reliability, performance, and security.
+Hi, I'm Christian Charukiewicz. I'm a software engineer, technology & product leader, teacher, learner, avid reader, and culinary enthusiast. I'm a Partner & Principal Software Engineer at [Foxhound Systems](https://www.foxhound.systems), a custom software development company that creates fast and reliable software systems. We specialize in using the Haskell programming language coupled with a variety of techniques such as SQL query optimization and database tuning to achieve superior reliability, performance, and security.
 
 ### About me
 
 - I've been programming since the mid-2000s, and started by writing IRC scripts and tweaking forum software.
-- My favorite programming language is [Haskell](https://www.haskell.org/), my second favorite is [Elm](https://elm-lang.org/).
+- My favorite programming language is [Haskell](https://www.haskell.org/).
 - I think statically typed functional programming is a boon to developer productivity and software quality. I think that it is something that every programmer would benefit from learning.
 - I'm a huge fan of Linux and run it on all of my machines, including my desktop and laptops.
 - My favorite way of managing a system is using [Nix](https://nixos.org/), and I use it both personally and professionally.
